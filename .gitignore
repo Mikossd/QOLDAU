@@ -1,0 +1,22 @@
+# Executables & large binaries
+cloudflared.exe
+*.exe
+
+# Runtime generated files
+tunnel_info.json
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
