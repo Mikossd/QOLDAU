@@ -1155,6 +1155,186 @@ body {
   border-top: 1px dashed var(--border-color, #e2e8f0);
 }
 
+/* Data Confidence Indicator */
+.confidence-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.confidence-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.confidence-label {
+  font-size: 0.72rem;
+  color: var(--text-muted, #64748b);
+  font-weight: 600;
+}
+
+.confidence-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill, 9999px);
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.confidence-badge.confidence-high {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.confidence-badge.confidence-medium {
+  background: #fef9c3;
+  color: #a16207;
+  border: 1px solid #fde047;
+}
+
+.confidence-badge.confidence-low {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.confidence-note {
+  font-size: 0.72rem;
+  color: #b45309;
+  background: #fffbeb;
+  border: 1px solid #fef08a;
+  border-radius: 6px;
+  padding: 4px 8px;
+  line-height: 1.35;
+}
+
+[data-theme="dark"] .confidence-note {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.3);
+  color: #fde68a;
+}
+
+/* "Why this score?" Breakdown Section */
+.why-score-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border-color, #e2e8f0);
+}
+
+.why-score-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.why-score-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted, #64748b);
+}
+
+.why-score-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.why-score-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.why-score-item.why-neg {
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #991b1b;
+}
+
+[data-theme="dark"] .why-score-item.why-neg {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+}
+
+.why-score-item.why-pos {
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  color: #166534;
+}
+
+[data-theme="dark"] .why-score-item.why-pos {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #86efac;
+}
+
+.why-score-item.why-neutral {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+[data-theme="dark"] .why-score-item.why-neutral {
+  background: rgba(148, 163, 184, 0.1);
+  border-color: rgba(148, 163, 184, 0.2);
+  color: #cbd5e1;
+}
+
+.why-item-desc {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.why-item-impact {
+  font-weight: 800;
+  font-size: 0.76rem;
+  padding: 1px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.why-neg .why-item-impact {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+[data-theme="dark"] .why-neg .why-item-impact {
+  background: rgba(239, 68, 68, 0.25);
+  color: #fca5a5;
+}
+
+.why-pos .why-item-impact {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+[data-theme="dark"] .why-pos .why-item-impact {
+  background: rgba(16, 185, 129, 0.25);
+  color: #86efac;
+}
+
+.why-neutral .why-item-impact {
+  background: #e2e8f0;
+  color: #475569;
+}
+
 /* Info Cards (Nutrition, Insights, Ingredients) */
 .info-card {
   background: var(--bg-card);

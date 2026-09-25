@@ -180,9 +180,54 @@ const I18N = {
       source_status_label: 'Статус данных:',
       source_updated_label: 'Последнее обновление:',
       status_community: 'Сообщество (Open Food Facts)',
-      status_user_local: 'Пользовательские данные (без верификации)',
-      status_local_verified: 'Локальная база Qoldau (верифицировано)',
-      transparency_full_disclaimer: '⚠️ Индекс пользы Qoldau является информационной оценкой на основе доступных данных о составе и пищевой ценности. Он не является медицинским диагнозом или официальным сертификатом качества.'
+      transparency_full_disclaimer: '⚠️ Индекс пользы Qoldau является информационной оценкой на основе доступных данных о составе и пищевой ценности. Он не является медицинским диагнозом или официальным сертификатом качества.',
+      score_grade_good_choice: 'Отличный выбор',
+      score_grade_moderate_choice: 'Умеренно',
+      score_grade_less_healthy: 'Менее полезно',
+      score_grade_poor_choice: 'Нежелательно',
+      confidence_label: 'Надежность данных:',
+      confidence_high: 'Высокая',
+      confidence_medium: 'Средняя',
+      confidence_low: 'Низкая',
+      confidence_note_missing: 'Отсутствуют некоторые данные ({missing}), расчет может быть менее точным.',
+      confidence_note_significant: 'Существенная часть ключевых показателей отсутствует ({missing}).',
+      why_this_score_title: 'Почему такая оценка?',
+      scale_poor: '0 • Нежелательно',
+      scale_moderate: '60 • Умеренно',
+      scale_good: '80–100 • Отличный выбор',
+      score_disclaimer_text: 'ℹ️ Qoldau Health Score является информационным расчетом на основе доступных данных о составе и пищевой ценности. Он не является медицинским диагнозом или официальным сертификатом качества.',
+      factor_sugar: 'Сахар',
+      factor_satfat: 'Насыщенные жиры',
+      factor_fat: 'Общий жир',
+      factor_salt: 'Соль',
+      factor_transfat: 'Трансжиры',
+      factor_fiber: 'Клетчатка',
+      factor_protein: 'Белок',
+      factor_sugar_very_high: 'Очень высокий сахар',
+      factor_sugar_high: 'Высокий сахар',
+      factor_sugar_elevated: 'Повышенный сахар',
+      factor_sugar_moderate: 'Умеренный сахар',
+      factor_sugar_low: 'Низкий сахар',
+      factor_satfat_very_high: 'Очень высокие насыщенные жиры',
+      factor_satfat_high: 'Высокие насыщенные жиры',
+      factor_satfat_elevated: 'Повышенные насыщенные жиры',
+      factor_satfat_moderate: 'Умеренные насыщенные жиры',
+      factor_satfat_low: 'Низкие насыщенные жиры',
+      factor_fat_high: 'Высокое общее содержание жиров',
+      factor_fat_elevated: 'Повышенное содержание жиров',
+      factor_fat_moderate: 'Умеренное содержание жиров',
+      factor_fat_mild: 'Небольшое содержание жиров',
+      factor_fat_low: 'Низкое содержание жиров',
+      factor_salt_very_high: 'Очень высокое содержание соли',
+      factor_salt_high: 'Высокое содержание соли',
+      factor_salt_elevated: 'Повышенное содержание соли',
+      factor_salt_moderate: 'Умеренное содержание соли',
+      factor_salt_low: 'Низкое содержание соли',
+      factor_transfat_penalty: 'Наличие трансжиров',
+      factor_fiber_high: 'Высокое содержание клетчатки',
+      factor_fiber_source: 'Источник клетчатки',
+      factor_protein_high: 'Высокое содержание белка',
+      factor_protein_source: 'Источник белка'
     },
 
     kk: {
@@ -347,9 +392,54 @@ const I18N = {
       source_status_label: 'Деректер күйі:',
       source_updated_label: 'Соңғы жаңартылуы:',
       status_community: 'Қоғамдастық (Open Food Facts)',
-      status_user_local: 'Пайдаланушы деректері (тексерілмеген)',
-      status_local_verified: 'Qoldau жергілікті базасы (тексерілген)',
-      transparency_full_disclaimer: '⚠️ Qoldau пайдалылық индексі — тағамдық құрамы мен құндылығы туралы қолжетімді деректерге негізделген ақпараттық бағалау. Ол медициналық диагноз немесе ресми сапа сертификаты болып табылмайды.'
+      transparency_full_disclaimer: '⚠️ Qoldau пайдалылық индексі — тағамдық құрамы мен құндылығы туралы қолжетімді деректерге негізделген ақпараттық бағалау. Ол медициналық диагноз немесе ресми сапа сертификаты болып табылмайды.',
+      score_grade_good_choice: 'Жақсы таңдау',
+      score_grade_moderate_choice: 'Қалыпты',
+      score_grade_less_healthy: 'Пайдасы аздау',
+      score_grade_poor_choice: 'Төмен сапа',
+      confidence_label: 'Деректер сенімділігі:',
+      confidence_high: 'Жоғары',
+      confidence_medium: 'Орташа',
+      confidence_low: 'Төмен',
+      confidence_note_missing: 'Кейбір көрсеткіштер жоқ ({missing}), есептеу дәлдігі төмендеуі мүмкін.',
+      confidence_note_significant: 'Негізгі тағамдық мәліметтердің едәуір бөлігі жоқ ({missing}).',
+      why_this_score_title: 'Неге мұндай бағалау?',
+      scale_poor: '0 • Төмен сапа',
+      scale_moderate: '60 • Қалыпты',
+      scale_good: '80–100 • Жақсы таңдау',
+      score_disclaimer_text: 'ℹ️ Qoldau Health Score — қолжетімді құрамы мен тағамдық құндылығы деректеріне негізделген ақпараттық есептеу. Ол медициналық диагноз немесе ресми сапа сертификаты болып табылмайды.',
+      factor_sugar: 'Қант',
+      factor_satfat: 'Қаныққан майлар',
+      factor_fat: 'Жалпы май',
+      factor_salt: 'Тұз',
+      factor_transfat: 'Трансмайлар',
+      factor_fiber: 'Жасұнық (клетчатка)',
+      factor_protein: 'Ақуыз',
+      factor_sugar_very_high: 'Өте жоғары қант',
+      factor_sugar_high: 'Жоғары қант',
+      factor_sugar_elevated: 'Қант мөлшері көптеу',
+      factor_sugar_moderate: 'Орташа қант',
+      factor_sugar_low: 'Төмен қант',
+      factor_satfat_very_high: 'Өте жоғары қаныққан майлар',
+      factor_satfat_high: 'Жоғары қаныққан майлар',
+      factor_satfat_elevated: 'Қаныққан май мөлшері көптеу',
+      factor_satfat_moderate: 'Орташа қаныққан майлар',
+      factor_satfat_low: 'Төмен қаныққан майлар',
+      factor_fat_high: 'Жалпы майдың жоғары мөлшері',
+      factor_fat_elevated: 'Майдың көптеу мөлшері',
+      factor_fat_moderate: 'Орташа май мөлшері',
+      factor_fat_mild: 'Аздаған май мөлшері',
+      factor_fat_low: 'Төмен май мөлшері',
+      factor_salt_very_high: 'Өте жоғары тұз',
+      factor_salt_high: 'Жоғары тұз',
+      factor_salt_elevated: 'Тұздың көптеу мөлшері',
+      factor_salt_moderate: 'Орташа тұз',
+      factor_salt_low: 'Төмен тұз',
+      factor_transfat_penalty: 'Трансмайлардың болуы',
+      factor_fiber_high: 'Жоғары жасұнық (клетчатка)',
+      factor_fiber_source: 'Жасұнық көзі',
+      factor_protein_high: 'Жоғары ақуыз',
+      factor_protein_source: 'Ақуыз көзі'
     },
 
     en: {
@@ -513,10 +603,54 @@ const I18N = {
       source_origin_label: 'Data source:',
       source_status_label: 'Data status:',
       source_updated_label: 'Last updated:',
-      status_community: 'Community-sourced (Open Food Facts)',
-      status_user_local: 'User-Submitted (Unverified)',
-      status_local_verified: 'Qoldau Local DB (Verified)',
-      transparency_full_disclaimer: '⚠️ Qoldau Health Score is an informational score based on available nutrition and ingredient data. It is not a medical diagnosis or official certification.'
+      transparency_full_disclaimer: '⚠️ Qoldau Health Score is an informational calculation based on available nutrition and ingredient data. It is not a medical diagnosis or official certification.',
+      score_grade_good_choice: 'Good choice',
+      score_grade_moderate_choice: 'Moderate',
+      score_grade_less_healthy: 'Less healthy',
+      score_grade_poor_choice: 'Poor choice',
+      confidence_label: 'Data confidence:',
+      confidence_high: 'High',
+      confidence_medium: 'Medium',
+      confidence_low: 'Low',
+      confidence_note_missing: 'Some nutritional data is missing ({missing}), score may be less precise.',
+      confidence_note_significant: 'Significant nutrition information is missing ({missing}).',
+      why_this_score_title: 'Why this score?',
+      scale_poor: '0 • Poor choice',
+      scale_moderate: '60 • Moderate',
+      scale_good: '80–100 • Good choice',
+      score_disclaimer_text: 'ℹ️ Qoldau Health Score is an informational calculation based on available nutrition and ingredient data. It is not a medical diagnosis or official certification.',
+      factor_sugar: 'Sugar',
+      factor_satfat: 'Saturated fat',
+      factor_fat: 'Total fat',
+      factor_salt: 'Salt',
+      factor_transfat: 'Trans fat',
+      factor_fiber: 'Fiber',
+      factor_protein: 'Protein',
+      factor_sugar_very_high: 'Very high sugar',
+      factor_sugar_high: 'High sugar',
+      factor_sugar_elevated: 'Elevated sugar',
+      factor_sugar_moderate: 'Moderate sugar',
+      factor_sugar_low: 'Low sugar',
+      factor_satfat_very_high: 'Very high saturated fat',
+      factor_satfat_high: 'High saturated fat',
+      factor_satfat_elevated: 'Elevated saturated fat',
+      factor_satfat_moderate: 'Moderate saturated fat',
+      factor_satfat_low: 'Low saturated fat',
+      factor_fat_high: 'High total fat',
+      factor_fat_elevated: 'Elevated total fat',
+      factor_fat_moderate: 'Moderate total fat',
+      factor_fat_mild: 'Mild total fat',
+      factor_fat_low: 'Low total fat',
+      factor_salt_very_high: 'Very high salt',
+      factor_salt_high: 'High salt',
+      factor_salt_elevated: 'Elevated salt',
+      factor_salt_moderate: 'Moderate salt',
+      factor_salt_low: 'Low salt',
+      factor_transfat_penalty: 'Trans fat present',
+      factor_fiber_high: 'High fiber',
+      factor_fiber_source: 'Source of fiber',
+      factor_protein_high: 'High protein',
+      factor_protein_source: 'Source of protein'
     }
   },
 
@@ -1057,6 +1191,8 @@ function normalizeProductFromOFF(p, fallbackBarcode = '') {
     carbohydrates: getNum(n['carbohydrates_100g']),
     sugar: getNum(n['sugars_100g']),
     salt: getNum(n['salt_100g'] !== undefined ? n['salt_100g'] : (n['sodium_100g'] ? n['sodium_100g'] * 2.5 : null)),
+    fiber: getNum(n['fiber_100g']),
+    trans_fat: getNum(n['trans-fat_100g']),
     allergens: allergens,
     country: p.countries || '',
     manufacturer: p.manufacturing_places || brandStr || '',
@@ -1482,6 +1618,20 @@ const EVALUATOR = {
    *   negatives: Array<{ icon: string, text: string }>
    * }}
    */
+  /**
+   * Qoldau Health Score (100-point transparent scientific index)
+   * Base = 100 points
+   * Penalties:
+   *  - Sugar: 0-5g (0), >5-10g (-5), >10-20g (-10), >20-30g (-20), >30g (-30)
+   *  - Saturated Fat: 0-1.5g (0), >1.5-3g (-5), >3-5g (-10), >5-10g (-20), >10g (-30)
+   *  - Salt: 0-0.3g (0), >0.3-0.6g (-5), >0.6-1g (-10), >1-1.5g (-20), >1.5g (-30)
+   *  - Total Fat: 0-5g (0), >5-10g (-5), >10-20g (-10), >20-30g (-20), >30g (-25)
+   *  - Trans Fat (ONLY if explicitly present in data): >0.1g (-10)
+   * Bonuses:
+   *  - Fiber: 1-3g (+2), >3g (+4)
+   *  - Protein: 2-5g (+2), >5g (+4)
+   * Clamped to [0, 100].
+   */
   calculateHealthScore(product) {
     if (!product) {
       return {
@@ -1491,204 +1641,315 @@ const EVALUATOR = {
         labelKey: 'score_grade_nodata',
         headline: I18N.t('score_grade_nodata'),
         summary: I18N.t('rating_nodata'),
+        confidence: 'low',
+        confidenceNote: '',
+        whyFactors: [],
         positives: [],
         negatives: []
       };
     }
 
-    let score = 100;
-    const positives = [];
-    const negatives = [];
-    let hasData = false;
+    const coreFields = ['sugar', 'saturated_fat', 'salt', 'fat', 'protein'];
+    const availableCore = coreFields.filter(f => product[f] !== null && product[f] !== undefined);
+    const missingCore = coreFields.filter(f => product[f] === null || product[f] === undefined);
 
-    const nameLower = (product.name || '').toLowerCase();
-    const isBeverage = (/\b(напиток|кола|чай|сок|вода|сусын|drink|cola|tea|juice|soda)\b/i.test(nameLower) ||
-                        nameLower.includes('coca-cola') || nameLower.includes('pepsi') ||
-                        (Number(product.protein) === 0 && Number(product.fat) === 0 && Number(product.sugar) > 0)) &&
-                       !nameLower.includes('шоколад') && !nameLower.includes('chocolate');
-
-    const isFermentedDairy = nameLower.includes('қымыз') || nameLower.includes('кумыс') ||
-                             nameLower.includes('айран') || nameLower.includes('шұбат') ||
-                             nameLower.includes('шубат') || nameLower.includes('йогурт') ||
-                             nameLower.includes('кефир') || nameLower.includes('творог');
-
-    // 1. SUGAR (Max penalty: up to -42 pts for sugary drinks, -35 for food)
-    if (product.sugar !== null && product.sugar !== undefined) {
-      hasData = true;
-      const sugar = Number(product.sugar);
-      if (isBeverage) {
-        if (sugar > 9.0) {
-          score -= 42;
-          negatives.push({ icon: '🍬', text: `Критически много сахара в напитке (${sugar} г / 100 мл)` });
-        } else if (sugar > 5.0) {
-          score -= 25;
-          negatives.push({ icon: '🍬', text: `Много жидкого сахара (${sugar} г / 100 мл)` });
-        } else if (sugar > 1.5) {
-          score -= 12;
-          negatives.push({ icon: '⚖️', text: `Умеренный сахар (${sugar} г / 100 мл)` });
-        } else {
-          score += 4;
-          positives.push({ icon: '✨', text: `Минимум сахара (${sugar} г)` });
-        }
-      } else {
-        if (sugar > 35.0) {
-          score -= 35;
-          negatives.push({ icon: '🍬', text: `Очень много сахара (${sugar} г / 100 г)` });
-        } else if (sugar > 22.5) {
-          score -= 26;
-          negatives.push({ icon: '🍬', text: `Высокий сахар (${sugar} г / 100 г)` });
-        } else if (sugar > 12.5) {
-          score -= 15;
-          negatives.push({ icon: '⚖️', text: `Умеренный сахар (${sugar} г / 100 г)` });
-        } else if (sugar > 5.0) {
-          score -= 6;
-        } else {
-          score += 5;
-          positives.push({ icon: '✨', text: `Низкий сахар (${sugar} г / 100 г)` });
-        }
-      }
-    }
-
-    // 2. SATURATED FAT (Max penalty: -20 pts)
-    if (product.saturated_fat !== null && product.saturated_fat !== undefined) {
-      hasData = true;
-      const satFat = Number(product.saturated_fat);
-      if (satFat > 10.0) {
-        score -= 20;
-        negatives.push({ icon: '🧈', text: `Высокие насыщенные жиры (${satFat} г / 100 г)` });
-      } else if (satFat > 5.0) {
-        score -= 14;
-        negatives.push({ icon: '🧈', text: `Повышенные насыщенные жиры (${satFat} г)` });
-      } else if (satFat > 2.5) {
-        score -= 7;
-      } else if (satFat <= 1.0 && product.fat > 0) {
-        positives.push({ icon: '🥑', text: `Мало насыщенных жиров (${satFat} г)` });
-      }
-    }
-
-    // 3. SALT / SODIUM (Max penalty: -25 pts)
-    if (product.salt !== null && product.salt !== undefined) {
-      hasData = true;
-      const salt = Number(product.salt);
-      if (salt > 1.5) {
-        score -= 25;
-        negatives.push({ icon: '🧂', text: `Избыток соли (${salt} г / 100 г)` });
-      } else if (salt > 0.8) {
-        score -= 12;
-        negatives.push({ icon: '🧂', text: `Повышенное содержание соли (${salt} г)` });
-      } else if (salt <= 0.25) {
-        score += 5;
-        positives.push({ icon: '💧', text: `Мало соли / натрия (${salt} г)` });
-      }
-    }
-
-    // 4. CALORIES (Max penalty: -15 pts)
-    if (product.calories !== null && product.calories !== undefined) {
-      hasData = true;
-      const cal = Number(product.calories);
-      if (cal > 500) {
-        score -= 15;
-        negatives.push({ icon: '🔥', text: `Высокая калорийность (${cal} ккал / 100 г)` });
-      } else if (cal > 380) {
-        score -= 8;
-        negatives.push({ icon: '🔥', text: `Повышенные калории (${cal} ккал)` });
-      } else if (cal < 80 && (!isBeverage || (product.sugar || 0) <= 2.0)) {
-        positives.push({ icon: '🍃', text: `Низкая калорийность (${cal} ккал)` });
-      }
-    }
-
-    // 5. PROTEIN (Bonus: up to +12 pts)
-    if (product.protein !== null && product.protein !== undefined) {
-      hasData = true;
-      const prot = Number(product.protein);
-      if (prot >= 12.0) {
-        score += 12;
-        positives.push({ icon: '💪', text: `Богат белком (${prot} г / 100 г)` });
-      } else if (prot >= 6.0) {
-        score += 6;
-        positives.push({ icon: '💪', text: `Хороший источник белка (${prot} г)` });
-      }
-    }
-
-    // 6. Natural Fermented Dairy / Kazakh Staples Bonus
-    if (isFermentedDairy) {
-      score += 10;
-      positives.push({ icon: '🥛', text: 'Полезный кисломолочный продукт (пробиотики)' });
-    }
-
-    // 7. Additives / Ultra-processed penalty
-    const ingrLower = (product.ingredients || '').toLowerCase();
-    if (ingrLower.includes('e150d') || ingrLower.includes('сахарный колер') ||
-        ingrLower.includes('ортофосфорная') || ingrLower.includes('аспартам') ||
-        ingrLower.includes('пальмовое') || ingrLower.includes('пальмоядровое')) {
-      const penalty = isBeverage ? 25 : 15;
-      score -= penalty;
-      negatives.push({ icon: '⚠️', text: 'Содержит вредные добавки или пальмовое масло' });
-    }
-
-    // 8. Empty calories penalty for sugary soft drinks
-    if (isBeverage && (product.sugar || 0) > 8.0 && (product.protein || 0) === 0) {
-      score -= 15;
-      negatives.push({ icon: '📉', text: '«Пустые калории»: чистый жидкий сахар без белка и клетчатки' });
-    }
-
-    // 9. 100% natural pure tea
-    if (nameLower.includes('чай') && (product.calories || 0) < 5 && (product.sugar || 0) === 0) {
-      score = 100;
-      positives.push({ icon: '🌱', text: '100% натуральный чай без сахара и калорий' });
-    }
-
-    if (!hasData) {
+    if (availableCore.length === 0) {
       return {
         score: null,
         grade: 'nodata',
         color: '#94a3b8',
         labelKey: 'score_grade_nodata',
-        headline: I18N.t('score_headline_nodata'),
-        summary: I18N.t('score_summary_nodata'),
+        headline: I18N.t('score_grade_nodata'),
+        summary: I18N.t('rating_nodata'),
+        confidence: 'low',
+        confidenceNote: I18N.t('score_summary_nodata'),
+        whyFactors: [],
         positives: [],
         negatives: []
       };
     }
 
-    const finalScore = Math.max(1, Math.min(100, Math.round(score)));
+    // Determine Data Confidence level
+    let confidence = 'high';
+    let confidenceNote = '';
+    const missingNames = missingCore.map(k => {
+      if (k === 'sugar') return I18N.t('factor_sugar');
+      if (k === 'saturated_fat') return I18N.t('factor_satfat');
+      if (k === 'salt') return I18N.t('factor_salt');
+      if (k === 'fat') return I18N.t('factor_fat');
+      if (k === 'protein') return I18N.t('factor_protein');
+      return k;
+    });
 
-    let grade = 'excellent';
+    if (availableCore.length === 5) {
+      confidence = 'high';
+      confidenceNote = '';
+    } else if (availableCore.length >= 3) {
+      confidence = 'medium';
+      confidenceNote = I18N.t('confidence_note_missing').replace('{missing}', missingNames.join(', '));
+    } else {
+      confidence = 'low';
+      confidenceNote = I18N.t('confidence_note_significant').replace('{missing}', missingNames.join(', '));
+    }
+
+    let totalPenalties = 0;
+    let totalBonuses = 0;
+    const whyFactors = [];
+    const positives = [];
+    const negatives = [];
+
+    // 1. SUGAR PENALTY
+    if (product.sugar !== null && product.sugar !== undefined) {
+      const sugar = Number(product.sugar);
+      let penalty = 0;
+      let desc = '';
+      if (sugar > 30) {
+        penalty = 30;
+        desc = `${I18N.t('factor_sugar_very_high')}: ${sugar} г / 100 г`;
+      } else if (sugar > 20) {
+        penalty = 20;
+        desc = `${I18N.t('factor_sugar_high')}: ${sugar} г / 100 г`;
+      } else if (sugar > 10) {
+        penalty = 10;
+        desc = `${I18N.t('factor_sugar_elevated')}: ${sugar} г / 100 г`;
+      } else if (sugar > 5) {
+        penalty = 5;
+        desc = `${I18N.t('factor_sugar_moderate')}: ${sugar} г / 100 г`;
+      } else {
+        penalty = 0;
+        desc = `${I18N.t('factor_sugar_low')}: ${sugar} г / 100 г`;
+      }
+
+      totalPenalties += penalty;
+      const factorObj = {
+        type: penalty > 0 ? 'neg' : 'neutral',
+        icon: penalty > 0 ? '🍬' : '✨',
+        desc: desc,
+        impact: penalty > 0 ? `-${penalty}` : '0',
+        impactNum: -penalty
+      };
+      whyFactors.push(factorObj);
+      if (penalty > 0) negatives.push({ icon: '🍬', text: desc });
+      else positives.push({ icon: '✨', text: desc });
+    }
+
+    // 2. SATURATED FAT PENALTY
+    if (product.saturated_fat !== null && product.saturated_fat !== undefined) {
+      const satFat = Number(product.saturated_fat);
+      let penalty = 0;
+      let desc = '';
+      if (satFat > 10) {
+        penalty = 30;
+        desc = `${I18N.t('factor_satfat_very_high')}: ${satFat} г / 100 г`;
+      } else if (satFat > 5) {
+        penalty = 20;
+        desc = `${I18N.t('factor_satfat_high')}: ${satFat} г / 100 г`;
+      } else if (satFat > 3) {
+        penalty = 10;
+        desc = `${I18N.t('factor_satfat_elevated')}: ${satFat} г / 100 г`;
+      } else if (satFat > 1.5) {
+        penalty = 5;
+        desc = `${I18N.t('factor_satfat_moderate')}: ${satFat} г / 100 г`;
+      } else {
+        penalty = 0;
+        desc = `${I18N.t('factor_satfat_low')}: ${satFat} г / 100 г`;
+      }
+
+      totalPenalties += penalty;
+      const factorObj = {
+        type: penalty > 0 ? 'neg' : 'neutral',
+        icon: penalty > 0 ? '🧈' : '🥑',
+        desc: desc,
+        impact: penalty > 0 ? `-${penalty}` : '0',
+        impactNum: -penalty
+      };
+      whyFactors.push(factorObj);
+      if (penalty > 0) negatives.push({ icon: '🧈', text: desc });
+      else positives.push({ icon: '🥑', text: desc });
+    }
+
+    // 3. SALT / SODIUM PENALTY
+    if (product.salt !== null && product.salt !== undefined) {
+      const salt = Number(product.salt);
+      let penalty = 0;
+      let desc = '';
+      if (salt > 1.5) {
+        penalty = 30;
+        desc = `${I18N.t('factor_salt_very_high')}: ${salt} г / 100 г`;
+      } else if (salt > 1.0) {
+        penalty = 20;
+        desc = `${I18N.t('factor_salt_high')}: ${salt} г / 100 г`;
+      } else if (salt > 0.6) {
+        penalty = 10;
+        desc = `${I18N.t('factor_salt_elevated')}: ${salt} г / 100 г`;
+      } else if (salt > 0.3) {
+        penalty = 5;
+        desc = `${I18N.t('factor_salt_moderate')}: ${salt} г / 100 г`;
+      } else {
+        penalty = 0;
+        desc = `${I18N.t('factor_salt_low')}: ${salt} г / 100 г`;
+      }
+
+      totalPenalties += penalty;
+      const factorObj = {
+        type: penalty > 0 ? 'neg' : 'neutral',
+        icon: penalty > 0 ? '🧂' : '💧',
+        desc: desc,
+        impact: penalty > 0 ? `-${penalty}` : '0',
+        impactNum: -penalty
+      };
+      whyFactors.push(factorObj);
+      if (penalty > 0) negatives.push({ icon: '🧂', text: desc });
+      else positives.push({ icon: '💧', text: desc });
+    }
+
+    // 4. TOTAL FAT PENALTY
+    if (product.fat !== null && product.fat !== undefined) {
+      const fat = Number(product.fat);
+      let penalty = 0;
+      let desc = '';
+      if (fat > 30) {
+        penalty = 25;
+        desc = `${I18N.t('factor_fat_high')}: ${fat} г / 100 г`;
+      } else if (fat > 20) {
+        penalty = 20;
+        desc = `${I18N.t('factor_fat_elevated')}: ${fat} г / 100 г`;
+      } else if (fat > 10) {
+        penalty = 10;
+        desc = `${I18N.t('factor_fat_moderate')}: ${fat} г / 100 г`;
+      } else if (fat > 5) {
+        penalty = 5;
+        desc = `${I18N.t('factor_fat_mild')}: ${fat} г / 100 г`;
+      } else {
+        penalty = 0;
+        desc = `${I18N.t('factor_fat_low')}: ${fat} г / 100 г`;
+      }
+
+      totalPenalties += penalty;
+      const factorObj = {
+        type: penalty > 0 ? 'neg' : 'neutral',
+        icon: penalty > 0 ? '⚠️' : '🍃',
+        desc: desc,
+        impact: penalty > 0 ? `-${penalty}` : '0',
+        impactNum: -penalty
+      };
+      whyFactors.push(factorObj);
+      if (penalty > 0) negatives.push({ icon: '⚠️', text: desc });
+      else positives.push({ icon: '🍃', text: desc });
+    }
+
+    // 5. TRANS FAT PENALTY (Applied ONLY when explicitly available in data)
+    if (product.trans_fat !== null && product.trans_fat !== undefined) {
+      const transFat = Number(product.trans_fat);
+      if (transFat > 0.1) {
+        const penalty = 10;
+        totalPenalties += penalty;
+        const desc = `${I18N.t('factor_transfat_penalty')}: ${transFat} г / 100 г`;
+        whyFactors.push({
+          type: 'neg',
+          icon: '⚠️',
+          desc: desc,
+          impact: `-${penalty}`,
+          impactNum: -penalty
+        });
+        negatives.push({ icon: '⚠️', text: desc });
+      }
+    }
+
+    // 6. FIBER BONUS
+    if (product.fiber !== null && product.fiber !== undefined) {
+      const fiber = Number(product.fiber);
+      if (fiber > 3) {
+        const bonus = 4;
+        totalBonuses += bonus;
+        const desc = `${I18N.t('factor_fiber_high')}: ${fiber} г / 100 г`;
+        whyFactors.push({
+          type: 'pos',
+          icon: '🌾',
+          desc: desc,
+          impact: `+${bonus}`,
+          impactNum: bonus
+        });
+        positives.push({ icon: '🌾', text: desc });
+      } else if (fiber >= 1) {
+        const bonus = 2;
+        totalBonuses += bonus;
+        const desc = `${I18N.t('factor_fiber_source')}: ${fiber} г / 100 г`;
+        whyFactors.push({
+          type: 'pos',
+          icon: '🌾',
+          desc: desc,
+          impact: `+${bonus}`,
+          impactNum: bonus
+        });
+        positives.push({ icon: '🌾', text: desc });
+      }
+    }
+
+    // 7. PROTEIN BONUS
+    if (product.protein !== null && product.protein !== undefined) {
+      const protein = Number(product.protein);
+      if (protein > 5) {
+        const bonus = 4;
+        totalBonuses += bonus;
+        const desc = `${I18N.t('factor_protein_high')}: ${protein} г / 100 г`;
+        whyFactors.push({
+          type: 'pos',
+          icon: '💪',
+          desc: desc,
+          impact: `+${bonus}`,
+          impactNum: bonus
+        });
+        positives.push({ icon: '💪', text: desc });
+      } else if (protein >= 2) {
+        const bonus = 2;
+        totalBonuses += bonus;
+        const desc = `${I18N.t('factor_protein_source')}: ${protein} г / 100 г`;
+        whyFactors.push({
+          type: 'pos',
+          icon: '💪',
+          desc: desc,
+          impact: `+${bonus}`,
+          impactNum: bonus
+        });
+        positives.push({ icon: '💪', text: desc });
+      }
+    }
+
+    // Sort whyFactors: penalties (-30..-5) first, then bonuses (+4..+2), then neutral (0)
+    whyFactors.sort((a, b) => {
+      if (a.impactNum < 0 && b.impactNum < 0) return a.impactNum - b.impactNum;
+      if (a.impactNum < 0) return -1;
+      if (b.impactNum < 0) return 1;
+      if (a.impactNum > 0 && b.impactNum > 0) return b.impactNum - a.impactNum;
+      if (a.impactNum > 0) return -1;
+      if (b.impactNum > 0) return 1;
+      return 0;
+    });
+
+    const finalScore = Math.max(0, Math.min(100, Math.round(100 - totalPenalties + totalBonuses)));
+
+    // Score Categories / Grades
+    let grade = 'good_choice';
     let color = '#10b981';
-    let labelKey = 'score_grade_excellent';
-    let headline = 'Отличный, полезный выбор';
-    let summary = 'Сбалансированный питательный профиль, отлично подходит для регулярного питания.';
+    let labelKey = 'score_grade_good_choice';
 
     if (finalScore >= 80) {
-      grade = 'excellent';
+      grade = 'good_choice';
       color = '#10b981'; // Green
-      labelKey = 'score_grade_excellent';
-      headline = I18N.t('score_headline_excellent');
-      summary = I18N.t('score_summary_excellent');
+      labelKey = 'score_grade_good_choice';
     } else if (finalScore >= 60) {
-      grade = 'good';
-      color = '#84cc16'; // Lime
-      labelKey = 'score_grade_good';
-      headline = I18N.t('score_headline_good');
-      summary = I18N.t('score_summary_good');
-    } else if (finalScore >= 40) {
-      grade = 'moderate';
+      grade = 'moderate_choice';
       color = '#f59e0b'; // Amber
-      labelKey = 'score_grade_moderate';
-      headline = I18N.t('score_headline_moderate');
-      summary = I18N.t('score_summary_moderate');
-    } else if (finalScore >= 20) {
-      grade = 'poor';
+      labelKey = 'score_grade_moderate_choice';
+    } else if (finalScore >= 40) {
+      grade = 'less_healthy';
       color = '#f97316'; // Orange
-      labelKey = 'score_grade_poor';
-      headline = I18N.t('score_headline_poor');
-      summary = I18N.t('score_summary_poor');
+      labelKey = 'score_grade_less_healthy';
     } else {
-      grade = 'bad';
+      grade = 'poor_choice';
       color = '#ef4444'; // Red
-      labelKey = 'score_grade_bad';
-      headline = I18N.t('score_headline_bad');
-      summary = I18N.t('score_summary_bad');
+      labelKey = 'score_grade_poor_choice';
     }
 
     return {
@@ -1696,8 +1957,14 @@ const EVALUATOR = {
       grade,
       color,
       labelKey,
-      headline,
-      summary,
+      confidence,
+      confidenceNote,
+      missingCore,
+      totalPenalties,
+      totalBonuses,
+      whyFactors,
+      headline: I18N.t(labelKey),
+      summary: '',
       positives,
       negatives
     };
@@ -1709,13 +1976,13 @@ const EVALUATOR = {
    */
   calculateRating(product) {
     const health = this.calculateHealthScore(product);
-    if (!health.score) {
+    if (!health || health.score === null) {
       return { labelKey: 'rating_nodata', classname: 'rating-nodata' };
     }
-    if (health.score >= 60) {
+    if (health.score >= 80) {
       return { labelKey: 'rating_low', classname: 'rating-low' };
     }
-    if (health.score >= 35) {
+    if (health.score >= 60) {
       return { labelKey: 'rating_moderate', classname: 'rating-moderate' };
     }
     return { labelKey: 'rating_high', classname: 'rating-high' };
@@ -2648,6 +2915,26 @@ const UIController = {
     const barFillEl = document.getElementById('health-bar-fill');
     const needleEl = document.getElementById('health-bar-needle');
     const factorsEl = document.getElementById('health-score-factors');
+    const confBadge = document.getElementById('health-confidence-badge');
+    const confNote = document.getElementById('health-confidence-note');
+    const whySection = document.getElementById('why-score-section');
+    const whyList = document.getElementById('why-score-list');
+
+    // Data Confidence Rendering
+    if (confBadge) {
+      const confLevel = health && health.confidence ? health.confidence : 'low';
+      confBadge.textContent = I18N.t('confidence_' + confLevel);
+      confBadge.className = `confidence-badge confidence-${confLevel}`;
+    }
+    if (confNote) {
+      if (health && health.confidenceNote) {
+        confNote.textContent = health.confidenceNote;
+        confNote.style.display = 'block';
+      } else {
+        confNote.textContent = '';
+        confNote.style.display = 'none';
+      }
+    }
 
     if (!health || health.score === null) {
       if (valEl) {
@@ -2668,6 +2955,10 @@ const UIController = {
       if (barFillEl) barFillEl.style.width = '0%';
       if (needleEl) needleEl.style.left = '0%';
       if (factorsEl) factorsEl.innerHTML = '';
+      if (whySection && whyList) {
+        whyList.innerHTML = '';
+        whySection.style.display = 'none';
+      }
       return;
     }
 
@@ -2692,7 +2983,7 @@ const UIController = {
     }
 
     if (headlineEl) {
-      headlineEl.textContent = health.headline || I18N.t(health.labelKey);
+      headlineEl.textContent = I18N.t(health.labelKey);
     }
 
     if (summaryEl) {
@@ -2708,10 +2999,25 @@ const UIController = {
       needleEl.style.left = `${health.score}%`;
     }
 
-    // Render positive and negative factors
+    // Render "Why this score?" breakdown
+    if (whySection && whyList) {
+      if (health.whyFactors && health.whyFactors.length > 0) {
+        whyList.innerHTML = health.whyFactors.map(f => `
+          <div class="why-score-item why-${escapeHtml(f.type)}">
+            <span class="why-item-desc">${f.icon} ${escapeHtml(f.desc)}</span>
+            <span class="why-item-impact">${escapeHtml(f.impact)}</span>
+          </div>
+        `).join('');
+        whySection.style.display = 'flex';
+      } else {
+        whyList.innerHTML = '';
+        whySection.style.display = 'none';
+      }
+    }
+
+    // Backward-compatibility: Render positive and negative factors
     if (factorsEl) {
       const items = [];
-
       if (health.positives && health.positives.length > 0) {
         health.positives.forEach(item => {
           items.push(`
@@ -2722,7 +3028,6 @@ const UIController = {
           `);
         });
       }
-
       if (health.negatives && health.negatives.length > 0) {
         health.negatives.forEach(item => {
           items.push(`
@@ -2733,7 +3038,6 @@ const UIController = {
           `);
         });
       }
-
       factorsEl.innerHTML = items.join('');
     }
   },

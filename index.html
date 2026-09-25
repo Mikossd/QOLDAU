@@ -304,7 +304,7 @@
             <span id="product-origin-badge" class="origin-badge"></span>
           </div>
 
-          <!-- 100-Point Scientific Health Score Card -->
+          <!-- Qoldau Health Score Card -->
           <div class="health-score-card" id="product-health-card">
             <div class="score-card-top">
               <div class="score-meter-wrap">
@@ -320,32 +320,50 @@
 
               <div class="score-info-wrap">
                 <div class="score-title-row">
-                  <span class="score-card-label" data-i18n="health_score_title">Индекс пользы продукта</span>
+                  <span class="score-card-label" data-i18n="health_score_title">Qoldau Health Score</span>
                   <span class="score-grade-badge" id="health-grade-badge">--</span>
                 </div>
                 <div class="score-headline" id="health-score-headline">--</div>
-                <div class="score-summary" id="health-score-summary">--</div>
+                
+                <!-- Data Confidence Indicator -->
+                <div class="confidence-wrap" id="confidence-wrap">
+                  <div class="confidence-badge-row">
+                    <span class="confidence-label" data-i18n="confidence_label">Надежность данных:</span>
+                    <span class="confidence-badge" id="health-confidence-badge">High</span>
+                  </div>
+                  <div class="confidence-note" id="health-confidence-note" style="display:none;"></div>
+                </div>
               </div>
             </div>
 
-            <!-- Horizontal scale bar from 0 (poor) to 100 (super healthy) -->
+            <!-- Horizontal scale bar from 0 (poor choice) to 100 (good choice) -->
             <div class="score-bar-container">
               <div class="score-bar-track">
                 <div class="score-bar-fill" id="health-bar-fill"></div>
                 <div class="score-bar-needle" id="health-bar-needle"></div>
               </div>
               <div class="score-bar-labels">
-                <span data-i18n="scale_unhealthy">0 • Вредно</span>
-                <span data-i18n="scale_moderate">50 • Средне</span>
-                <span data-i18n="scale_healthy">100 • Полезно</span>
+                <span data-i18n="scale_poor">0 • Нежелательно</span>
+                <span data-i18n="scale_moderate">60 • Умеренно</span>
+                <span data-i18n="scale_good">80–100 • Отличный выбор</span>
               </div>
             </div>
 
-            <!-- Key positive/negative breakdown factors -->
-            <div class="score-factors" id="health-score-factors"></div>
+            <!-- "Why this score?" Section -->
+            <div class="why-score-section" id="why-score-section">
+              <div class="why-score-header">
+                <span class="why-score-title" data-i18n="why_this_score_title">Почему такая оценка?</span>
+              </div>
+              <div class="why-score-list" id="why-score-list">
+                <!-- Populated dynamically by EVALUATOR -->
+              </div>
+            </div>
 
-            <p class="score-disclaimer" data-i18n="rating_disclaimer">
-              ⚠️ Оценка питательного профиля по стандартам ВОЗ на 100 г продукта. Чем выше балл (до 100), тем полезнее и чище состав продукта.
+            <!-- Backward-compatibility container -->
+            <div class="score-factors" id="health-score-factors" style="display:none;"></div>
+
+            <p class="score-disclaimer" data-i18n="score_disclaimer_text">
+              ℹ️ Qoldau Health Score является информационным расчетом на основе доступных данных о составе и пищевой ценности. Он не является медицинским диагнозом или официальным сертификатом качества.
             </p>
             <!-- Backward-compatibility element -->
             <span id="rating-badge" style="display:none;"></span>
