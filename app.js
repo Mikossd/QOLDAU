@@ -143,7 +143,46 @@ const I18N = {
       score_headline_nodata: 'Недостаточно данных для индекса',
       score_summary_nodata: 'Данные о сахаре, жирах или соли не указаны на упаковке.',
       score_positives_title: 'Плюсы состава',
-      score_negatives_title: 'Минусы состава'
+      score_negatives_title: 'Минусы состава',
+      // New features
+      tab_search_barcode: 'По штрихкоду',
+      tab_search_name: 'По названию',
+      input_name_placeholder: 'Введите название (напр. Coca-Cola, Snickers, чай)...',
+      quick_samples_name_label: 'Популярные запросы:',
+      search_results_title: 'Результаты поиска',
+      btn_close_results: '✕ Закрыть',
+      loading_search_products: 'Поиск продуктов в Open Food Facts...',
+      search_no_results: 'Продукт не найден. Попробуйте другое название или отсканируйте штрихкод.',
+      search_error: 'Произошла ошибка при поиске. Пожалуйста, попробуйте снова.',
+      btn_search_manually_name: 'Искать по названию',
+      alternatives_badge: 'Рекомендации Qoldau',
+      alternatives_title: 'Более полезные альтернативы',
+      alternatives_sub: 'Товары той же категории с более высоким индексом пользы',
+      loading_alternatives: 'Поиск лучших альтернатив...',
+      alternatives_empty_text: 'Подходящих более полезных альтернатив в этой категории не найдено.',
+      alternatives_disclaimer: 'ℹ️ Сравнение основано на доступных данных о составе и пищевой ценности. Не является врачебным назначением.',
+      alt_reason_lower_sugar: 'Меньше сахара',
+      alt_reason_lower_salt: 'Меньше соли',
+      alt_reason_lower_satfat: 'Меньше насыщ. жиров',
+      alt_reason_higher_protein: 'Больше белка',
+      alt_reason_better_score: 'Выше индекс пользы',
+      badge_official_registry: 'Официальный реестр',
+      official_info_title: 'Официальная информация о продукции',
+      official_info_sub: 'Регулирование, знаки соответствия и сертификация',
+      official_cert_empty: 'Официальная информация о сертификации для этого продукта отсутствует в базе.',
+      official_cert_label_type: 'Тип сертификата / знак:',
+      official_cert_label_issuer: 'Орган / реестр:',
+      official_cert_label_num: 'Номер документа:',
+      official_cert_view_doc: 'Перейти к источнику документа ↗',
+      transparency_title: 'Источник данных и прозрачность',
+      transparency_sub: 'Происхождение информации и статус верификации',
+      source_origin_label: 'Источник данных:',
+      source_status_label: 'Статус данных:',
+      source_updated_label: 'Последнее обновление:',
+      status_community: 'Сообщество (Open Food Facts)',
+      status_user_local: 'Пользовательские данные (без верификации)',
+      status_local_verified: 'Локальная база Qoldau (верифицировано)',
+      transparency_full_disclaimer: '⚠️ Индекс пользы Qoldau является информационной оценкой на основе доступных данных о составе и пищевой ценности. Он не является медицинским диагнозом или официальным сертификатом качества.'
     },
 
     kk: {
@@ -271,7 +310,46 @@ const I18N = {
       score_headline_nodata: 'Индекс үшін дерек жеткіліксіз',
       score_summary_nodata: 'Қаптамада қант, май немесе тұз туралы ақпарат көрсетілмеген.',
       score_positives_title: 'Құрамның артықшылықтары',
-      score_negatives_title: 'Құрамның кемшіліктері'
+      score_negatives_title: 'Құрамның кемшіліктері',
+      // New features
+      tab_search_barcode: 'Штрихкод бойынша',
+      tab_search_name: 'Атауы бойынша',
+      input_name_placeholder: 'Өнім атауын енгізіңіз (мыс. Coca-Cola, Snickers, шай)...',
+      quick_samples_name_label: 'Танымал сұраныстар:',
+      search_results_title: 'Іздеу нәтижелері',
+      btn_close_results: '✕ Жабу',
+      loading_search_products: 'Өнімдер Open Food Facts базасынан ізделуде...',
+      search_no_results: 'Өнім табылмады. Басқа атауды енгізіп көріңіз немесе штрихкодты сканерлеңіз.',
+      search_error: 'Іздеу кезінде қате орын алды. Қайталап көріңіз.',
+      btn_search_manually_name: 'Атауы бойынша іздеу',
+      alternatives_badge: 'Qoldau ұсыныстары',
+      alternatives_title: 'Пайдалырақ баламалар',
+      alternatives_sub: 'Пайдалылық балы жоғары осы санаттағы өнімдер',
+      loading_alternatives: 'Үздік баламаларды іздеу...',
+      alternatives_empty_text: 'Бұл санатта сәйкес келетін пайдалырақ баламалар табылмады.',
+      alternatives_disclaimer: 'ℹ️ Салыстыру тағамдық құрамы мен құндылығы бойынша қолжетімді деректерге негізделген. Дәрігерлік нұсқаулық емес.',
+      alt_reason_lower_sugar: 'Қанты аз',
+      alt_reason_lower_salt: 'Тұзы аз',
+      alt_reason_lower_satfat: 'Қаныққан майы аз',
+      alt_reason_higher_protein: 'Ақуызы көп',
+      alt_reason_better_score: 'Пайдалылық балы жоғары',
+      badge_official_registry: 'Ресми тізілім',
+      official_info_title: 'Өнім туралы ресми ақпарат',
+      official_info_sub: 'Реттеу, сәйкестік белгілері және сертификаттау',
+      official_cert_empty: 'Бұл өнім бойынша ресми сертификаттау туралы ақпарат базада жоқ.',
+      official_cert_label_type: 'Сертификат түрі / белгі:',
+      official_cert_label_issuer: 'Орган / тізілім:',
+      official_cert_label_num: 'Құжат нөмірі:',
+      official_cert_view_doc: 'Құжат көзіне өту ↗',
+      transparency_title: 'Деректер көзі және ашықтық',
+      transparency_sub: 'Ақпараттың шығу тегі мен тексерілу күйі',
+      source_origin_label: 'Дереккөз:',
+      source_status_label: 'Деректер күйі:',
+      source_updated_label: 'Соңғы жаңартылуы:',
+      status_community: 'Қоғамдастық (Open Food Facts)',
+      status_user_local: 'Пайдаланушы деректері (тексерілмеген)',
+      status_local_verified: 'Qoldau жергілікті базасы (тексерілген)',
+      transparency_full_disclaimer: '⚠️ Qoldau пайдалылық индексі — тағамдық құрамы мен құндылығы туралы қолжетімді деректерге негізделген ақпараттық бағалау. Ол медициналық диагноз немесе ресми сапа сертификаты болып табылмайды.'
     },
 
     en: {
@@ -399,7 +477,46 @@ const I18N = {
       score_headline_nodata: 'Insufficient Data for Health Score',
       score_summary_nodata: 'Nutritional facts for sugar, fat, or salt are not available.',
       score_positives_title: 'Composition Highlights',
-      score_negatives_title: 'Areas of Concern'
+      score_negatives_title: 'Areas of Concern',
+      // New features
+      tab_search_barcode: 'By Barcode',
+      tab_search_name: 'By Name',
+      input_name_placeholder: 'Enter product name (e.g. Coca-Cola, Snickers, tea)...',
+      quick_samples_name_label: 'Popular queries:',
+      search_results_title: 'Search Results',
+      btn_close_results: '✕ Close',
+      loading_search_products: 'Searching for products in Open Food Facts...',
+      search_no_results: 'Product not found. Try another name or scan the barcode.',
+      search_error: 'Something went wrong while searching. Please try again.',
+      btn_search_manually_name: 'Search by name',
+      alternatives_badge: 'Qoldau Recommendations',
+      alternatives_title: 'Healthier Alternatives',
+      alternatives_sub: 'Products in the same category with a higher health score',
+      loading_alternatives: 'Searching for better alternatives...',
+      alternatives_empty_text: 'No suitable healthier alternatives found in this category.',
+      alternatives_disclaimer: 'ℹ️ Comparison is based on available nutrition and ingredient data. It is not a medical recommendation.',
+      alt_reason_lower_sugar: 'Lower sugar',
+      alt_reason_lower_salt: 'Lower salt',
+      alt_reason_lower_satfat: 'Lower sat. fat',
+      alt_reason_higher_protein: 'Higher protein',
+      alt_reason_better_score: 'Better health score',
+      badge_official_registry: 'Official Registry',
+      official_info_title: 'Official Product Information',
+      official_info_sub: 'Regulation, compliance marks, and certification',
+      official_cert_empty: 'Official certification information is not available for this product.',
+      official_cert_label_type: 'Certificate type / mark:',
+      official_cert_label_issuer: 'Issuer / registry:',
+      official_cert_label_num: 'Document number:',
+      official_cert_view_doc: 'View source document ↗',
+      transparency_title: 'Data Source & Transparency',
+      transparency_sub: 'Information provenance and verification status',
+      source_origin_label: 'Data source:',
+      source_status_label: 'Data status:',
+      source_updated_label: 'Last updated:',
+      status_community: 'Community-sourced (Open Food Facts)',
+      status_user_local: 'User-Submitted (Unverified)',
+      status_local_verified: 'Qoldau Local DB (Verified)',
+      transparency_full_disclaimer: '⚠️ Qoldau Health Score is an informational score based on available nutrition and ingredient data. It is not a medical diagnosis or official certification.'
     }
   },
 
@@ -833,11 +950,27 @@ async function getProductByBarcode(barcode) {
     };
   }
 
-  const p = data.product;
+  const cleanProduct = normalizeProductFromOFF(data.product, data.code || cleanBarcode);
+
+  return {
+    found: true,
+    product: cleanProduct,
+    source: 'open_food_facts'
+  };
+}
+
+/**
+ * Normalizes raw Open Food Facts product objects into clean application model.
+ * Extracts categories, certification labels, and last modified timestamps.
+ * 
+ * @param {object} p Raw product from OFF
+ * @param {string} fallbackBarcode
+ * @returns {object|null}
+ */
+function normalizeProductFromOFF(p, fallbackBarcode = '') {
+  if (!p) return null;
   const n = p.nutriments || {};
 
-  // 4. Extract required fields cleanly
-  // Helper for numeric extraction
   const getNum = (val) => {
     if (val === undefined || val === null || val === '') return null;
     const parsed = parseFloat(val);
@@ -869,11 +1002,52 @@ async function getProductByBarcode(barcode) {
                p.generic_name || 
                'Без названия';
 
-  // 5. Return clean JavaScript object
-  const cleanProduct = {
-    barcode: data.code || cleanBarcode,
+  // Brands can be an array or string in different search endpoints
+  let brandStr = '';
+  if (Array.isArray(p.brands)) {
+    brandStr = p.brands.join(', ');
+  } else if (typeof p.brands === 'string') {
+    brandStr = p.brands;
+  }
+
+  // Extract official labels & certifications if present (Requirement 3: Official Data)
+  const labelsTags = Array.isArray(p.labels_tags) ? p.labels_tags : [];
+  const embCodesTags = Array.isArray(p.emb_codes_tags) ? p.emb_codes_tags : [];
+  const officialCerts = [];
+
+  labelsTags.forEach(tag => {
+    const cleanTag = tag.replace(/^[a-z]{2}:/, '').toLowerCase();
+    if (cleanTag.includes('halal') || cleanTag.includes('халал')) {
+      officialCerts.push({
+        type: 'Халал / Halal',
+        name: tag.replace(/^[a-z]{2}:/, ''),
+        issuer: 'Сертификационный центр Халал'
+      });
+    } else if (cleanTag.includes('eac') || cleanTag.includes('гост') || cleanTag.includes('gost') || cleanTag.includes('tr-ts') || cleanTag.includes('тр-тс')) {
+      officialCerts.push({
+        type: 'EAC / ГОСТ / ТР ТС',
+        name: tag.replace(/^[a-z]{2}:/, ''),
+        issuer: 'Евразийский экономический союз (ЕАЭС)'
+      });
+    } else if (cleanTag.includes('organic') || cleanTag.includes('bio') || cleanTag.includes('эко') || cleanTag.includes('органик')) {
+      officialCerts.push({
+        type: 'Organic / Bio / Эко',
+        name: tag.replace(/^[a-z]{2}:/, ''),
+        issuer: 'Органы экологической сертификации'
+      });
+    } else if (cleanTag.includes('iso')) {
+      officialCerts.push({
+        type: 'ISO',
+        name: tag.replace(/^[a-z]{2}:/, ''),
+        issuer: 'Международная организация по стандартизации (ISO)'
+      });
+    }
+  });
+
+  return {
+    barcode: p.code || fallbackBarcode || '',
     name: name,
-    brand: p.brands || '',
+    brand: brandStr,
     image: p.image_front_url || p.image_url || p.image_small_url || '',
     ingredients: p.ingredients_text_ru || p.ingredients_text || p.ingredients_text_en || '',
     calories: calories,
@@ -885,15 +1059,297 @@ async function getProductByBarcode(barcode) {
     salt: getNum(n['salt_100g'] !== undefined ? n['salt_100g'] : (n['sodium_100g'] ? n['sodium_100g'] * 2.5 : null)),
     allergens: allergens,
     country: p.countries || '',
-    manufacturer: p.manufacturing_places || p.brands || '',
-    verified: true
-  };
-
-  return {
-    found: true,
-    product: cleanProduct,
+    manufacturer: p.manufacturing_places || brandStr || '',
+    categories: p.categories || '',
+    categories_tags: Array.isArray(p.categories_tags) ? p.categories_tags : [],
+    last_modified_t: p.last_modified_t || null,
+    labels_tags: labelsTags,
+    emb_codes_tags: embCodesTags,
+    official_certs: officialCerts,
+    verified: true,
     source: 'open_food_facts'
   };
+}
+
+/**
+ * Requirement 2: Manual Product Search by Name
+ * Searches both local Kazakhstan database and Open Food Facts API.
+ * 
+ * @param {string} query 
+ * @returns {Promise<{ success: boolean, count: number, products: Array<object>, error?: string }>}
+ */
+async function searchProductsByName(query) {
+  if (!query || typeof query !== 'string') {
+    return { success: false, count: 0, products: [] };
+  }
+
+  const cleanQuery = query.trim().toLowerCase();
+  if (cleanQuery.length < 2) {
+    return { success: true, count: 0, products: [] };
+  }
+
+  const matches = [];
+  const seenBarcodes = new Set();
+
+  // 1. Search local DB first (Instant response for local KZ goods)
+  const allLocal = [
+    ...Object.values(LOCAL_DB.seedProducts),
+    ...Object.values(LOCAL_DB.getUserProducts())
+  ];
+
+  for (const item of allLocal) {
+    const name = (item.name || '').toLowerCase();
+    const brand = (item.brand || '').toLowerCase();
+    const barcode = String(item.barcode || '');
+    if (name.includes(cleanQuery) || brand.includes(cleanQuery)) {
+      if (!seenBarcodes.has(barcode)) {
+        seenBarcodes.add(barcode);
+        matches.push(item);
+      }
+    }
+  }
+
+  // 2. Query Open Food Facts modern search engine
+  let networkFailed = false;
+  try {
+    const searchUrl = `https://search.openfoodfacts.org/search?q=${encodeURIComponent(cleanQuery)}&page_size=15`;
+    const resp = await fetch(searchUrl, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'User-Agent': 'QoldauFood-KZ-MVP/1.0 (https://qoldau.kz; contact@qoldau.kz)'
+      }
+    });
+
+    if (resp.ok) {
+      const data = await resp.json();
+      const hits = data.hits || data.products || [];
+      for (const h of hits) {
+        const barcode = String(h.code || '');
+        if (barcode && !seenBarcodes.has(barcode)) {
+          seenBarcodes.add(barcode);
+          const norm = normalizeProductFromOFF(h, barcode);
+          if (norm && norm.name && norm.name !== 'Без названия') {
+            matches.push(norm);
+          }
+        }
+      }
+    } else {
+      networkFailed = true;
+    }
+  } catch (err) {
+    console.warn('search.openfoodfacts.org failed, trying fallback:', err);
+    networkFailed = true;
+  }
+
+  // 3. Fallback to country search endpoint if modern search had network failure
+  if (networkFailed) {
+    try {
+      const fallbackUrl = `https://ru.openfoodfacts.org/cgi/search.pl?search_terms=${encodeURIComponent(cleanQuery)}&search_simple=1&action=process&json=1&page_size=12`;
+      const fbResp = await fetch(fallbackUrl, {
+        headers: { 'User-Agent': 'QoldauFood-KZ-MVP/1.0' }
+      });
+      if (fbResp.ok) {
+        const fbData = await fbResp.json();
+        const prods = fbData.products || [];
+        for (const p of prods) {
+          const barcode = String(p.code || '');
+          if (barcode && !seenBarcodes.has(barcode)) {
+            seenBarcodes.add(barcode);
+            const norm = normalizeProductFromOFF(p, barcode);
+            if (norm && norm.name && norm.name !== 'Без названия') {
+              matches.push(norm);
+            }
+          }
+        }
+      }
+    } catch (fbErr) {
+      console.warn('Fallback search also failed:', fbErr);
+    }
+  }
+
+  return {
+    success: true,
+    count: matches.length,
+    products: matches
+  };
+}
+
+/**
+ * Requirement 1: Healthier Alternatives Finder
+ * Identifies 1-3 products from the same or similar category with a higher Health Score.
+ * Computes comparative delta reasons (lower sugar, lower salt, higher score).
+ * 
+ * @param {object} product Current product
+ * @returns {Promise<Array<object>>} Top 1-3 healthier alternatives
+ */
+async function findHealthierAlternatives(product) {
+  if (!product) return [];
+
+  const currentScoreObj = EVALUATOR.calculateHealthScore(product);
+  const currentScore = currentScoreObj.score !== null ? currentScoreObj.score : 0;
+  const currentBarcode = String(product.barcode || '');
+
+  const candidates = [];
+  const seenBarcodes = new Set([currentBarcode]);
+
+  // 1. Identify category traits
+  const nameLower = (product.name || '').toLowerCase();
+  const isBeverage = (/\b(напиток|кола|чай|сок|вода|сусын|drink|cola|tea|juice|soda)\b/i.test(nameLower) ||
+                      nameLower.includes('coca-cola') || nameLower.includes('pepsi') ||
+                      (Number(product.protein) === 0 && Number(product.fat) === 0 && Number(product.sugar) > 0)) &&
+                     !nameLower.includes('шоколад') && !nameLower.includes('chocolate');
+  const isSweetSnack = nameLower.includes('шоколад') || nameLower.includes('chocolate') ||
+                       nameLower.includes('батончик') || nameLower.includes('candy') ||
+                       nameLower.includes('вафли') || nameLower.includes('печенье') ||
+                       nameLower.includes('конфет') || nameLower.includes('snickers');
+  const isDairy = nameLower.includes('молоко') || nameLower.includes('сүт') ||
+                  nameLower.includes('айран') || nameLower.includes('кумыс') ||
+                  nameLower.includes('қымыз') || nameLower.includes('кефир') ||
+                  nameLower.includes('йогурт');
+
+  // Check Local DB first for matches in same general category
+  const allLocal = [
+    ...Object.values(LOCAL_DB.seedProducts),
+    ...Object.values(LOCAL_DB.getUserProducts())
+  ];
+
+  for (const item of allLocal) {
+    if (seenBarcodes.has(String(item.barcode))) continue;
+    const iName = (item.name || '').toLowerCase();
+    let isMatch = false;
+
+    if (isBeverage && (iName.includes('чай') || iName.includes('қымыз') || iName.includes('кумыс') || iName.includes('сусын') || iName.includes('вода'))) {
+      isMatch = true;
+    } else if (isSweetSnack && (iName.includes('шоколад') || iName.includes('рахат') || iName.includes('батончик'))) {
+      isMatch = true;
+    } else if (isDairy && (iName.includes('қымыз') || iName.includes('молоко') || iName.includes('сүт') || iName.includes('айран'))) {
+      isMatch = true;
+    }
+
+    if (isMatch) {
+      seenBarcodes.add(String(item.barcode));
+      candidates.push(item);
+    }
+  }
+
+  // 2. Fetch candidates from Open Food Facts category or related search
+  let searchTag = '';
+  if (Array.isArray(product.categories_tags) && product.categories_tags.length > 0) {
+    const cleanTags = product.categories_tags
+      .map(t => t.replace(/^[a-z]{2}:/, '').replace(/-/g, ' '))
+      .filter(t => !['plant based foods and beverages', 'foods', 'groceries'].includes(t.toLowerCase()));
+    if (cleanTags.length > 0) {
+      searchTag = cleanTags[cleanTags.length - 1];
+    }
+  }
+
+  if (!searchTag) {
+    if (isBeverage) searchTag = 'tea';
+    else if (isSweetSnack) searchTag = 'dark chocolate';
+    else if (isDairy) searchTag = 'kefir';
+  }
+
+  if (searchTag) {
+    try {
+      const url = `https://search.openfoodfacts.org/search?q=${encodeURIComponent(searchTag)}&page_size=12`;
+      const resp = await fetch(url, {
+        headers: { 'User-Agent': 'QoldauFood-KZ-MVP/1.0' }
+      });
+      if (resp.ok) {
+        const d = await resp.json();
+        const hits = d.hits || d.products || [];
+        for (const h of hits) {
+          const b = String(h.code || '');
+          if (b && !seenBarcodes.has(b)) {
+            seenBarcodes.add(b);
+            const norm = normalizeProductFromOFF(h, b);
+            if (norm && norm.name && norm.name !== 'Без названия') {
+              candidates.push(norm);
+            }
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('Failed to fetch OFF category candidates:', e);
+    }
+  }
+
+  // 3. Score candidates and compute delta comparison reasons
+  const scoredAlts = [];
+
+  for (const cand of candidates) {
+    const candScoreObj = EVALUATOR.calculateHealthScore(cand);
+    const candScore = candScoreObj.score;
+    // Prefer products with a strictly higher Qoldau Health Score
+    if (candScore === null || candScore <= currentScore) {
+      continue;
+    }
+
+    const reasons = [];
+
+    // Reason: Lower Sugar
+    if (product.sugar !== null && product.sugar !== undefined &&
+        cand.sugar !== null && cand.sugar !== undefined &&
+        (Number(product.sugar) - Number(cand.sugar)) >= 2.0) {
+      const diff = Math.round((Number(product.sugar) - Number(cand.sugar)) * 10) / 10;
+      reasons.push({
+        type: 'sugar',
+        icon: '🍬',
+        text: `${I18N.t('alt_reason_lower_sugar')} (-${diff}г)`
+      });
+    }
+
+    // Reason: Lower Salt
+    if (product.salt !== null && product.salt !== undefined &&
+        cand.salt !== null && cand.salt !== undefined &&
+        (Number(product.salt) - Number(cand.salt)) >= 0.15) {
+      reasons.push({
+        type: 'salt',
+        icon: '🧂',
+        text: I18N.t('alt_reason_lower_salt')
+      });
+    }
+
+    // Reason: Lower Saturated Fat
+    if (product.saturated_fat !== null && product.saturated_fat !== undefined &&
+        cand.saturated_fat !== null && cand.saturated_fat !== undefined &&
+        (Number(product.saturated_fat) - Number(cand.saturated_fat)) >= 1.5) {
+      reasons.push({
+        type: 'satfat',
+        icon: '🧈',
+        text: I18N.t('alt_reason_lower_satfat')
+      });
+    }
+
+    // Reason: Higher Protein
+    if (cand.protein !== null && cand.protein !== undefined &&
+        (Number(cand.protein) - Number(product.protein || 0)) >= 3.0) {
+      reasons.push({
+        type: 'protein',
+        icon: '💪',
+        text: I18N.t('alt_reason_higher_protein')
+      });
+    }
+
+    // Reason: Score advantage
+    const scoreDiff = candScore - currentScore;
+    reasons.push({
+      type: 'better-score',
+      icon: '📈',
+      text: `${I18N.t('alt_reason_better_score')} (+${scoreDiff})`
+    });
+
+    cand.reasons = reasons;
+    cand.computedScore = candScore;
+    scoredAlts.push(cand);
+  }
+
+  // 4. Sort descending by score
+  scoredAlts.sort((a, b) => b.computedScore - a.computedScore);
+
+  // 5. Return top 1 to 3 items
+  return scoredAlts.slice(0, 3);
 }
 
 
@@ -2500,8 +2956,246 @@ const UIController = {
       detSection.style.display = 'block';
     }
 
+    // 11. Healthier Alternatives (Requirement 1)
+    this.renderAlternatives(product);
+
+    // 12. Official Product Information (Requirement 3: Official Data)
+    this.renderOfficialInfo(product);
+
+    // 13. Information Source & Transparency (Requirement 3: Provenance & Disclaimer)
+    this.renderDataSource(product);
+
     // Switch view
     this.showView('view-product');
+  },
+
+  /**
+   * Requirement 1: Render Healthier Alternatives
+   * @param {object} product 
+   */
+  async renderAlternatives(product) {
+    const section = document.getElementById('section-alternatives');
+    const loadingEl = document.getElementById('alternatives-loading');
+    const emptyEl = document.getElementById('alternatives-empty');
+    const listEl = document.getElementById('alternatives-list');
+    if (!section || !listEl) return;
+
+    section.style.display = 'block';
+    if (loadingEl) loadingEl.style.display = 'flex';
+    if (emptyEl) emptyEl.style.display = 'none';
+    listEl.innerHTML = '';
+
+    try {
+      const alternatives = await findHealthierAlternatives(product);
+      if (loadingEl) loadingEl.style.display = 'none';
+
+      if (!alternatives || alternatives.length === 0) {
+        if (emptyEl) emptyEl.style.display = 'flex';
+        return;
+      }
+
+      listEl.innerHTML = alternatives.map(alt => {
+        const scoreObj = EVALUATOR.calculateHealthScore(alt);
+        const score = scoreObj.score !== null ? scoreObj.score : '--';
+        const color = scoreObj.color || '#10b981';
+
+        const reasonsHtml = (alt.reasons || []).map(r => `
+          <span class="alt-reason-chip chip-${escapeHtml(r.type)}">${escapeHtml(r.icon)} ${escapeHtml(r.text)}</span>
+        `).join('');
+
+        const imgHtml = alt.image 
+          ? `<img src="${escapeHtml(alt.image)}" class="alt-item-thumb" alt="${escapeHtml(alt.name)}" loading="lazy" onerror="this.outerHTML='<div class=\\'alt-item-thumb-fallback\\'>🥗</div>'">`
+          : `<div class="alt-item-thumb-fallback">🥗</div>`;
+
+        return `
+          <div class="alt-item-card" data-barcode="${escapeHtml(alt.barcode)}">
+            <div class="alt-item-main">
+              ${imgHtml}
+              <div class="alt-item-info">
+                <div class="alt-item-name">${escapeHtml(alt.name)}</div>
+                <div class="alt-item-brand">${escapeHtml(alt.brand || alt.country || '')}</div>
+              </div>
+              <div class="alt-item-score" style="background:${color}18; color:${color}; border: 1.5px solid ${color}40;">
+                <span>${score}</span>
+                <small>/100</small>
+              </div>
+            </div>
+            ${reasonsHtml ? `<div class="alt-reasons-row">${reasonsHtml}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+
+      // Add click listeners to alternative cards (clicking alternative opens its details page)
+      listEl.querySelectorAll('.alt-item-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const barcode = card.getAttribute('data-barcode');
+          if (barcode) {
+            App.searchBarcode(barcode);
+          }
+        });
+      });
+
+    } catch (err) {
+      console.warn('Failed to load alternatives:', err);
+      if (loadingEl) loadingEl.style.display = 'none';
+      if (emptyEl) emptyEl.style.display = 'flex';
+    }
+  },
+
+  /**
+   * Requirement 3: Official Product Information
+   * Shows official certs/EAC/Halal only if present in data, otherwise polite fallback.
+   * @param {object} product 
+   */
+  renderOfficialInfo(product) {
+    const container = document.getElementById('official-info-content');
+    if (!container) return;
+
+    const certs = product.official_certs || [];
+    if (certs.length === 0) {
+      container.innerHTML = `
+        <div class="official-cert-empty">
+          <span class="empty-cert-icon">ℹ️</span>
+          <div>
+            <p>${I18N.t('official_cert_empty')}</p>
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = certs.map(c => `
+      <div class="official-cert-item">
+        <div class="official-cert-title">
+          <span>📜</span>
+          <span>${escapeHtml(c.type)}</span>
+        </div>
+        <div class="official-cert-meta">
+          <div><strong>${I18N.t('official_cert_label_type')}</strong> ${escapeHtml(c.name || c.type)}</div>
+          ${c.issuer ? `<div><strong>${I18N.t('official_cert_label_issuer')}</strong> ${escapeHtml(c.issuer)}</div>` : ''}
+          ${c.number ? `<div><strong>${I18N.t('official_cert_label_num')}</strong> ${escapeHtml(c.number)}</div>` : ''}
+        </div>
+        ${c.url ? `<a href="${escapeHtml(c.url)}" target="_blank" rel="noopener" class="official-cert-link">${I18N.t('official_cert_view_doc')}</a>` : ''}
+      </div>
+    `).join('');
+  },
+
+  /**
+   * Requirement 3: Data Source, Transparency & Disclaimer
+   * @param {object} product 
+   */
+  renderDataSource(product) {
+    const originEl = document.getElementById('source-origin-val');
+    const statusEl = document.getElementById('source-status-val');
+    const updatedEl = document.getElementById('source-updated-val');
+
+    if (originEl) {
+      if (product.source === 'user_local') {
+        originEl.textContent = 'Qoldau Food (Пользователь / Пайдаланушы)';
+      } else if (product.source === 'local_verified') {
+        originEl.textContent = 'Qoldau Food (Казахстан)';
+      } else {
+        originEl.textContent = 'Open Food Facts (Global Database)';
+      }
+    }
+
+    if (statusEl) {
+      if (product.source === 'user_local') {
+        statusEl.textContent = I18N.t('status_user_local');
+        statusEl.style.background = '#fef3c7';
+        statusEl.style.color = '#92400e';
+      } else if (product.source === 'local_verified') {
+        statusEl.textContent = I18N.t('status_local_verified');
+        statusEl.style.background = '#d1fae5';
+        statusEl.style.color = '#065f46';
+      } else {
+        statusEl.textContent = I18N.t('status_community');
+        statusEl.style.background = '#e0f2fe';
+        statusEl.style.color = '#0369a1';
+      }
+    }
+
+    if (updatedEl) {
+      if (product.last_modified_t) {
+        const date = new Date(product.last_modified_t * 1000);
+        const locale = I18N.currentLang === 'kk' ? 'kk-KZ' : (I18N.currentLang === 'ru' ? 'ru-RU' : 'en-US');
+        updatedEl.textContent = date.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
+      } else if (product.submittedAt) {
+        const date = new Date(product.submittedAt);
+        const locale = I18N.currentLang === 'kk' ? 'kk-KZ' : (I18N.currentLang === 'ru' ? 'ru-RU' : 'en-US');
+        updatedEl.textContent = date.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
+      } else {
+        updatedEl.textContent = '—';
+      }
+    }
+  },
+
+  /**
+   * Requirement 2: Render Search Results List for Name Search
+   * @param {Array<object>} results 
+   * @param {string} query 
+   */
+  renderSearchResults(results, query) {
+    const section = document.getElementById('search-results-section');
+    const loadingEl = document.getElementById('search-results-loading');
+    const emptyEl = document.getElementById('search-results-empty');
+    const errorEl = document.getElementById('search-results-error');
+    const listEl = document.getElementById('search-results-list');
+    const countEl = document.getElementById('search-results-count');
+
+    if (!section || !listEl) return;
+    section.style.display = 'block';
+
+    if (loadingEl) loadingEl.style.display = 'none';
+    if (errorEl) errorEl.style.display = 'none';
+
+    if (!results || results.length === 0) {
+      if (emptyEl) emptyEl.style.display = 'flex';
+      listEl.innerHTML = '';
+      if (countEl) countEl.textContent = '0';
+      return;
+    }
+
+    if (emptyEl) emptyEl.style.display = 'none';
+    if (countEl) countEl.textContent = String(results.length);
+
+    listEl.innerHTML = results.map(item => {
+      const scoreObj = EVALUATOR.calculateHealthScore(item);
+      const score = scoreObj.score !== null ? scoreObj.score : '--';
+      const color = scoreObj.color || '#94a3b8';
+
+      const imgHtml = item.image
+        ? `<img src="${escapeHtml(item.image)}" class="search-result-thumb" alt="${escapeHtml(item.name)}" loading="lazy" onerror="this.outerHTML='<div class=\\'search-result-thumb-fallback\\'>🥗</div>'">`
+        : `<div class="search-result-thumb-fallback">🥗</div>`;
+
+      return `
+        <div class="search-result-card" data-barcode="${escapeHtml(item.barcode)}">
+          ${imgHtml}
+          <div class="search-result-info">
+            <div class="search-result-name">${escapeHtml(item.name)}</div>
+            <div class="search-result-meta">
+              <span>${escapeHtml(item.brand || item.country || '—')}</span>
+              <span>•</span>
+              <code>${escapeHtml(item.barcode)}</code>
+            </div>
+          </div>
+          <div class="search-result-score-badge" style="background:${color}18; color:${color}; border: 1.5px solid ${color}40;">
+            <span>${score}</span>
+            <small>/100</small>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Attach click listeners to cards (opens Product Details)
+    listEl.querySelectorAll('.search-result-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const barcode = card.getAttribute('data-barcode');
+        if (barcode) {
+          App.searchBarcode(barcode);
+        }
+      });
+    });
   },
 
   showNotFound(barcode) {
@@ -2732,6 +3426,118 @@ const App = {
         e.preventDefault();
         const code = barcodeInput.value;
         if (code) App.searchBarcode(code);
+      });
+    }
+
+    // 5b. Search Mode Tabs Switcher (Barcode vs Name - Requirement 2)
+    const tabBarcode = document.getElementById('tab-search-barcode');
+    const tabName = document.getElementById('tab-search-name');
+    const panelBarcode = document.getElementById('panel-search-barcode');
+    const panelName = document.getElementById('panel-search-name');
+    const nameInput = document.getElementById('input-product-name');
+    const clearNameInputBtn = document.getElementById('btn-clear-name-input');
+    const nameSearchForm = document.getElementById('form-name-search');
+    const btnCloseResults = document.getElementById('btn-close-results');
+    const searchResultsSection = document.getElementById('search-results-section');
+
+    const switchSearchTab = (mode) => {
+      if (mode === 'name') {
+        if (tabName) tabName.classList.add('active');
+        if (tabBarcode) tabBarcode.classList.remove('active');
+        if (panelName) { panelName.style.display = 'block'; panelName.classList.add('active'); }
+        if (panelBarcode) { panelBarcode.style.display = 'none'; panelBarcode.classList.remove('active'); }
+        if (nameInput) nameInput.focus();
+      } else {
+        if (tabBarcode) tabBarcode.classList.add('active');
+        if (tabName) tabName.classList.remove('active');
+        if (panelBarcode) { panelBarcode.style.display = 'block'; panelBarcode.classList.add('active'); }
+        if (panelName) { panelName.style.display = 'none'; panelName.classList.remove('active'); }
+        if (barcodeInput) barcodeInput.focus();
+      }
+    };
+
+    if (tabBarcode) {
+      tabBarcode.addEventListener('click', () => switchSearchTab('barcode'));
+    }
+    if (tabName) {
+      tabName.addEventListener('click', () => switchSearchTab('name'));
+    }
+
+    // Name search input and clear button
+    if (nameInput && clearNameInputBtn) {
+      nameInput.addEventListener('input', () => {
+        clearNameInputBtn.style.display = nameInput.value.length > 0 ? 'block' : 'none';
+      });
+      clearNameInputBtn.addEventListener('click', () => {
+        nameInput.value = '';
+        clearNameInputBtn.style.display = 'none';
+        nameInput.focus();
+        if (searchResultsSection) searchResultsSection.style.display = 'none';
+      });
+    }
+
+    // Name search form submission (Requirement 2)
+    if (nameSearchForm && nameInput) {
+      nameSearchForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const query = nameInput.value.trim();
+        if (!query) return;
+
+        // Show loading state
+        const loadingEl = document.getElementById('search-results-loading');
+        const emptyEl = document.getElementById('search-results-empty');
+        const errorEl = document.getElementById('search-results-error');
+        const listEl = document.getElementById('search-results-list');
+
+        if (searchResultsSection) searchResultsSection.style.display = 'block';
+        if (loadingEl) loadingEl.style.display = 'flex';
+        if (emptyEl) emptyEl.style.display = 'none';
+        if (errorEl) errorEl.style.display = 'none';
+        if (listEl) listEl.innerHTML = '';
+
+        try {
+          const res = await searchProductsByName(query);
+          if (res.success) {
+            UIController.renderSearchResults(res.products, query);
+          } else {
+            if (loadingEl) loadingEl.style.display = 'none';
+            if (errorEl) errorEl.style.display = 'flex';
+          }
+        } catch (err) {
+          console.error('Name search failed:', err);
+          if (loadingEl) loadingEl.style.display = 'none';
+          if (errorEl) errorEl.style.display = 'flex';
+        }
+      });
+    }
+
+    // Quick Name Query Chips
+    document.querySelectorAll('.name-sample-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const q = btn.getAttribute('data-query');
+        if (q && nameInput) {
+          nameInput.value = q;
+          if (clearNameInputBtn) clearNameInputBtn.style.display = 'block';
+          if (nameSearchForm) {
+            nameSearchForm.dispatchEvent(new Event('submit'));
+          }
+        }
+      });
+    });
+
+    // Close Search Results Button
+    if (btnCloseResults && searchResultsSection) {
+      btnCloseResults.addEventListener('click', () => {
+        searchResultsSection.style.display = 'none';
+      });
+    }
+
+    // Search manually by name from Not Found screen (Requirement 2)
+    const btnNotFoundSearchName = document.getElementById('btn-not-found-search-name');
+    if (btnNotFoundSearchName) {
+      btnNotFoundSearchName.addEventListener('click', () => {
+        UIController.showView('view-home');
+        switchSearchTab('name');
       });
     }
 

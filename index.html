@@ -83,60 +83,144 @@
       </div>
 
       <!-- Manual Barcode Search Form -->
+      <!-- Manual Search: Barcode & Product Name (Requirement 2) -->
       <div class="search-card">
-        <h2 class="section-title" data-i18n="manual_search_title">
-          <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 5v14M8 5v14M12 5v14M17 5v14M21 5v14"/>
-          </svg>
-          <span data-i18n="manual_search_heading">Поиск по штрихкоду</span>
-        </h2>
-        <form id="form-manual-search" class="search-form">
-          <div class="input-wrapper">
-            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <!-- Search Mode Switcher Tabs -->
+        <div class="search-tabs">
+          <button type="button" id="tab-search-barcode" class="search-tab active" data-tab="barcode">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 5v14M8 5v14M12 5v14M17 5v14M21 5v14"/>
+            </svg>
+            <span data-i18n="tab_search_barcode">По штрихкоду</span>
+          </button>
+          <button type="button" id="tab-search-name" class="search-tab" data-tab="name">
+            <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8"/>
               <line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
-            <input 
-              type="tel" 
-              inputmode="numeric" 
-              pattern="[0-9]*" 
-              id="input-barcode" 
-              class="barcode-input" 
-              placeholder="Введите штрихкод (напр. 3017620422003)..." 
-              data-i18n-placeholder="input_barcode_placeholder"
-              autocomplete="off"
-              required
-            >
-            <button type="button" id="btn-clear-input" class="btn-clear-input" title="Очистить" style="display:none;">&times;</button>
-          </div>
-          <button type="submit" id="btn-submit-search" class="btn btn-secondary">
-            <span data-i18n="btn_search">Найти</span>
+            <span data-i18n="tab_search_name">По названию</span>
           </button>
-        </form>
+        </div>
 
-        <!-- Quick Test Barcodes (Helpful for desktop / demo testing) -->
-        <div class="quick-samples">
-          <span class="quick-samples-label" data-i18n="quick_samples_label">Попробуйте примеры:</span>
-          <div class="chips-row">
-            <button type="button" class="chip-btn" data-barcode="4870144000308" title="Чай Пиала Gold (100 баллов)">
-              🍵 <span>Чай Пиала (100 б.)</span>
+        <!-- Panel 1: Barcode Search -->
+        <div id="panel-search-barcode" class="search-panel active">
+          <form id="form-manual-search" class="search-form">
+            <div class="input-wrapper">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input 
+                type="tel" 
+                inputmode="numeric" 
+                pattern="[0-9]*" 
+                id="input-barcode" 
+                class="barcode-input" 
+                placeholder="Введите штрихкод (напр. 3017620422003)..." 
+                data-i18n-placeholder="input_barcode_placeholder"
+                autocomplete="off"
+                required
+              >
+              <button type="button" id="btn-clear-input" class="btn-clear-input" title="Очистить" style="display:none;">&times;</button>
+            </div>
+            <button type="submit" id="btn-submit-search" class="btn btn-secondary">
+              <span data-i18n="btn_search">Найти</span>
             </button>
-            <button type="button" class="chip-btn" data-barcode="4870206330015" title="Қымыз табиғи (95 баллов)">
-              🥛 <span>Қымыз (95 б.)</span>
-            </button>
-            <button type="button" class="chip-btn" data-barcode="4870001010143" title="Шоколад Казахстанский (Рахат)">
-              🍫 <span>Шоколад Рахат</span>
-            </button>
-            <button type="button" class="chip-btn" data-barcode="5449000000996" title="Coca-Cola (15 баллов)">
-              🥤 <span>Coca-Cola (15 б.)</span>
-            </button>
-            <button type="button" class="chip-btn" data-barcode="3017620422003" title="Nutella">
-              🌰 <span>Nutella</span>
-            </button>
-            <button type="button" class="chip-btn chip-btn-muted" data-barcode="9999999999999" title="Проверка продукта, которого нет в базе">
-              ❓ <span data-i18n="test_not_found">Тест: нет в базе</span>
-            </button>
+          </form>
+
+          <!-- Quick Test Barcodes (Helpful for desktop / demo testing) -->
+          <div class="quick-samples">
+            <span class="quick-samples-label" data-i18n="quick_samples_label">Попробуйте примеры:</span>
+            <div class="chips-row">
+              <button type="button" class="chip-btn" data-barcode="4870144000308" title="Чай Пиала Gold (100 баллов)">
+                🍵 <span>Чай Пиала (100 б.)</span>
+              </button>
+              <button type="button" class="chip-btn" data-barcode="4870206330015" title="Қымыз табиғи (95 баллов)">
+                🥛 <span>Қымыз (95 б.)</span>
+              </button>
+              <button type="button" class="chip-btn" data-barcode="4870001010143" title="Шоколад Казахстанский (Рахат)">
+                🍫 <span>Шоколад Рахат</span>
+              </button>
+              <button type="button" class="chip-btn" data-barcode="5449000000996" title="Coca-Cola (15 баллов)">
+                🥤 <span>Coca-Cola (15 б.)</span>
+              </button>
+              <button type="button" class="chip-btn" data-barcode="3017620422003" title="Nutella">
+                🌰 <span>Nutella</span>
+              </button>
+              <button type="button" class="chip-btn chip-btn-muted" data-barcode="9999999999999" title="Проверка продукта, которого нет в базе">
+                ❓ <span data-i18n="test_not_found">Тест: нет в базе</span>
+              </button>
+            </div>
           </div>
+        </div>
+
+        <!-- Panel 2: Product Name Search (Requirement 2) -->
+        <div id="panel-search-name" class="search-panel" style="display:none;">
+          <form id="form-name-search" class="search-form">
+            <div class="input-wrapper">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input 
+                type="text" 
+                id="input-product-name" 
+                class="barcode-input" 
+                placeholder="Введите название (напр. Coca-Cola, Snickers, чай)..." 
+                data-i18n-placeholder="input_name_placeholder"
+                autocomplete="off"
+                required
+              >
+              <button type="button" id="btn-clear-name-input" class="btn-clear-input" title="Очистить" style="display:none;">&times;</button>
+            </div>
+            <button type="submit" id="btn-submit-name-search" class="btn btn-secondary">
+              <span data-i18n="btn_search">Найти</span>
+            </button>
+          </form>
+
+          <!-- Quick Name Search Pills -->
+          <div class="quick-samples">
+            <span class="quick-samples-label" data-i18n="quick_samples_name_label">Популярные запросы:</span>
+            <div class="chips-row">
+              <button type="button" class="chip-btn name-sample-btn" data-query="Coca-Cola">🥤 <span>Coca-Cola</span></button>
+              <button type="button" class="chip-btn name-sample-btn" data-query="Snickers">🍫 <span>Snickers</span></button>
+              <button type="button" class="chip-btn name-sample-btn" data-query="Рахат">🍬 <span>Рахат</span></button>
+              <button type="button" class="chip-btn name-sample-btn" data-query="Пиала чай">🍵 <span>Пиала чай</span></button>
+              <button type="button" class="chip-btn name-sample-btn" data-query="Кумыс">🥛 <span>Кумыс / Қымыз</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Results Container for Name Search (Requirement 2) -->
+        <div id="search-results-section" class="search-results-section" style="display:none;">
+          <div class="results-header">
+            <h3 class="results-title">
+              <span data-i18n="search_results_title">Результаты поиска</span>
+              <span id="search-results-count" class="badge-count">0</span>
+            </h3>
+            <button type="button" id="btn-close-results" class="btn-text-muted" data-i18n="btn_close_results">✕ Закрыть</button>
+          </div>
+
+          <!-- Loading state -->
+          <div id="search-results-loading" class="search-feedback-box" style="display:none;">
+            <div class="spinner-small"></div>
+            <span data-i18n="loading_search_products">Поиск продуктов...</span>
+          </div>
+
+          <!-- Empty state -->
+          <div id="search-results-empty" class="search-feedback-box" style="display:none;">
+            <span class="feedback-icon">🔍</span>
+            <p data-i18n="search_no_results">Продукт не найден. Попробуйте другое название или отсканируйте штрихкод.</p>
+          </div>
+
+          <!-- Error state -->
+          <div id="search-results-error" class="search-feedback-box error" style="display:none;">
+            <span class="feedback-icon">⚠️</span>
+            <p data-i18n="search_error">Произошла ошибка при поиске. Пожалуйста, попробуйте снова.</p>
+          </div>
+
+          <!-- Results list -->
+          <div id="search-results-list" class="search-results-list"></div>
         </div>
       </div>
 
@@ -283,6 +367,40 @@
         </div>
       </div>
 
+      <!-- Healthier Alternatives Section (Requirement 1) -->
+      <div class="info-card alternatives-card" id="section-alternatives">
+        <div class="card-header">
+          <div class="card-header-icon">🌿</div>
+          <div class="header-text-group">
+            <div class="badge-accent-sub" data-i18n="alternatives_badge">Рекомендации Qoldau</div>
+            <h2 class="card-title" data-i18n="alternatives_title">Более полезные альтернативы</h2>
+            <p class="card-subtitle" data-i18n="alternatives_sub">Товары той же категории с более высоким индексом пользы</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <!-- Loading state for alternatives -->
+          <div id="alternatives-loading" class="alternatives-loading" style="display:none;">
+            <div class="spinner-small"></div>
+            <span data-i18n="loading_alternatives">Поиск лучших альтернатив...</span>
+          </div>
+
+          <!-- Fallback when no alternatives found -->
+          <div id="alternatives-empty" class="alternatives-empty-state" style="display:none;">
+            <span class="empty-icon">🌱</span>
+            <p data-i18n="alternatives_empty_text">Подходящих более полезных альтернатив в этой категории не найдено.</p>
+          </div>
+
+          <!-- Dynamic Alternatives List (1-3 products) -->
+          <div id="alternatives-list" class="alternatives-grid">
+            <!-- Populated dynamically by app.js -->
+          </div>
+
+          <div class="alternatives-disclaimer-note" data-i18n="alternatives_disclaimer">
+            ℹ️ Сравнение основано на доступных данных о составе и пищевой ценности. Не является врачебным назначением.
+          </div>
+        </div>
+      </div>
+
       <!-- Nutrition Section (Mandatory requirement #4) -->
       <div class="info-card nutrition-card">
         <div class="card-header">
@@ -338,6 +456,57 @@
         </div>
       </div>
 
+      <!-- Official Product Information (Requirement 3: Official Data) -->
+      <div class="info-card official-info-card" id="section-official-info">
+        <div class="card-header">
+          <div class="card-header-icon">📜</div>
+          <div class="header-text-group">
+            <div class="official-tag-row">
+              <span class="badge badge-official" data-i18n="badge_official_registry">Официальный реестр</span>
+            </div>
+            <h2 class="card-title" data-i18n="official_info_title">Официальная информация о продукции</h2>
+            <p class="card-subtitle" data-i18n="official_info_sub">Регулирование, знаки соответствия и сертификация</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div id="official-info-content" class="official-info-content">
+            <!-- Populated dynamically: real certs if present, else polite non-invented fallback -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Information Source & Transparency (Requirement 3: Provenance & Disclaimer) -->
+      <div class="info-card transparency-card" id="section-data-source">
+        <div class="card-header">
+          <div class="card-header-icon">🛡️</div>
+          <div class="header-text-group">
+            <h2 class="card-title" data-i18n="transparency_title">Источник данных и прозрачность</h2>
+            <p class="card-subtitle" data-i18n="transparency_sub">Происхождение информации и статус верификации</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="transparency-grid">
+            <div class="transparency-item">
+              <span class="transparency-label" data-i18n="source_origin_label">Источник данных:</span>
+              <span class="transparency-val" id="source-origin-val">Open Food Facts</span>
+            </div>
+            <div class="transparency-item">
+              <span class="transparency-label" data-i18n="source_status_label">Статус данных:</span>
+              <span class="transparency-val badge-status" id="source-status-val">Сообщество (краудсорсинг)</span>
+            </div>
+            <div class="transparency-item">
+              <span class="transparency-label" data-i18n="source_updated_label">Последнее обновление:</span>
+              <span class="transparency-val" id="source-updated-val">—</span>
+            </div>
+          </div>
+          <div class="transparency-disclaimer-box">
+            <p data-i18n="transparency_full_disclaimer">
+              ⚠️ Индекс пользы Qoldau является информационной оценкой на основе доступных данных о составе и пищевой ценности. Он не является медицинским диагнозом или официальным сертификатом качества.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <!-- Product Page Footer Actions -->
       <div class="product-bottom-actions">
         <button type="button" id="btn-scan-another" class="btn btn-primary btn-large">
@@ -384,7 +553,14 @@
             </svg>
             <span data-i18n="btn_add_product">Добавить этот продукт</span>
           </button>
-          <button type="button" id="btn-not-found-back" class="btn btn-secondary">
+          <button type="button" id="btn-not-found-search-name" class="btn btn-secondary btn-large">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <span data-i18n="btn_search_manually_name">Искать по названию</span>
+          </button>
+          <button type="button" id="btn-not-found-back" class="btn btn-outline">
             <span data-i18n="btn_back_home">На главную</span>
           </button>
         </div>
