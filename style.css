@@ -2822,4 +2822,512 @@ body {
   color: #92400e;
 }
 
+/* ==========================================================================
+   Midterm Stage 1: User Preferences & Header Actions
+   ========================================================================== */
+.pref-header-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.pref-header-btn:hover {
+  background: #dcfce7;
+  border-color: #86efac;
+}
+
+.pref-badge-count {
+  background: #16a34a;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: var(--radius-pill);
+}
+
+/* Top badges bar on product page */
+.product-top-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge-offline-cache {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  font-weight: 700;
+  font-size: 0.74rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================================================
+   Personalized Warning Component (Main User Flow)
+   ========================================================================== */
+.personalized-warning-card {
+  margin-top: 12px;
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: var(--transition);
+}
+
+/* Alert state: Match with allergen or restricted diet */
+.personalized-warning-card.warning-alert {
+  background: #fff1f2;
+  border: 1.5px solid #fecdd3;
+  color: #9f1239;
+}
+
+[data-theme="dark"] .personalized-warning-card.warning-alert {
+  background: rgba(225, 29, 72, 0.15);
+  border-color: rgba(225, 29, 72, 0.35);
+  color: #fecdd3;
+}
+
+.warning-alert-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 0.92rem;
+  line-height: 1.3;
+}
+
+.warning-alert-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.warning-matched-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.warning-matched-tag {
+  background: #ffe4e6;
+  color: #881337;
+  border: 1px solid #fda4af;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+[data-theme="dark"] .warning-matched-tag {
+  background: rgba(225, 29, 72, 0.25);
+  color: #ffe4e6;
+  border-color: rgba(225, 29, 72, 0.4);
+}
+
+.warning-disclaimer-note {
+  font-size: 0.72rem;
+  color: #9f1239;
+  opacity: 0.85;
+  line-height: 1.35;
+}
+
+/* Safe state: Preferences set, no conflict detected */
+.personalized-warning-card.warning-safe {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+
+[data-theme="dark"] .personalized-warning-card.warning-safe {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #86efac;
+}
+
+.warning-safe-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+/* Prompt state: No preferences configured yet */
+.personalized-warning-card.warning-prompt {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  color: #475569;
+}
+
+.warning-prompt-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.warning-prompt-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.warning-prompt-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.warning-prompt-btn:hover {
+  background: #f1f5f9;
+}
+
+/* ==========================================================================
+   Data Validation & Quality Layer Card
+   ========================================================================== */
+.validation-card {
+  margin-top: 12px;
+  padding: 14px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+[data-theme="dark"] .validation-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.validation-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.validation-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.validation-confidence-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.validation-confidence-badge.confidence-high {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.validation-confidence-badge.confidence-medium {
+  background: #fef9c3;
+  color: #a16207;
+  border: 1px solid #fde047;
+}
+
+.validation-confidence-badge.confidence-low {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.validation-card-title {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.data-origin-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f5f9;
+  border-radius: var(--radius-pill);
+  padding: 2px 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+[data-theme="dark"] .data-origin-pill {
+  background: #334155;
+  color: #cbd5e1;
+}
+
+.pill-sep {
+  opacity: 0.5;
+}
+
+.validation-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.validation-missing-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.validation-missing-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.validation-missing-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.missing-chip {
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   Product Not Found Inline Search Form
+   ========================================================================== */
+.not-found-search-inline {
+  width: 100%;
+  margin: 14px 0 8px 0;
+  text-align: left;
+}
+
+.not-found-search-label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   Healthier Alternatives Score Advantage Badge
+   ========================================================================== */
+.alt-score-diff {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  font-size: 0.74rem;
+  color: #047857;
+  background: #d1fae5;
+  border: 1px solid #a7f3d0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   User Preferences / Profile Modal
+   ========================================================================== */
+.pref-modal-content {
+  background: #ffffff;
+  color: var(--text-main);
+  padding: 0;
+  max-width: 520px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 88vh;
+}
+
+[data-theme="dark"] .pref-modal-content {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+.pref-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pref-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pref-header-icon {
+  font-size: 1.5rem;
+}
+
+.pref-modal-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .pref-modal-title {
+  color: #f8fafc;
+}
+
+.pref-modal-sub {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.pref-modal-body {
+  padding: 18px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pref-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pref-section-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pref-section-icon {
+  font-size: 1.1rem;
+}
+
+.pref-section-title {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+[data-theme="dark"] .pref-section-title {
+  color: #f8fafc;
+}
+
+.pref-section-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.pref-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.pref-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  user-select: none;
+}
+
+[data-theme="dark"] .pref-chip {
+  background: #0f172a;
+  border-color: #334155;
+}
+
+.pref-chip:hover {
+  background: #f1f5f9;
+  border-color: var(--primary);
+}
+
+.pref-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.pref-chip:has(.pref-checkbox:checked) {
+  background: #ecfdf5;
+  border-color: #059669;
+  color: #065f46;
+}
+
+[data-theme="dark"] .pref-chip:has(.pref-checkbox:checked) {
+  background: rgba(5, 150, 105, 0.2);
+  border-color: #10b981;
+  color: #a7f3d0;
+}
+
+.pref-chip-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.pref-disclaimer-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-sm);
+  color: #92400e;
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+.pref-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border-color);
+  background: #fafafa;
+}
+
+[data-theme="dark"] .pref-modal-footer {
+  background: #0f172a;
+  border-color: #334155;
+}
+
 

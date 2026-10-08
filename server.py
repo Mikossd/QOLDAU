@@ -122,6 +122,7 @@ def main():
 
     # Start HTTP server
     try:
+        HTTPServer.allow_reuse_address = True
         server_instance = HTTPServer(("0.0.0.0", PORT), CustomHTTPRequestHandler)
     except OSError:
         print(f"\n[!] Ошибка: Порт {PORT} уже занят!")

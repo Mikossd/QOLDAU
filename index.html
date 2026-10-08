@@ -27,8 +27,13 @@
         </div>
       </div>
 
-      <!-- Controls: QR Code on Phone, Currency & Language Switcher -->
+      <!-- Controls: User Preferences, QR Code on Phone, Currency & Language Switcher -->
       <div class="header-actions">
+        <button type="button" id="btn-user-preferences" class="currency-tag pref-header-btn" title="Настройки аллергенов и диеты">
+          👤 <span data-i18n="nav_preferences">Диета / Аллергены</span>
+          <span id="pref-count-badge" class="badge-count" style="display:none;">0</span>
+        </button>
+
         <button type="button" id="btn-show-qr" class="currency-tag qr-header-btn" title="Открыть на телефоне">
           📱 <span>На телефон</span>
         </button>
@@ -275,8 +280,13 @@
           <span data-i18n="btn_back">Назад</span>
         </button>
 
-        <div id="product-source-badge" class="badge badge-verified">
-          ✓ Open Food Facts
+        <div class="product-top-badges">
+          <div id="product-cache-badge" class="badge badge-offline-cache" style="display:none;">
+            📦 Офлайн-кэш
+          </div>
+          <div id="product-source-badge" class="badge badge-verified">
+            ✓ Open Food Facts
+          </div>
         </div>
       </div>
 
@@ -304,7 +314,32 @@
             <span id="product-origin-badge" class="origin-badge"></span>
           </div>
 
-          <!-- Qoldau Health Score Card -->
+          <!-- 1. Personalized Warnings Card (Requirement 2: Dietary & Allergen Profile) -->
+          <div id="product-personalized-warnings" class="personalized-warning-card" style="display:none;">
+            <!-- Populated dynamically by UserPreferencesService -->
+          </div>
+
+          <!-- 2. Data Validation & Quality Layer (Requirement 3: Data Quality) -->
+          <div id="product-validation-card" class="validation-card" style="display:none;">
+            <div class="validation-card-top">
+              <div class="validation-title-row">
+                <span class="validation-confidence-badge" id="validation-confidence-badge">HIGH</span>
+                <span class="validation-card-title" data-i18n="validation_card_title">Качество данных продукта</span>
+              </div>
+              <div class="data-origin-pill">
+                <span class="pill-official" data-i18n="tag_official_data">🏷️ Данные упаковки</span>
+                <span class="pill-sep">•</span>
+                <span class="pill-analysis" data-i18n="tag_qoldau_analysis">🔬 Анализ Qoldau</span>
+              </div>
+            </div>
+            <p class="validation-desc" id="validation-desc-text">—</p>
+            <div id="validation-missing-box" class="validation-missing-box" style="display:none;">
+              <span class="validation-missing-label" data-i18n="validation_missing_label">Не указано на упаковке:</span>
+              <div class="validation-missing-chips" id="validation-missing-chips"></div>
+            </div>
+          </div>
+
+          <!-- 3. Qoldau Health Score Card (Requirement 4) -->
           <div class="health-score-card" id="product-health-card">
             <div class="score-card-top">
               <div class="score-meter-wrap">
@@ -555,6 +590,31 @@
           <span data-i18n="not_found_desc_2">пока отсутствует в глобальной базе Open Food Facts.</span>
         </p>
 
+        <!-- Inline Manual Search Box (Requirement 6) -->
+        <div class="not-found-search-inline">
+          <label class="not-found-search-label" data-i18n="not_found_search_label">Или найдите товар по названию прямо сейчас:</label>
+          <form id="form-not-found-inline-search" class="search-form">
+            <div class="input-wrapper">
+              <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input
+                type="text"
+                id="input-not-found-inline"
+                class="barcode-input"
+                placeholder="Введите название (напр. Coca-Cola, чай)..."
+                data-i18n-placeholder="input_name_placeholder"
+                autocomplete="off"
+              >
+              <button type="button" id="btn-clear-not-found-input" class="btn-clear-input" title="Очистить" style="display:none;">&times;</button>
+            </div>
+            <button type="submit" id="btn-submit-not-found-inline" class="btn btn-secondary">
+              <span data-i18n="btn_search">Найти</span>
+            </button>
+          </form>
+        </div>
+
         <div class="kazakhstan-callout">
           <span class="callout-flag">🇰🇿</span>
           <div>
@@ -564,21 +624,28 @@
         </div>
 
         <div class="status-actions">
-          <button type="button" id="btn-open-add-product" class="btn btn-primary btn-large">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"/>
-              <line x1="5" y1="12" x2="19" y2="12"/>
-            </svg>
-            <span data-i18n="btn_add_product">Добавить этот продукт</span>
-          </button>
-          <button type="button" id="btn-not-found-search-name" class="btn btn-secondary btn-large">
+          <button type="button" id="btn-not-found-search-name" class="btn btn-primary btn-large">
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8"/>
               <line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
             <span data-i18n="btn_search_manually_name">Искать по названию</span>
           </button>
-          <button type="button" id="btn-not-found-back" class="btn btn-outline">
+          <button type="button" id="btn-not-found-scan-again" class="btn btn-secondary btn-large">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+            <span data-i18n="btn_scan_another">Сканировать другой штрихкод</span>
+          </button>
+          <button type="button" id="btn-open-add-product" class="btn btn-outline">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"/>
+              <line x1="5" y1="12" x2="19" y2="12"/>
+            </svg>
+            <span data-i18n="btn_add_product">Добавить этот продукт</span>
+          </button>
+          <button type="button" id="btn-not-found-back" class="btn btn-text-muted">
             <span data-i18n="btn_back_home">На главную</span>
           </button>
         </div>
@@ -836,6 +903,124 @@
         </label>
 
         <div id="scanner-error-msg" class="scanner-error" style="display:none;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- USER PREFERENCES / PROFILE MODAL (Requirement 2) -->
+  <div id="modal-preferences" class="scanner-modal" style="display:none;" role="dialog" aria-modal="true">
+    <div class="scanner-modal-backdrop" id="backdrop-preferences"></div>
+    <div class="scanner-modal-content pref-modal-content">
+      <div class="pref-modal-header">
+        <div class="pref-title-group">
+          <span class="pref-header-icon">👤</span>
+          <div>
+            <h2 class="pref-modal-title" data-i18n="pref_modal_title">Профиль: Диета и Аллергены</h2>
+            <p class="pref-modal-sub" data-i18n="pref_modal_sub">Персональные предупреждения при анализе продуктов</p>
+          </div>
+        </div>
+        <button type="button" id="btn-close-preferences" class="btn-icon-close" title="Закрыть">&times;</button>
+      </div>
+
+      <div class="pref-modal-body">
+        <!-- Allergen Preferences Section -->
+        <div class="pref-section">
+          <div class="pref-section-header">
+            <span class="pref-section-icon">⚠️</span>
+            <h3 class="pref-section-title" data-i18n="pref_allergens_title">Ваши аллергены и непереносимости</h3>
+          </div>
+          <p class="pref-section-desc" data-i18n="pref_allergens_desc">
+            Система предупредит, если в составе или аллергенах продукта обнаружены выбранные компоненты:
+          </p>
+          <div class="pref-chips-grid">
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_allergen" value="milk" class="pref-checkbox">
+              <span class="pref-chip-label">🥛 <span data-i18n="allergen_milk">Молоко / Лактоза</span></span>
+            </label>
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_allergen" value="gluten" class="pref-checkbox">
+              <span class="pref-chip-label">🌾 <span data-i18n="allergen_gluten">Глютен / Пшеница</span></span>
+            </label>
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_allergen" value="nuts" class="pref-checkbox">
+              <span class="pref-chip-label">🥜 <span data-i18n="allergen_nuts">Арахис и орехи</span></span>
+            </label>
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_allergen" value="soy" class="pref-checkbox">
+              <span class="pref-chip-label">🌱 <span data-i18n="allergen_soy">Соя</span></span>
+            </label>
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_allergen" value="eggs" class="pref-checkbox">
+              <span class="pref-chip-label">🥚 <span data-i18n="allergen_eggs">Яйца</span></span>
+            </label>
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_allergen" value="fish" class="pref-checkbox">
+              <span class="pref-chip-label">🐟 <span data-i18n="allergen_fish">Рыба / Морепродукты</span></span>
+            </label>
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_allergen" value="sesame" class="pref-checkbox">
+              <span class="pref-chip-label">🌿 <span data-i18n="allergen_sesame">Кунжут</span></span>
+            </label>
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_allergen" value="mustard" class="pref-checkbox">
+              <span class="pref-chip-label">🟡 <span data-i18n="allergen_mustard">Горчица</span></span>
+            </label>
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_allergen" value="celery" class="pref-checkbox">
+              <span class="pref-chip-label">🥬 <span data-i18n="allergen_celery">Сельдерей</span></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Dietary Restrictions Section -->
+        <div class="pref-section">
+          <div class="pref-section-header">
+            <span class="pref-section-icon">🥗</span>
+            <h3 class="pref-section-title" data-i18n="pref_diets_title">Диетические предпочтения</h3>
+          </div>
+          <p class="pref-section-desc" data-i18n="pref_diets_desc">
+            Предупреждения о несоответствии выбранным диетическим правилам:
+          </p>
+          <div class="pref-chips-grid">
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_diet" value="vegetarian" class="pref-checkbox">
+              <span class="pref-chip-label">🥗 <span data-i18n="diet_vegetarian">Вегетарианство</span></span>
+            </label>
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_diet" value="vegan" class="pref-checkbox">
+              <span class="pref-chip-label">🥑 <span data-i18n="diet_vegan">Веганство</span></span>
+            </label>
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_diet" value="halal" class="pref-checkbox">
+              <span class="pref-chip-label">🌙 <span data-i18n="diet_halal">Халал-контроль</span></span>
+            </label>
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_diet" value="low_sugar" class="pref-checkbox">
+              <span class="pref-chip-label">🍬 <span data-i18n="diet_low_sugar">Контроль сахара (&gt;15г)</span></span>
+            </label>
+            <label class="pref-chip">
+              <input type="checkbox" name="pref_diet" value="low_salt" class="pref-checkbox">
+              <span class="pref-chip-label">🧂 <span data-i18n="diet_low_salt">Контроль соли (&gt;1.2г)</span></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Non-medical Disclaimer -->
+        <div class="pref-disclaimer-box">
+          <span class="disclaimer-icon">ℹ️</span>
+          <p data-i18n="pref_disclaimer">
+            Информационные предупреждения на основе доступных данных о составе. Не является медицинским диагнозом или врачебным назначением.
+          </p>
+        </div>
+      </div>
+
+      <div class="pref-modal-footer">
+        <button type="button" id="btn-reset-preferences" class="btn btn-outline" data-i18n="btn_pref_reset">
+          Сбросить все
+        </button>
+        <button type="button" id="btn-save-preferences" class="btn btn-primary" data-i18n="btn_pref_save">
+          Сохранить настройки
+        </button>
       </div>
     </div>
   </div>

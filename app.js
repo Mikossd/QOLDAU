@@ -227,7 +227,76 @@ const I18N = {
       factor_fiber_high: 'Высокое содержание клетчатки',
       factor_fiber_source: 'Источник клетчатки',
       factor_protein_high: 'Высокое содержание белка',
-      factor_protein_source: 'Источник белка'
+      factor_protein_source: 'Источник белка',
+
+      // --- Preferences & Profile ---
+      nav_preferences: 'Диета / Аллергены',
+      pref_modal_title: 'Профиль: Диета и Аллергены',
+      pref_modal_sub: 'Персональные предупреждения при анализе продуктов',
+      pref_allergens_title: 'Ваши аллергены и непереносимости',
+      pref_allergens_desc: 'Система предупредит, если в составе или аллергенах продукта обнаружены выбранные компоненты:',
+      allergen_milk: 'Молоко / Лактоза',
+      allergen_gluten: 'Глютен / Пшеница',
+      allergen_nuts: 'Арахис и орехи',
+      allergen_soy: 'Соя',
+      allergen_eggs: 'Яйца',
+      allergen_fish: 'Рыба / Морепродукты',
+      allergen_sesame: 'Кунжут',
+      allergen_mustard: 'Горчица',
+      allergen_celery: 'Сельдерей',
+      pref_diets_title: 'Диетические предпочтения',
+      pref_diets_desc: 'Предупреждения о несоответствии выбранным диетическим правилам:',
+      diet_vegetarian: 'Вегетарианство',
+      diet_vegan: 'Веганство',
+      diet_halal: 'Халал-контроль',
+      diet_low_sugar: 'Контроль сахара (>15г)',
+      diet_low_salt: 'Контроль соли (>1.2г)',
+      pref_disclaimer: 'Информационные предупреждения на основе доступных данных о составе. Не является медицинским диагнозом или врачебным назначением.',
+      btn_pref_reset: 'Сбросить все',
+      btn_pref_save: 'Сохранить настройки',
+      toast_pref_saved: 'Настройки профиля сохранены',
+      toast_pref_reset: 'Настройки профиля сброшены',
+
+      // --- Personalized Warnings ---
+      warning_card_title: 'Персональные предупреждения',
+      warning_allergen_alert: 'Обнаружены компоненты из вашего списка аллергенов!',
+      warning_diet_alert: 'Не соответствует вашим диетическим предпочтениям:',
+      warning_safe_title: 'Соответствует вашим предпочтениям',
+      warning_safe_desc: 'Аллергенов из вашего профиля и нарушений диеты в доступных данных не обнаружено.',
+      warning_prompt_setup: 'Настройте профиль диеты и аллергенов для персональных предупреждений',
+      btn_setup_preferences: 'Настроить',
+      warning_nonmedical_note: 'Не является медицинским диагнозом. Проверяйте фактическую маркировку на упаковке.',
+      diet_meat_reason: 'Обнаружены мясные компоненты или желатин',
+      diet_animal_reason: 'Обнаружены продукты животного происхождения (молоко, яйца или мясо)',
+      diet_halal_reason: 'Обнаружены нехаляльные ингредиенты (свинина, алкоголь или неверифицированный желатин)',
+      diet_sugar_reason: 'Сахар {val} г/100г превышает порог 15 г',
+      diet_salt_reason: 'Соль {val} г/100г превышает порог 1.2 г',
+
+      // --- Data Quality & Validation ---
+      validation_card_title: 'Качество данных продукта',
+      tag_official_data: '🏷️ Данные упаковки',
+      tag_qoldau_analysis: '🔬 Анализ Qoldau',
+      validation_confidence_high: 'Высокая надежность: полная информация о составе и пищевой ценности.',
+      validation_confidence_medium: 'Средняя надежность: ключевые нутриенты указаны, но часть параметров отсутствует.',
+      validation_confidence_low: 'Низкая надежность: состав или нутриенты указаны частично. Оценка приблизительная.',
+      validation_missing_label: 'Не указано на упаковке:',
+      missing_fiber: 'Клетчатка',
+      missing_trans_fat: 'Трансжиры',
+      missing_sat_fat: 'Насыщенные жиры',
+      missing_sugar: 'Сахар',
+      missing_salt: 'Соль',
+      missing_fat: 'Общий жир',
+      missing_protein: 'Белок',
+      missing_ingredients: 'Список ингредиентов',
+
+      // --- Offline & Cache ---
+      badge_offline_cache: '📦 Офлайн-кэш',
+      offline_cache_notice: 'Показана сохраненная копия из памяти устройства (нет связи с сетью).',
+
+      // --- Healthier Alternatives & Not Found ---
+      alternatives_empty_text: 'Подходящие альтернативные продукты в этой категории пока отсутствуют.',
+      alt_points_gain: 'баллов',
+      not_found_search_label: 'Или найдите товар по названию прямо сейчас:'
     },
 
     kk: {
@@ -439,7 +508,76 @@ const I18N = {
       factor_fiber_high: 'Жоғары жасұнық (клетчатка)',
       factor_fiber_source: 'Жасұнық көзі',
       factor_protein_high: 'Жоғары ақуыз',
-      factor_protein_source: 'Ақуыз көзі'
+      factor_protein_source: 'Ақуыз көзі',
+
+      // --- Preferences & Profile ---
+      nav_preferences: 'Диета / Аллергендер',
+      pref_modal_title: 'Профиль: Диета және аллергендер',
+      pref_modal_sub: 'Өнімдерді талдау кезіндегі жеке ескертулер',
+      pref_allergens_title: 'Сіздің аллергендеріңіз бен төзбеушіліктеріңіз',
+      pref_allergens_desc: 'Өнімнің құрамында немесе аллергендерінде таңдалған компоненттер табылса, жүйе ескертеді:',
+      allergen_milk: 'Сүт / Лактоза',
+      allergen_gluten: 'Глютен / Бидай',
+      allergen_nuts: 'Жержаңғақ және жаңғақтар',
+      allergen_soy: 'Соя',
+      allergen_eggs: 'Жұмыртқа',
+      allergen_fish: 'Балық / Теңіз өнімдері',
+      allergen_sesame: 'Күнжіт',
+      allergen_mustard: 'Қыша',
+      allergen_celery: 'Сельдерей',
+      pref_diets_title: 'Диеталық талғамдар',
+      pref_diets_desc: 'Таңдалған диеталық ережелерге сәйкес келмеу туралы ескертулер:',
+      diet_vegetarian: 'Вегетариандық',
+      diet_vegan: 'Вегандық',
+      diet_halal: 'Халал бақылау',
+      diet_low_sugar: 'Қантты бақылау (>15г)',
+      diet_low_salt: 'Тұзды бақылау (>1.2г)',
+      pref_disclaimer: 'Құрамы туралы қолжетімді деректер негізіндегі ақпараттық ескертулер. Медициналық диагноз немесе дәрігерлік нұсқау болып табылмайды.',
+      btn_pref_reset: 'Барлығын тастау',
+      btn_pref_save: 'Баптауларды сақтау',
+      toast_pref_saved: 'Профиль баптаулары сақталды',
+      toast_pref_reset: 'Профиль баптаулары қалпына келтірілді',
+
+      // --- Personalized Warnings ---
+      warning_card_title: 'Жеке ескертулер',
+      warning_allergen_alert: 'Аллергендер тізіміңіздегі компоненттер табылды!',
+      warning_diet_alert: 'Сіздің диеталық ережелеріңізге сәйкес келмейді:',
+      warning_safe_title: 'Сіздің талғамдарыңызға сәйкес келеді',
+      warning_safe_desc: 'Профиліңіздегі аллергендер және диеталық шектеулер қолжетімді деректерде табылмады.',
+      warning_prompt_setup: 'Жеке ескертулер алу үшін диета мен аллергендер профилін баптаңыз',
+      btn_setup_preferences: 'Баптау',
+      warning_nonmedical_note: 'Медициналық диагноз болып табылмайды. Қаптамадағы нақты мәліметтерді тексеріңіз.',
+      diet_meat_reason: 'Ет өнімдері немесе желатин анықталды',
+      diet_animal_reason: 'Жануарлардан алынған өнімдер (сүт, жұмыртқа немесе ет) табылды',
+      diet_halal_reason: 'Халал емес ингредиенттер (шошқа еті, алкоголь немесе расталмаған желатин) табылды',
+      diet_sugar_reason: 'Қант {val} г/100г шекті 15 г мөлшерінен асады',
+      diet_salt_reason: 'Тұз {val} г/100г шекті 1.2 г мөлшерінен асады',
+
+      // --- Data Quality & Validation ---
+      validation_card_title: 'Өнім деректерінің сапасы',
+      tag_official_data: '🏷️ Қаптама деректері',
+      tag_qoldau_analysis: '🔬 Qoldau сараптамасы',
+      validation_confidence_high: 'Жоғары сенімділік: құрамы мен тағамдық құндылығы толық көрсетілген.',
+      validation_confidence_medium: 'Орташа сенімділік: негізгі нутриенттер бар, бірақ кейбір параметрлер жоқ.',
+      validation_confidence_low: 'Төмен сенімділік: құрамы немесе нутриенттері толық емес. Бағалау шамамен берілген.',
+      validation_missing_label: 'Қаптамада көрсетілмеген:',
+      missing_fiber: 'Жасұнық (клетчатка)',
+      missing_trans_fat: 'Трансмайлар',
+      missing_sat_fat: 'Қаныққан майлар',
+      missing_sugar: 'Қант',
+      missing_salt: 'Тұз',
+      missing_fat: 'Жалпы май',
+      missing_protein: 'Ақуыз',
+      missing_ingredients: 'Құрамы тізімі',
+
+      // --- Offline & Cache ---
+      badge_offline_cache: '📦 Офлайн-кэш',
+      offline_cache_notice: 'Құрылғы жадынан сақталған көшірме көрсетілді (желі байланысы жоқ).',
+
+      // --- Healthier Alternatives & Not Found ---
+      alternatives_empty_text: 'Бұл санатта қолайлы балама өнімдер әзірге жоқ.',
+      alt_points_gain: 'балл',
+      not_found_search_label: 'Немесе тауарды дәл қазір атауы бойынша іздеңіз:'
     },
 
     en: {
@@ -650,7 +788,76 @@ const I18N = {
       factor_fiber_high: 'High fiber',
       factor_fiber_source: 'Source of fiber',
       factor_protein_high: 'High protein',
-      factor_protein_source: 'Source of protein'
+      factor_protein_source: 'Source of protein',
+
+      // --- Preferences & Profile ---
+      nav_preferences: 'Diet / Allergens',
+      pref_modal_title: 'Profile: Diet & Allergens',
+      pref_modal_sub: 'Personalized warnings during product analysis',
+      pref_allergens_title: 'Your Allergens and Intolerances',
+      pref_allergens_desc: 'The system will alert you if selected components are found in product ingredients or allergens:',
+      allergen_milk: 'Milk / Lactose',
+      allergen_gluten: 'Gluten / Wheat',
+      allergen_nuts: 'Peanuts & Tree Nuts',
+      allergen_soy: 'Soy',
+      allergen_eggs: 'Eggs',
+      allergen_fish: 'Fish / Seafood',
+      allergen_sesame: 'Sesame',
+      allergen_mustard: 'Mustard',
+      allergen_celery: 'Celery',
+      pref_diets_title: 'Dietary Preferences',
+      pref_diets_desc: 'Alerts for non-compliance with selected dietary rules:',
+      diet_vegetarian: 'Vegetarian',
+      diet_vegan: 'Vegan',
+      diet_halal: 'Halal Check',
+      diet_low_sugar: 'Low Sugar (>15g limit)',
+      diet_low_salt: 'Low Salt (>1.2g limit)',
+      pref_disclaimer: 'Informational alerts based on available ingredient data. Not a medical diagnosis or medical advice.',
+      btn_pref_reset: 'Reset all',
+      btn_pref_save: 'Save preferences',
+      toast_pref_saved: 'Profile preferences saved',
+      toast_pref_reset: 'Profile preferences reset',
+
+      // --- Personalized Warnings ---
+      warning_card_title: 'Personalized Warnings',
+      warning_allergen_alert: 'Ingredients matching your allergen list were detected!',
+      warning_diet_alert: 'Does not match your dietary preferences:',
+      warning_safe_title: 'Matches your preferences',
+      warning_safe_desc: 'No allergens from your profile or dietary conflicts were found in available data.',
+      warning_prompt_setup: 'Set up your diet and allergen profile for personalized warnings',
+      btn_setup_preferences: 'Configure',
+      warning_nonmedical_note: 'Not a medical diagnosis. Always check physical packaging labels.',
+      diet_meat_reason: 'Meat ingredients or gelatin detected',
+      diet_animal_reason: 'Animal-derived products (milk, eggs, or meat) detected',
+      diet_halal_reason: 'Non-halal ingredients (pork, alcohol, or unverified gelatin) detected',
+      diet_sugar_reason: 'Sugar {val} g/100g exceeds 15g threshold',
+      diet_salt_reason: 'Salt {val} g/100g exceeds 1.2g threshold',
+
+      // --- Data Quality & Validation ---
+      validation_card_title: 'Product Data Quality',
+      tag_official_data: '🏷️ Packaging Data',
+      tag_qoldau_analysis: '🔬 Qoldau Analysis',
+      validation_confidence_high: 'High confidence: complete ingredient and nutritional facts.',
+      validation_confidence_medium: 'Medium confidence: key nutrients available, but some parameters are missing.',
+      validation_confidence_low: 'Low confidence: incomplete ingredients or nutrients. Score is approximate.',
+      validation_missing_label: 'Not specified on packaging:',
+      missing_fiber: 'Fiber',
+      missing_trans_fat: 'Trans Fat',
+      missing_sat_fat: 'Saturated Fat',
+      missing_sugar: 'Sugar',
+      missing_salt: 'Salt',
+      missing_fat: 'Total Fat',
+      missing_protein: 'Protein',
+      missing_ingredients: 'Ingredients list',
+
+      // --- Offline & Cache ---
+      badge_offline_cache: '📦 Offline Cache',
+      offline_cache_notice: 'Showing saved copy from device cache (offline).',
+
+      // --- Healthier Alternatives & Not Found ---
+      alternatives_empty_text: 'No suitable alternative products found in this category yet.',
+      alt_points_gain: 'points',
+      not_found_search_label: 'Or search for the product by name right now:'
     }
   },
 
@@ -977,6 +1184,54 @@ const LOCAL_DB = {
 
 
 /* ==============================================================================
+   3B. LOCAL OFFLINE CACHE MANAGER (Requirement 7)
+   Caches viewed products with timestamps in localStorage for offline resiliency
+   ============================================================================== */
+const LocalCacheManager = {
+  STORAGE_KEY: 'qoldau_product_cache',
+  MAX_ENTRIES: 50,
+
+  getAll() {
+    try {
+      const raw = localStorage.getItem(this.STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) {
+      return {};
+    }
+  },
+
+  get(barcode) {
+    if (!barcode) return null;
+    const clean = String(barcode).trim().replace(/[\s-]/g, '');
+    const cache = this.getAll();
+    const entry = cache[clean];
+    if (entry && entry.product) {
+      return { ...entry.product, cachedAt: entry.cachedAt };
+    }
+    return null;
+  },
+
+  save(product) {
+    if (!product || !product.barcode) return;
+    try {
+      const clean = String(product.barcode).trim().replace(/[\s-]/g, '');
+      const cache = this.getAll();
+      const keys = Object.keys(cache);
+      if (keys.length >= this.MAX_ENTRIES && !cache[clean]) {
+        delete cache[keys[0]];
+      }
+      cache[clean] = {
+        product: { ...product, isOfflineCache: false },
+        cachedAt: new Date().toISOString()
+      };
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(cache));
+    } catch (e) {
+      console.warn('Failed to save product to local cache:', e);
+    }
+  }
+};
+
+/* ==============================================================================
    4. OPEN FOOD FACTS API INTEGRATION
    Requirement: Separate getProductByBarcode(barcode) function
    ============================================================================== */
@@ -998,13 +1253,15 @@ function isValidBarcode(barcode) {
  *
  * 1. Validates barcode.
  * 2. Checks local Kazakhstan DB.
- * 3. Sends request to Open Food Facts v2 API.
- * 4. Checks whether product exists (status 1 vs status 0 / 404).
- * 5. Extracts and normalizes required fields into a clean JS object.
- * 6. Handles missing data, 404, and network errors.
+ * 3. Checks offline cache if network is down or offline.
+ * 4. Sends request to Open Food Facts v2 API.
+ * 5. Checks whether product exists (status 1 vs status 0 / 404).
+ * 6. Extracts and normalizes required fields into a clean JS object.
+ * 7. Caches normalized product locally with timestamp.
+ * 8. Handles missing data, 404, and network errors.
  *
  * @param {string} barcode
- * @returns {Promise<{ found: boolean, product?: object, error?: string }>}
+ * @returns {Promise<{ found: boolean, product?: object, error?: string, source?: string }>}
  */
 async function getProductByBarcode(barcode) {
   // 1. Barcode validation
@@ -1027,6 +1284,19 @@ async function getProductByBarcode(barcode) {
     };
   }
 
+  // If browser is offline, attempt to serve immediately from local cache
+  if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+    const cachedProduct = LocalCacheManager.get(cleanBarcode);
+    if (cachedProduct) {
+      cachedProduct.isOfflineCache = true;
+      return {
+        found: true,
+        product: cachedProduct,
+        source: 'offline_cache'
+      };
+    }
+  }
+
   // 2. Request to Open Food Facts API v2
   const url = `https://world.openfoodfacts.org/api/v2/product/${encodeURIComponent(cleanBarcode)}.json`;
 
@@ -1042,6 +1312,18 @@ async function getProductByBarcode(barcode) {
     });
   } catch (netErr) {
     console.error('Network error contacting Open Food Facts:', netErr);
+
+    // Fallback to local cache if network request fails
+    const cachedProduct = LocalCacheManager.get(cleanBarcode);
+    if (cachedProduct) {
+      cachedProduct.isOfflineCache = true;
+      return {
+        found: true,
+        product: cachedProduct,
+        source: 'offline_cache'
+      };
+    }
+
     return {
       found: false,
       error: 'network_error',
@@ -1051,6 +1333,15 @@ async function getProductByBarcode(barcode) {
 
   // Handle 404: Product not found in Open Food Facts
   if (response.status === 404) {
+    const cachedProduct = LocalCacheManager.get(cleanBarcode);
+    if (cachedProduct) {
+      cachedProduct.isOfflineCache = true;
+      return {
+        found: true,
+        product: cachedProduct,
+        source: 'offline_cache'
+      };
+    }
     return {
       found: false,
       barcode: cleanBarcode
@@ -1058,6 +1349,15 @@ async function getProductByBarcode(barcode) {
   }
 
   if (!response.ok) {
+    const cachedProduct = LocalCacheManager.get(cleanBarcode);
+    if (cachedProduct) {
+      cachedProduct.isOfflineCache = true;
+      return {
+        found: true,
+        product: cachedProduct,
+        source: 'offline_cache'
+      };
+    }
     return {
       found: false,
       error: `API returned status ${response.status}`,
@@ -1085,6 +1385,11 @@ async function getProductByBarcode(barcode) {
   }
 
   const cleanProduct = normalizeProductFromOFF(data.product, data.code || cleanBarcode);
+
+  // Cache viewed product in local offline cache
+  if (cleanProduct) {
+    LocalCacheManager.save(cleanProduct);
+  }
 
   return {
     found: true,
@@ -1989,6 +2294,294 @@ const EVALUATOR = {
   }
 };
 
+/* ==============================================================================
+   5B. DATA VALIDATION & QUALITY SERVICE (Requirement 3)
+   Inspects product completeness, calculates data confidence levels (HIGH/MEDIUM/LOW),
+   and clearly separates Packaging Data from Qoldau Analysis.
+   ============================================================================== */
+const DataValidator = {
+  validate(product) {
+    if (!product) {
+      return {
+        confidence: 'LOW',
+        confidenceClass: 'badge-confidence-low',
+        desc: I18N.t('validation_confidence_low'),
+        missingFields: []
+      };
+    }
+
+    const missing = [];
+    if (!product.ingredients || !product.ingredients.trim()) {
+      missing.push(I18N.t('missing_ingredients'));
+    }
+    if (product.sugar === null || product.sugar === undefined) {
+      missing.push(I18N.t('missing_sugar'));
+    }
+    if (product.saturated_fat === null || product.saturated_fat === undefined) {
+      missing.push(I18N.t('missing_sat_fat'));
+    }
+    if (product.salt === null || product.salt === undefined) {
+      missing.push(I18N.t('missing_salt'));
+    }
+    if (product.fat === null || product.fat === undefined) {
+      missing.push(I18N.t('missing_fat'));
+    }
+    if (product.protein === null || product.protein === undefined) {
+      missing.push(I18N.t('missing_protein'));
+    }
+    if (product.fiber === null || product.fiber === undefined) {
+      missing.push(I18N.t('missing_fiber'));
+    }
+    if (product.trans_fat === null || product.trans_fat === undefined) {
+      missing.push(I18N.t('missing_trans_fat'));
+    }
+
+    // Evaluate confidence level based on core fields
+    const coreNutrients = [product.sugar, product.saturated_fat, product.salt, product.fat, product.protein];
+    const availableCoreCount = coreNutrients.filter(v => v !== null && v !== undefined).length;
+    const hasIngredients = Boolean(product.ingredients && product.ingredients.trim());
+
+    let confidence = 'HIGH';
+    let confidenceClass = 'badge-confidence-high';
+    let desc = I18N.t('validation_confidence_high');
+
+    if (availableCoreCount >= 4 && hasIngredients) {
+      confidence = 'HIGH';
+      confidenceClass = 'badge-confidence-high';
+      desc = I18N.t('validation_confidence_high');
+    } else if (availableCoreCount >= 3 || (hasIngredients && availableCoreCount >= 2)) {
+      confidence = 'MEDIUM';
+      confidenceClass = 'badge-confidence-medium';
+      desc = I18N.t('validation_confidence_medium');
+    } else {
+      confidence = 'LOW';
+      confidenceClass = 'badge-confidence-low';
+      desc = I18N.t('validation_confidence_low');
+    }
+
+    return {
+      confidence,
+      confidenceClass,
+      desc,
+      missingFields: missing
+    };
+  }
+};
+
+/* ==============================================================================
+   5C. USER PREFERENCES & PERSONALIZATION SERVICE (Requirement 2)
+   Dietary and allergen profiles with non-medical advisory warnings.
+   ============================================================================== */
+const UserPreferencesService = {
+  STORAGE_KEY: 'qoldau_user_preferences',
+
+  ALLERGEN_PATTERNS: {
+    milk: {
+      tags: ['milk', 'lait', 'leche', 'молоко', 'лактоза', 'сыворотка', 'сливки', 'сүт', 'dairy'],
+      regex: /(молок|лактоз|сыворотк|сливк|творог|сыр|сүт|айран|қаймақ|май|milk|whey|lactose|casein|butter|cheese|cream)/i
+    },
+    gluten: {
+      tags: ['gluten', 'wheat', 'blé', 'пшеница', 'глютен', 'рожь', 'ячмень', 'бидай', 'овес'],
+      regex: /(глютен|пшениц|пшенич|мука\s+пшенич|рожь|ржан|ячмен|овес|овсян|бидай|ұн|gluten|wheat|barley|rye|oats|flour)/i
+    },
+    nuts: {
+      tags: ['nuts', 'peanuts', 'arachides', 'fruits-a-coque', 'орехи', 'арахис', 'миндаль', 'фундук', 'кешью', 'жаңғақ'],
+      regex: /(арахис|орех|миндал|фундук|кешью|фисташк|пекан|жаңғақ|peanut|nut|almond|hazelnut|cashew|walnut|pistachio)/i
+    },
+    soy: {
+      tags: ['soy', 'soja', 'соя', 'соевый'],
+      regex: /(соя|соев|соялық|soy|soya|soja)/i
+    },
+    eggs: {
+      tags: ['eggs', 'oeufs', 'яйца', 'яйцо', 'меланж', 'жұмыртқа'],
+      regex: /(яйц|яичн|меланж|альбумин|жұмыртқа|egg|eggs)/i
+    },
+    fish: {
+      tags: ['fish', 'poisson', 'crustaceans', 'molluscs', 'рыба', 'морепродукты', 'балық'],
+      regex: /(рыб|лосос|тунец|треск|креветк|краб|моллюск|балық|fish|salmon|tuna|cod|shrimp|crab|seafood)/i
+    },
+    sesame: {
+      tags: ['sesame', 'sésame', 'кунжут', 'күнжіт'],
+      regex: /(кунжут|күнжіт|sesame|tahini|тахини)/i
+    },
+    mustard: {
+      tags: ['mustard', 'moutarde', 'горчица', 'қыша'],
+      regex: /(горчиц|қыша|mustard)/i
+    },
+    celery: {
+      tags: ['celery', 'céleri', 'сельдерей'],
+      regex: /(сельдерей|celery)/i
+    }
+  },
+
+  DIET_PATTERNS: {
+    meatRegex: /(мясо|говядина|свинина|птица|курица|индейка|баранина|шпик|сало|ветчина|ет|сиыр|шошқа|құс|meat|beef|pork|poultry|chicken|turkey|bacon|ham|gelatin|желатин)/i,
+    animalRegex: /(мясо|говядина|свинина|птица|курица|рыба|молоко|сливки|сыр|творог|яйц|мед|бал|ет|сүт|жұмыртқа|желатин|meat|fish|milk|dairy|egg|honey|gelatin|cheese)/i,
+    halalNonMeatPork: /(свинина|шпик|сало|ветчина|шошқа|pork|bacon|ham|lard)/i,
+    alcoholRegex: /(алкоголь|спирт|вино|пиво|ликёр|коньяк|водка|alcohol|ethanol|wine|beer|liqueur)/i
+  },
+
+  getPreferences() {
+    try {
+      const raw = localStorage.getItem(this.STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        return {
+          allergens: Array.isArray(parsed.allergens) ? parsed.allergens : [],
+          diets: Array.isArray(parsed.diets) ? parsed.diets : []
+        };
+      }
+    } catch (e) {
+      console.warn('Failed to parse user preferences:', e);
+    }
+    return { allergens: [], diets: [] };
+  },
+
+  savePreferences(prefs) {
+    try {
+      const data = {
+        allergens: Array.isArray(prefs.allergens) ? prefs.allergens : [],
+        diets: Array.isArray(prefs.diets) ? prefs.diets : []
+      };
+      localStorage.setItem(this.STORAGE_KEY, JSON.stringify(data));
+      this.updateBadge();
+      return true;
+    } catch (e) {
+      console.warn('Failed to save user preferences:', e);
+      return false;
+    }
+  },
+
+  resetPreferences() {
+    try {
+      localStorage.removeItem(this.STORAGE_KEY);
+      this.updateBadge();
+      return true;
+    } catch (e) {
+      return false;
+    }
+  },
+
+  getActiveCount() {
+    const prefs = this.getPreferences();
+    return prefs.allergens.length + prefs.diets.length;
+  },
+
+  updateBadge() {
+    const count = this.getActiveCount();
+    const badge = document.getElementById('pref-count-badge');
+    if (badge) {
+      if (count > 0) {
+        badge.textContent = count;
+        badge.style.display = 'inline-block';
+      } else {
+        badge.style.display = 'none';
+      }
+    }
+  },
+
+  evaluateProduct(product) {
+    const prefs = this.getPreferences();
+    const hasPreferences = (prefs.allergens.length + prefs.diets.length) > 0;
+    if (!hasPreferences || !product) {
+      return {
+        hasPreferences: false,
+        isSafe: false,
+        allergenMatches: [],
+        dietMatches: []
+      };
+    }
+
+    const allergenMatches = [];
+    const dietMatches = [];
+
+    const ingText = (product.ingredients || '').toLowerCase();
+    const productAllergens = Array.isArray(product.allergens)
+      ? product.allergens.map(a => String(a).toLowerCase())
+      : [];
+
+    // Check allergen preferences
+    prefs.allergens.forEach(allergenKey => {
+      const pattern = this.ALLERGEN_PATTERNS[allergenKey];
+      if (!pattern) return;
+
+      let matched = false;
+      // 1. Check in product allergens tags/list
+      for (const tag of pattern.tags) {
+        if (productAllergens.some(a => a.includes(tag))) {
+          matched = true;
+          break;
+        }
+      }
+      // 2. Check in ingredient text
+      if (!matched && ingText && pattern.regex.test(ingText)) {
+        matched = true;
+      }
+
+      if (matched) {
+        const name = I18N.t(`allergen_${allergenKey}`, allergenKey);
+        allergenMatches.push({ id: allergenKey, name });
+      }
+    });
+
+    // Check dietary preferences
+    prefs.diets.forEach(dietKey => {
+      if (dietKey === 'vegetarian') {
+        if (this.DIET_PATTERNS.meatRegex.test(ingText)) {
+          dietMatches.push({
+            id: 'vegetarian',
+            name: I18N.t('diet_vegetarian'),
+            reason: I18N.t('diet_meat_reason')
+          });
+        }
+      } else if (dietKey === 'vegan') {
+        if (this.DIET_PATTERNS.animalRegex.test(ingText) || productAllergens.some(a => a.includes('milk') || a.includes('egg') || a.includes('молоко') || a.includes('яйц'))) {
+          dietMatches.push({
+            id: 'vegan',
+            name: I18N.t('diet_vegan'),
+            reason: I18N.t('diet_animal_reason')
+          });
+        }
+      } else if (dietKey === 'halal') {
+        const isHalalCert = Array.isArray(product.certifications) && product.certifications.some(c => c.toLowerCase().includes('halal') || c.toLowerCase().includes('халал'));
+        if (!isHalalCert) {
+          if (this.DIET_PATTERNS.halalNonMeatPork.test(ingText) || this.DIET_PATTERNS.alcoholRegex.test(ingText) || ingText.includes('желатин') || ingText.includes('gelatin')) {
+            dietMatches.push({
+              id: 'halal',
+              name: I18N.t('diet_halal'),
+              reason: I18N.t('diet_halal_reason')
+            });
+          }
+        }
+      } else if (dietKey === 'low_sugar') {
+        if (product.sugar !== null && product.sugar !== undefined && Number(product.sugar) > 15) {
+          dietMatches.push({
+            id: 'low_sugar',
+            name: I18N.t('diet_low_sugar'),
+            reason: I18N.t('diet_sugar_reason').replace('{val}', product.sugar)
+          });
+        }
+      } else if (dietKey === 'low_salt') {
+        if (product.salt !== null && product.salt !== undefined && Number(product.salt) > 1.2) {
+          dietMatches.push({
+            id: 'low_salt',
+            name: I18N.t('diet_low_salt'),
+            reason: I18N.t('diet_salt_reason').replace('{val}', product.salt)
+          });
+        }
+      }
+    });
+
+    const isSafe = allergenMatches.length === 0 && dietMatches.length === 0;
+
+    return {
+      hasPreferences: true,
+      isSafe,
+      allergenMatches,
+      dietMatches
+    };
+  }
+};
 
 /* ==============================================================================
    6. SCAN HISTORY / RECENT SCANS
@@ -3059,6 +3652,17 @@ const UIController = {
       }
     }
 
+    // 1b. Offline cache badge (Requirement 7)
+    const cacheBadge = document.getElementById('product-cache-badge');
+    if (cacheBadge) {
+      if (product.isOfflineCache) {
+        cacheBadge.style.display = 'inline-block';
+        cacheBadge.textContent = I18N.t('badge_offline_cache', '📦 Офлайн-кэш');
+      } else {
+        cacheBadge.style.display = 'none';
+      }
+    }
+
     // 2. Title & Brand
     const nameEl = document.getElementById('product-name');
     if (nameEl) nameEl.textContent = product.name || 'Без названия';
@@ -3106,6 +3710,12 @@ const UIController = {
       imgEl.style.display = 'none';
       fallbackEl.style.display = 'flex';
     }
+
+    // 4b. Personalized Warnings (Requirement 2)
+    this.renderPersonalizedWarnings(product);
+
+    // 4c. Data Validation & Quality Layer (Requirement 3)
+    this.renderDataValidation(product);
 
     // 5. 100-Point Health Score & Product Rating Indicator
     const healthData = EVALUATOR.calculateHealthScore(product);
@@ -3274,6 +3884,123 @@ const UIController = {
   },
 
   /**
+   * Requirement 2: Personalized Warnings (Dietary & Allergen Profile)
+   * @param {object} product
+   */
+  renderPersonalizedWarnings(product) {
+    const card = document.getElementById('product-personalized-warnings');
+    if (!card) return;
+
+    const evalResult = UserPreferencesService.evaluateProduct(product);
+
+    if (!evalResult.hasPreferences) {
+      card.innerHTML = `
+        <div class="warning-prompt-box">
+          <div class="warning-prompt-icon">👤</div>
+          <div class="warning-prompt-body">
+            <div class="warning-prompt-title">${escapeHtml(I18N.t('warning_prompt_setup'))}</div>
+            <p class="warning-prompt-sub">${escapeHtml(I18N.t('pref_modal_sub'))}</p>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline" id="btn-prompt-open-prefs">${escapeHtml(I18N.t('btn_setup_preferences'))}</button>
+        </div>
+      `;
+      card.style.display = 'block';
+      const promptBtn = document.getElementById('btn-prompt-open-prefs');
+      if (promptBtn) {
+        promptBtn.addEventListener('click', () => {
+          App.openPreferencesModal();
+        });
+      }
+      return;
+    }
+
+    if (evalResult.allergenMatches.length > 0 || evalResult.dietMatches.length > 0) {
+      const allergenTags = evalResult.allergenMatches.map(m => `
+        <span class="warning-tag allergen">🚫 ${escapeHtml(m.name)}</span>
+      `).join('');
+
+      const dietTags = evalResult.dietMatches.map(m => `
+        <span class="warning-tag diet" title="${escapeHtml(m.reason)}">❌ ${escapeHtml(m.name)}: ${escapeHtml(m.reason)}</span>
+      `).join('');
+
+      card.innerHTML = `
+        <div class="warning-alert-box">
+          <div class="warning-alert-header">
+            <span class="warning-alert-icon">⚠️</span>
+            <h3 class="warning-alert-title">${escapeHtml(I18N.t('warning_card_title'))}</h3>
+          </div>
+          ${evalResult.allergenMatches.length > 0 ? `
+            <div class="warning-match-group">
+              <div class="warning-match-subtitle">${escapeHtml(I18N.t('warning_allergen_alert'))}</div>
+              <div class="warning-tags">${allergenTags}</div>
+            </div>
+          ` : ''}
+          ${evalResult.dietMatches.length > 0 ? `
+            <div class="warning-match-group">
+              <div class="warning-match-subtitle">${escapeHtml(I18N.t('warning_diet_alert'))}</div>
+              <div class="warning-tags">${dietTags}</div>
+            </div>
+          ` : ''}
+          <p class="warning-disclaimer-note">ℹ️ ${escapeHtml(I18N.t('warning_nonmedical_note'))}</p>
+        </div>
+      `;
+      card.style.display = 'block';
+      return;
+    }
+
+    // Has preferences and product is safe
+    card.innerHTML = `
+      <div class="warning-safe-box">
+        <div class="warning-safe-header">
+          <span class="warning-safe-icon">✓</span>
+          <div>
+            <h3 class="warning-safe-title">${escapeHtml(I18N.t('warning_safe_title'))}</h3>
+            <p class="warning-safe-desc">${escapeHtml(I18N.t('warning_safe_desc'))}</p>
+          </div>
+        </div>
+      </div>
+    `;
+    card.style.display = 'block';
+  },
+
+  /**
+   * Requirement 3: Data Validation & Quality Layer
+   * @param {object} product
+   */
+  renderDataValidation(product) {
+    const card = document.getElementById('product-validation-card');
+    if (!card) return;
+
+    const val = DataValidator.validate(product);
+
+    const badge = document.getElementById('validation-confidence-badge');
+    if (badge) {
+      badge.textContent = val.confidence;
+      badge.className = `validation-confidence-badge ${val.confidenceClass}`;
+    }
+
+    const descEl = document.getElementById('validation-desc-text');
+    if (descEl) {
+      descEl.textContent = val.desc;
+    }
+
+    const missingBox = document.getElementById('validation-missing-box');
+    const missingChips = document.getElementById('validation-missing-chips');
+    if (missingBox && missingChips) {
+      if (val.missingFields && val.missingFields.length > 0) {
+        missingChips.innerHTML = val.missingFields.map(f => `
+          <span class="missing-chip">⚠️ ${escapeHtml(f)}</span>
+        `).join('');
+        missingBox.style.display = 'block';
+      } else {
+        missingBox.style.display = 'none';
+      }
+    }
+
+    card.style.display = 'block';
+  },
+
+  /**
    * Requirement 1: Render Healthier Alternatives
    * @param {object} product 
    */
@@ -3289,12 +4016,19 @@ const UIController = {
     if (emptyEl) emptyEl.style.display = 'none';
     listEl.innerHTML = '';
 
+    const currentScoreObj = EVALUATOR.calculateHealthScore(product);
+    const currentScore = currentScoreObj && currentScoreObj.score !== null ? currentScoreObj.score : 0;
+
     try {
       const alternatives = await findHealthierAlternatives(product);
       if (loadingEl) loadingEl.style.display = 'none';
 
       if (!alternatives || alternatives.length === 0) {
-        if (emptyEl) emptyEl.style.display = 'flex';
+        if (emptyEl) {
+          const emptyTextEl = document.getElementById('alternatives-empty-text');
+          if (emptyTextEl) emptyTextEl.textContent = I18N.t('alternatives_empty_text');
+          emptyEl.style.display = 'flex';
+        }
         return;
       }
 
@@ -3302,6 +4036,7 @@ const UIController = {
         const scoreObj = EVALUATOR.calculateHealthScore(alt);
         const score = scoreObj.score !== null ? scoreObj.score : '--';
         const color = scoreObj.color || '#10b981';
+        const scoreDiff = scoreObj.score !== null && scoreObj.score > currentScore ? scoreObj.score - currentScore : 0;
 
         const reasonsHtml = (alt.reasons || []).map(r => `
           <span class="alt-reason-chip chip-${escapeHtml(r.type)}">${escapeHtml(r.icon)} ${escapeHtml(r.text)}</span>
@@ -3322,6 +4057,7 @@ const UIController = {
               <div class="alt-item-score" style="background:${color}18; color:${color}; border: 1.5px solid ${color}40;">
                 <span>${score}</span>
                 <small>/100</small>
+                ${scoreDiff > 0 ? `<div class="alt-score-diff">+${scoreDiff} ${I18N.t('alt_points_gain', 'баллов')}</div>` : ''}
               </div>
             </div>
             ${reasonsHtml ? `<div class="alt-reasons-row">${reasonsHtml}</div>` : ''}
@@ -3342,7 +4078,11 @@ const UIController = {
     } catch (err) {
       console.warn('Failed to load alternatives:', err);
       if (loadingEl) loadingEl.style.display = 'none';
-      if (emptyEl) emptyEl.style.display = 'flex';
+      if (emptyEl) {
+        const emptyTextEl = document.getElementById('alternatives-empty-text');
+        if (emptyTextEl) emptyTextEl.textContent = I18N.t('alternatives_empty_text');
+        emptyEl.style.display = 'flex';
+      }
     }
   },
 
@@ -3550,8 +4290,62 @@ const AppState = {
 const App = {
   init() {
     I18N.init();
+    UserPreferencesService.updateBadge();
     HistoryManager.render();
     this.attachEventListeners();
+  },
+
+  openPreferencesModal() {
+    const modal = document.getElementById('modal-preferences');
+    if (!modal) return;
+    const prefs = UserPreferencesService.getPreferences();
+
+    document.querySelectorAll('input[name="pref_allergen"]').forEach(cb => {
+      cb.checked = prefs.allergens.includes(cb.value);
+    });
+
+    document.querySelectorAll('input[name="pref_diet"]').forEach(cb => {
+      cb.checked = prefs.diets.includes(cb.value);
+    });
+
+    modal.style.display = 'flex';
+  },
+
+  closePreferencesModal() {
+    const modal = document.getElementById('modal-preferences');
+    if (modal) modal.style.display = 'none';
+  },
+
+  savePreferencesFromModal() {
+    const selectedAllergens = Array.from(document.querySelectorAll('input[name="pref_allergen"]:checked'))
+      .map(cb => cb.value);
+    const selectedDiets = Array.from(document.querySelectorAll('input[name="pref_diet"]:checked'))
+      .map(cb => cb.value);
+
+    UserPreferencesService.savePreferences({
+      allergens: selectedAllergens,
+      diets: selectedDiets
+    });
+
+    this.closePreferencesModal();
+    UIController.showToast(I18N.t('toast_pref_saved'), 'success');
+
+    if (AppState.currentProduct && AppState.currentView === 'view-product') {
+      UIController.renderPersonalizedWarnings(AppState.currentProduct);
+    }
+  },
+
+  resetPreferencesFromModal() {
+    document.querySelectorAll('input[name="pref_allergen"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('input[name="pref_diet"]').forEach(cb => cb.checked = false);
+
+    UserPreferencesService.resetPreferences();
+    this.closePreferencesModal();
+    UIController.showToast(I18N.t('toast_pref_reset'), 'info');
+
+    if (AppState.currentProduct && AppState.currentView === 'view-product') {
+      UIController.renderPersonalizedWarnings(AppState.currentProduct);
+    }
   },
 
   /**
@@ -3633,6 +4427,39 @@ const App = {
     if (btnCopyQr) {
       btnCopyQr.addEventListener('click', () => {
         MobilePairingController.copyLink();
+      });
+    }
+
+    // 2c. User Preferences Modal Controls (Requirement 2)
+    const btnUserPrefs = document.getElementById('btn-user-preferences');
+    const btnClosePrefs = document.getElementById('btn-close-preferences');
+    const backdropPrefs = document.getElementById('backdrop-preferences');
+    const btnSavePrefs = document.getElementById('btn-save-preferences');
+    const btnResetPrefs = document.getElementById('btn-reset-preferences');
+
+    if (btnUserPrefs) {
+      btnUserPrefs.addEventListener('click', () => {
+        this.openPreferencesModal();
+      });
+    }
+    if (btnClosePrefs) {
+      btnClosePrefs.addEventListener('click', () => {
+        this.closePreferencesModal();
+      });
+    }
+    if (backdropPrefs) {
+      backdropPrefs.addEventListener('click', () => {
+        this.closePreferencesModal();
+      });
+    }
+    if (btnSavePrefs) {
+      btnSavePrefs.addEventListener('click', () => {
+        this.savePreferencesFromModal();
+      });
+    }
+    if (btnResetPrefs) {
+      btnResetPrefs.addEventListener('click', () => {
+        this.resetPreferencesFromModal();
       });
     }
 
@@ -3885,6 +4712,49 @@ const App = {
     if (btnNotFoundBack) {
       btnNotFoundBack.addEventListener('click', () => {
         UIController.showView('view-home');
+      });
+    }
+
+    const btnNotFoundScanAgain = document.getElementById('btn-not-found-scan-again');
+    if (btnNotFoundScanAgain) {
+      btnNotFoundScanAgain.addEventListener('click', () => {
+        UIController.showView('view-home');
+        ScannerController.openScanner();
+      });
+    }
+
+    // Inline manual search form on Not Found page (Requirement 5)
+    const formNotFoundInline = document.getElementById('form-not-found-inline-search');
+    const inputNotFoundInline = document.getElementById('input-not-found-inline');
+    const btnClearNotFoundInline = document.getElementById('btn-clear-not-found-input');
+
+    if (inputNotFoundInline && btnClearNotFoundInline) {
+      inputNotFoundInline.addEventListener('input', () => {
+        btnClearNotFoundInline.style.display = inputNotFoundInline.value.length > 0 ? 'block' : 'none';
+      });
+      btnClearNotFoundInline.addEventListener('click', () => {
+        inputNotFoundInline.value = '';
+        btnClearNotFoundInline.style.display = 'none';
+        inputNotFoundInline.focus();
+      });
+    }
+
+    if (formNotFoundInline && inputNotFoundInline) {
+      formNotFoundInline.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const q = inputNotFoundInline.value.trim();
+        if (!q) return;
+
+        if (isValidBarcode(q)) {
+          App.searchBarcode(q);
+        } else {
+          UIController.showView('view-home');
+          switchSearchTab('name');
+          const homeNameInput = document.getElementById('input-product-name');
+          const homeNameForm = document.getElementById('form-name-search');
+          if (homeNameInput) homeNameInput.value = q;
+          if (homeNameForm) homeNameForm.dispatchEvent(new Event('submit'));
+        }
       });
     }
 
