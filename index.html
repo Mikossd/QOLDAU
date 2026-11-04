@@ -3,44 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Qoldau Food — Сканер продуктов питания для Казахстана</title>
-  <meta name="description" content="Qoldau Food — сканер штрихкодов продуктов питания для Казахстана. Простая и понятная информация о составе, пищевой ценности и аллергенах.">
-  <link rel="stylesheet" href="style.css?v=2.2">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥗</text></svg>">
+  <title>QOLDAU Food — Проверка состава и продуктов питания в Казахстане</title>
+  <meta name="description" content="QOLDAU — честная информация о продуктах питания в Казахстане: индекс пользы Health Score, проверка состава, аллергены, нутриенты и статус Халал.">
+  <link rel="stylesheet" href="style.css?v=3.1">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+  <script>
+    (function() {
+      try {
+        var params = new URLSearchParams(window.location.search);
+        var urlTheme = params.get('theme');
+        var saved = urlTheme || localStorage.getItem('qoldau_theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
+  <!-- Dynamic Ambient Glowing Background Orbs & Grid Pattern -->
+  <div class="ambient-glow-wrap" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+    <div class="ambient-grid-pattern"></div>
+  </div>
+
   <!-- Global App Header -->
   <header class="app-header">
     <div class="container header-content">
-      <div class="brand-group" id="header-logo" role="button" tabindex="0" title="Qoldau Food Главная">
+      <div class="brand-group" id="header-logo" role="button" tabindex="0" title="QOLDAU Главная">
         <div class="logo-badge">
-          <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
+          <img src="assets/images/logo.png" alt="QOLDAU Food" class="header-logo-img">
         </div>
         <div class="brand-text">
           <div class="brand-title">
-            <span>Qoldau</span><span class="highlight">Food</span>
+            <span>QOLDAU</span><span class="highlight">Food</span>
             <span class="kz-badge" title="Қазақстан үшін жасалған">🇰🇿 KZ</span>
           </div>
-          <span class="brand-sub" data-i18n="tagline_short">Здоровый выбор</span>
+          <span class="brand-sub" data-i18n="tagline_short">Здоровый и осознанный выбор</span>
         </div>
       </div>
 
-      <!-- Controls: User Preferences, QR Code on Phone, Currency & Language Switcher -->
+      <!-- Controls: Comparison, Preferences, QR Mobile, Language -->
       <div class="header-actions">
+        <button type="button" id="btn-open-comparison" class="currency-tag comp-header-btn" title="Сравнение продуктов">
+          <svg class="header-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1zM2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/>
+            <path d="M7 21h10M12 3v18M3 7h2M19 7h2"/>
+          </svg>
+          <span data-i18n="nav_comparison">Сравнение</span>
+          <span id="comp-count-badge" class="badge-count" style="display:none;">0</span>
+        </button>
+
         <button type="button" id="btn-user-preferences" class="currency-tag pref-header-btn" title="Настройки аллергенов и диеты">
-          👤 <span data-i18n="nav_preferences">Диета / Аллергены</span>
+          <svg class="header-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span data-i18n="nav_preferences">Диета / Аллергены</span>
           <span id="pref-count-badge" class="badge-count" style="display:none;">0</span>
         </button>
 
-        <button type="button" id="btn-show-qr" class="currency-tag qr-header-btn" title="Открыть на телефоне">
-          📱 <span>На телефон</span>
+        <button type="button" id="btn-show-qr" class="currency-tag qr-header-btn" title="Открыть на смартфоне">
+          <svg class="header-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+            <line x1="12" y1="18" x2="12.01" y2="18"/>
+          </svg>
+          <span>На телефон</span>
         </button>
 
         <div class="currency-tag" title="Валюта по умолчанию: Тенге">
           <span class="currency-symbol">₸</span> KZT
         </div>
+
+        <!-- Theme Toggle: Light / Dark -->
+        <button type="button" id="btn-theme-toggle" class="currency-tag theme-header-btn" title="Сменить тему оформления" aria-label="Сменить тему (Светлая / Темная)">
+          <span class="theme-icon-light" style="display:inline-flex; align-items:center; gap:5px;">
+            <svg class="header-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <span class="theme-label-text">Темная</span>
+          </span>
+          <span class="theme-icon-dark" style="display:none; align-items:center; gap:5px;">
+            <svg class="header-action-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <span class="theme-label-text">Светлая</span>
+          </span>
+        </button>
 
         <div class="lang-switcher-wrapper">
           <select id="lang-select" class="lang-select" aria-label="Тілді таңдау / Выбор языка / Select language">
@@ -58,39 +118,29 @@
 
     <!-- VIEW 1: HOME SCREEN -->
     <section id="view-home" class="view active">
-      <!-- Hero Banner -->
+      <!-- Modern Hero Banner -->
       <div class="hero-card">
         <div class="hero-badge" data-i18n="hero_badge">✨ Проверьте состав за 2 секунды</div>
-        <h1 class="hero-title" data-i18n="hero_title">Знайте, что вы едите.</h1>
+        <h1 class="hero-title" data-i18n="hero_title">Знайте, что вы покупаете и едите</h1>
         <p class="hero-subtitle" data-i18n="hero_subtitle">
-          Наведите камеру на штрихкод или введите его вручную, чтобы узнать правду о сахаре, аллергенах и пищевой ценности.
+          Платформа честной информации о продуктах питания в Казахстане: Health Score, скрытый сахар, аллергены и прозрачный статус Халал.
         </p>
 
-        <!-- Primary Action: Scan Camera & Photo Snapshot -->
-        <div class="hero-actions" style="display:flex; flex-direction:column; gap:10px;">
-          <button id="btn-open-scanner" class="btn btn-primary btn-large btn-pulse">
+        <!-- Primary Action: Live Barcode Scanner -->
+        <div class="hero-actions">
+          <button id="btn-open-scanner" class="btn btn-primary btn-large btn-pulse" title="Открыть сканер штрихкодов с мгновенным анализом">
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
               <circle cx="12" cy="13" r="4"/>
             </svg>
-            <span data-i18n="btn_scan_product">Сканировать продукт </span>
+            <span data-i18n="btn_scan_product">Сканировать штрихкод</span>
           </button>
-
-          <label class="btn btn-secondary btn-large mobile-native-cam-btn" title="Сделать снимок штрихкода напрямую">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M19 4h-3.5l-2-2h-3l-2 2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
-            </svg>
-            <span data-i18n="btn_take_photo">📸 Сфотографировать камерой</span>
-            <input type="file" id="home-native-camera-input" accept="image/*" capture="environment" style="display:none;">
-          </label>
         </div>
       </div>
 
-      <!-- Manual Barcode Search Form -->
-      <!-- Manual Search: Barcode & Product Name (Requirement 2) -->
+      <!-- Search Section: Barcode & Product Name -->
       <div class="search-card">
-        <!-- Search Mode Switcher Tabs -->
+        <!-- Search Mode Tabs -->
         <div class="search-tabs">
           <button type="button" id="tab-search-barcode" class="search-tab active" data-tab="barcode">
             <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -121,7 +171,7 @@
                 pattern="[0-9]*" 
                 id="input-barcode" 
                 class="barcode-input" 
-                placeholder="Введите штрихкод (напр. 3017620422003)..." 
+                placeholder="Введите штрихкод (напр. 4870001010143)..." 
                 data-i18n-placeholder="input_barcode_placeholder"
                 autocomplete="off"
                 required
@@ -133,33 +183,33 @@
             </button>
           </form>
 
-          <!-- Quick Test Barcodes (Helpful for desktop / demo testing) -->
+          <!-- Quick Test Barcodes -->
           <div class="quick-samples">
-            <span class="quick-samples-label" data-i18n="quick_samples_label">Попробуйте примеры:</span>
+            <span class="quick-samples-label" data-i18n="quick_samples_label">Примеры казахстанских и популярных товаров:</span>
             <div class="chips-row">
-              <button type="button" class="chip-btn" data-barcode="4870144000308" title="Чай Пиала Gold (100 баллов)">
-                🍵 <span>Чай Пиала (100 б.)</span>
+              <button type="button" class="chip-btn" data-barcode="4870001010143" title="Шоколад Казахстанский Рахат">
+                🍫 <span>Шоколад Рахат (487)</span>
               </button>
-              <button type="button" class="chip-btn" data-barcode="4870206330015" title="Қымыз табиғи (95 баллов)">
-                🥛 <span>Қымыз (95 б.)</span>
+              <button type="button" class="chip-btn" data-barcode="4870144000308" title="Чай Пиала Gold Кения">
+                🍵 <span>Чай Пиала Gold</span>
               </button>
-              <button type="button" class="chip-btn" data-barcode="4870001010143" title="Шоколад Казахстанский (Рахат)">
-                🍫 <span>Шоколад Рахат</span>
+              <button type="button" class="chip-btn" data-barcode="4870206330015" title="Қымыз табиғи натуральный">
+                🥛 <span>Қымыз табиғи</span>
               </button>
-              <button type="button" class="chip-btn" data-barcode="5449000000996" title="Coca-Cola (15 баллов)">
-                🥤 <span>Coca-Cola (15 б.)</span>
+              <button type="button" class="chip-btn" data-barcode="4870205290013" title="Вода Tassay">
+                💧 <span>Вода Tassay</span>
               </button>
-              <button type="button" class="chip-btn" data-barcode="3017620422003" title="Nutella">
-                🌰 <span>Nutella</span>
+              <button type="button" class="chip-btn" data-barcode="5449000000996" title="Coca-Cola">
+                🥤 <span>Coca-Cola</span>
               </button>
-              <button type="button" class="chip-btn chip-btn-muted" data-barcode="9999999999999" title="Проверка продукта, которого нет в базе">
+              <button type="button" class="chip-btn chip-btn-muted" data-barcode="9999999999999" title="Тест: нет в базе">
                 ❓ <span data-i18n="test_not_found">Тест: нет в базе</span>
               </button>
             </div>
           </div>
         </div>
 
-        <!-- Panel 2: Product Name Search (Requirement 2) -->
+        <!-- Panel 2: Product Name Search -->
         <div id="panel-search-name" class="search-panel" style="display:none;">
           <form id="form-name-search" class="search-form">
             <div class="input-wrapper">
@@ -171,7 +221,7 @@
                 type="text" 
                 id="input-product-name" 
                 class="barcode-input" 
-                placeholder="Введите название (напр. Coca-Cola, Snickers, чай)..." 
+                placeholder="Введите название (напр. Рахат, Пиала, Кумыс, Цесна, Султан)..." 
                 data-i18n-placeholder="input_name_placeholder"
                 autocomplete="off"
                 required
@@ -183,20 +233,21 @@
             </button>
           </form>
 
-          <!-- Quick Name Search Pills -->
+          <!-- Quick Name Suggestions -->
           <div class="quick-samples">
             <span class="quick-samples-label" data-i18n="quick_samples_name_label">Популярные запросы:</span>
             <div class="chips-row">
-              <button type="button" class="chip-btn name-sample-btn" data-query="Coca-Cola">🥤 <span>Coca-Cola</span></button>
-              <button type="button" class="chip-btn name-sample-btn" data-query="Snickers">🍫 <span>Snickers</span></button>
-              <button type="button" class="chip-btn name-sample-btn" data-query="Рахат">🍬 <span>Рахат</span></button>
-              <button type="button" class="chip-btn name-sample-btn" data-query="Пиала чай">🍵 <span>Пиала чай</span></button>
-              <button type="button" class="chip-btn name-sample-btn" data-query="Кумыс">🥛 <span>Кумыс / Қымыз</span></button>
+              <button type="button" class="chip-btn name-sample-btn" data-query="Рахат">🍫 <span>Рахат</span></button>
+              <button type="button" class="chip-btn name-sample-btn" data-query="Пиала">🍵 <span>Пиала чай</span></button>
+              <button type="button" class="chip-btn name-sample-btn" data-query="Кумыс">🥛 <span>Қымыз / Кумыс</span></button>
+              <button type="button" class="chip-btn name-sample-btn" data-query="Цесна">🌾 <span>Цесна</span></button>
+              <button type="button" class="chip-btn name-sample-btn" data-query="Tassay">💧 <span>Tassay</span></button>
+              <button type="button" class="chip-btn name-sample-btn" data-query="Амиран">🍼 <span>Amiran</span></button>
             </div>
           </div>
         </div>
 
-        <!-- Search Results Container for Name Search (Requirement 2) -->
+        <!-- Search Results Container -->
         <div id="search-results-section" class="search-results-section" style="display:none;">
           <div class="results-header">
             <h3 class="results-title">
@@ -229,46 +280,208 @@
         </div>
       </div>
 
-      <!-- Recently Scanned Section -->
+      <!-- Kazakhstan Products Catalog & Category Pills -->
+      <div class="home-categories-section">
+        <div class="section-heading-row">
+          <div class="heading-title-group">
+            <h2 class="section-title">
+              <span class="section-icon-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/>
+                </svg>
+              </span>
+              <span data-i18n="catalog_kz_title">Каталог продуктов Казахстана</span>
+            </h2>
+            <p class="section-subtitle" data-i18n="catalog_kz_sub">Популярные отечественные и импортные товары в супермаркетах РК</p>
+          </div>
+
+          <div class="catalog-controls-group">
+            <!-- Flexible View Switcher: Grid vs List -->
+            <div class="view-switcher-toggle" id="catalog-view-toggle" title="Переключить вид отображения">
+              <button type="button" class="view-btn active" id="btn-view-grid" title="Сетка">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+                </svg>
+              </button>
+              <button type="button" class="view-btn" id="btn-view-list" title="Компактный список">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>
+                  <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Quick Filter / Sort Dropdown -->
+            <div class="catalog-sort-select-wrap">
+              <select id="catalog-sort-select" class="catalog-sort-select" title="Сортировка товаров">
+                <option value="default">✨ По умолчанию</option>
+                <option value="score_desc">⭐ Высокий Health Score</option>
+                <option value="score_asc">🍫 Меньший Health Score</option>
+                <option value="halal_only">🟢 Только Халал сертификат</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="category-pills-row" id="category-pills-row">
+          <button type="button" class="category-pill active" data-category="all">
+            <svg class="pill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            <span data-i18n="cat_all">Все товары</span>
+          </button>
+          <button type="button" class="category-pill" data-category="sweets">
+            <svg class="pill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6L6 18M9 4.5l-4.5 4.5a3 3 0 0 0 0 4.24l6.76 6.76a3 3 0 0 0 4.24 0L20 15.5M4 4l3 3M17 17l3 3"/>
+            </svg>
+            <span data-i18n="cat_sweets">Сладости</span>
+          </button>
+          <button type="button" class="category-pill" data-category="dairy">
+            <svg class="pill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 2h8v4H8zM7 6h10l1 4v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V10l1-4zM10 14a2 2 0 1 0 4 0"/>
+            </svg>
+            <span data-i18n="cat_dairy">Молочные</span>
+          </button>
+          <button type="button" class="category-pill" data-category="drinks">
+            <svg class="pill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 3h12l-2 17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2L6 3zM6 8h12M15 13a3 3 0 0 1-6 0"/>
+            </svg>
+            <span data-i18n="cat_drinks">Напитки</span>
+          </button>
+          <button type="button" class="category-pill" data-category="tea">
+            <svg class="pill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v3M10 1v3M14 1v3"/>
+            </svg>
+            <span data-i18n="cat_tea">Чай</span>
+          </button>
+          <button type="button" class="category-pill" data-category="grocery">
+            <svg class="pill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a9 9 0 0 0-9 9c0 5 9 11 9 11s9-6 9-11a9 9 0 0 0-9-9zM12 7v8M8 10l4-3 4 3"/>
+            </svg>
+            <span data-i18n="cat_grocery">Бакалея</span>
+          </button>
+        </div>
+
+        <!-- Populated dynamically from LOCAL_DB / products-kz.json -->
+        <div id="home-products-grid" class="home-products-grid"></div>
+      </div>
+
+      <!-- Recently Scanned History Section -->
       <div class="history-card" id="history-section">
         <div class="history-header">
           <h2 class="section-title">
-            <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <polyline points="12 6 12 12 16 14"/>
-            </svg>
-            <span data-i18n="recent_scans_title">Недавно сканированные</span>
+            <span class="section-icon-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </span>
+            <span data-i18n="recent_scans_title">Недавно просмотренные</span>
           </h2>
           <button type="button" id="btn-clear-history" class="btn-text-danger" data-i18n="btn_clear_history" style="display:none;">
             Очистить
           </button>
         </div>
-        <div id="recent-scans-list" class="recent-scans-grid">
-          <!-- Populated dynamically by app.js -->
+        <div id="recent-scans-list" class="recent-scans-grid"></div>
+      </div>
+
+      <!-- How QOLDAU Works (Requirement 3) -->
+      <div class="how-it-works-card">
+        <div class="section-heading-row" style="margin-bottom:16px;">
+          <h2 class="section-title">
+            <span class="section-icon-badge icon-gold">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            </span>
+            <span data-i18n="how_it_works_title">Как работает QOLDAU</span>
+          </h2>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-top-row">
+              <div class="step-badge">1</div>
+              <div class="step-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              </div>
+            </div>
+            <h3 class="step-title" data-i18n="step_1_title">Сканируйте или найдите</h3>
+            <p class="step-desc" data-i18n="step_1_desc">Наведите камеру на штрихкод или введите название продукта для мгновенного поиска.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-top-row">
+              <div class="step-badge">2</div>
+              <div class="step-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/><circle cx="12" cy="12" r="2"/></svg>
+              </div>
+            </div>
+            <h3 class="step-title" data-i18n="step_2_title">Понятный анализ состава</h3>
+            <p class="step-desc" data-i18n="step_2_desc">Смотрите Health Score, количество сахара, соли, аллергены и статус сертификации Халал.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-top-row">
+              <div class="step-badge">3</div>
+              <div class="step-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1zM2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/><path d="M7 21h10M12 3v18"/></svg>
+              </div>
+            </div>
+            <h3 class="step-title" data-i18n="step_3_title">Сравнивайте и выбирайте</h3>
+            <p class="step-desc" data-i18n="step_3_desc">Сопоставляйте 2+ продукта бок о бок и выбирайте более здоровые альтернативы для семьи.</p>
+          </div>
         </div>
       </div>
 
-      <!-- Feature Highlights -->
-      <div class="features-row">
-        <div class="feature-item">
-          <div class="feature-icon">🔍</div>
-          <h3 class="feature-title" data-i18n="feature_off_title">Open Food Facts</h3>
-          <p class="feature-desc" data-i18n="feature_off_desc">Глобальная база из более 3 млн проверенных продуктов питания.</p>
+      <!-- Trust and Transparency Principles (Requirement 3 & 6) -->
+      <div class="trust-principles-card">
+        <div class="section-heading-row" style="margin-bottom:16px;">
+          <h2 class="section-title">
+            <span class="section-icon-badge icon-teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <span data-i18n="trust_title">Почему нам доверяют</span>
+          </h2>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon">💡</div>
-          <h3 class="feature-title" data-i18n="feature_simple_title">Простыми словами</h3>
-          <p class="feature-desc" data-i18n="feature_simple_desc">Мгновенный анализ сахара, соли и аллергенов без сложных терминов.</p>
-        </div>
-        <div class="feature-item">
-          <div class="feature-icon">🇰🇿</div>
-          <h3 class="feature-title" data-i18n="feature_kz_title">Казахстанский фокус</h3>
-          <p class="feature-desc" data-i18n="feature_kz_desc">Поддержка местных товаров, цен в KZT (₸) и трех языков.</p>
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-icon-box icon-teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <div class="trust-text">
+              <strong data-i18n="trust_open_title">Открытые проверенные данные</strong>
+              <p data-i18n="trust_open_desc">Интеграция с крупнейшей базой Open Food Facts и открытыми реестрами Казахстана.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon-box icon-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <div class="trust-text">
+              <strong data-i18n="trust_halal_title">Честный Халал-статус</strong>
+              <p data-i18n="trust_halal_desc">Четко различаем сертификаты (ДУМК / Халал Даму) и заявления на пачке. Никаких фейковых знаков.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon-box icon-rose">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+            </div>
+            <div class="trust-text">
+              <strong data-i18n="trust_ads_title">Независимость от брендов</strong>
+              <p data-i18n="trust_ads_desc">Оценки Health Score рассчитываются автоматически по формуле ВОЗ, их невозможно купить.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon-box icon-indigo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="trust-text">
+              <strong data-i18n="trust_community_title">Вклад жителей Казахстана</strong>
+              <p data-i18n="trust_community_desc">Возможность сообщать о неточностях в составе и пополнять базу местных товаров.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- VIEW 2: PRODUCT DETAIL VIEW -->
+    <!-- VIEW 2: PRODUCT DETAIL VIEW (Organized into 8 Clear Cards) -->
     <section id="view-product" class="view" style="display:none;">
       <!-- Top Bar Navigation -->
       <div class="product-nav">
@@ -281,6 +494,13 @@
         </button>
 
         <div class="product-top-badges">
+          <button type="button" id="btn-toggle-compare-product" class="btn-compare-action" title="Сравнить продукт">
+            <svg class="comp-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1zM2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1z"/>
+              <path d="M7 21h10M12 3v18"/>
+            </svg>
+            <span id="btn-toggle-compare-text" data-i18n="btn_add_compare">Сравнить</span>
+          </button>
           <div id="product-cache-badge" class="badge badge-offline-cache" style="display:none;">
             📦 Офлайн-кэш
           </div>
@@ -290,8 +510,46 @@
         </div>
       </div>
 
-      <!-- Product Main Header Card -->
-      <div class="product-hero-card">
+      <!-- Sticky Quick-Navigation Bar for Product Details -->
+      <nav class="product-quick-nav" id="product-quick-nav" aria-label="Быстрая навигация по разделу">
+        <div class="quick-nav-track">
+          <a href="#card-health-score" class="quick-nav-pill active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <span>Health Score</span>
+          </a>
+          <a href="#card-ingredients" class="quick-nav-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10c0 5.5-4.5 10-10 10S2 17.5 2 12A10 10 0 0 1 12 2z"/><path d="M12 6v6l4 2"/></svg>
+            <span data-i18n="ingredients_title">Состав</span>
+          </a>
+          <a href="#card-nutrition" class="quick-nav-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            <span data-i18n="nutrition_title">Нутриенты</span>
+          </a>
+          <a href="#card-allergens" class="quick-nav-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span data-i18n="allergens_title">Аллергены</span>
+          </a>
+          <a href="#card-halal" class="quick-nav-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span data-i18n="halal_title">Халал</span>
+          </a>
+          <a href="#card-manufacturer" class="quick-nav-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12M9 12h6M9 16h6"/></svg>
+            <span data-i18n="manufacturer_title">Производитель</span>
+          </a>
+          <a href="#section-alternatives" class="quick-nav-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span data-i18n="alternatives_title">Альтернативы</span>
+          </a>
+          <a href="#card-transparency" class="quick-nav-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            <span data-i18n="transparency_title">Источник</span>
+          </a>
+        </div>
+      </nav>
+
+      <!-- CARD 1: PRODUCT HERO & BASIC INFORMATION -->
+      <div class="product-hero-card" id="card-product-hero">
         <div class="product-image-container">
           <img id="product-img" src="" alt="Фото продукта" class="product-img" loading="lazy">
           <div id="product-img-fallback" class="product-img-fallback" style="display:none;">
@@ -305,7 +563,7 @@
           <h1 class="product-title" id="product-name">—</h1>
 
           <div class="product-barcode-row">
-            <span class="barcode-chip">
+            <span class="barcode-chip" id="product-barcode-chip" title="Нажмите, чтобы скопировать штрихкод">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M3 5v14M8 5v14M12 5v14M17 5v14M21 5v14"/>
               </svg>
@@ -314,224 +572,166 @@
             <span id="product-origin-badge" class="origin-badge"></span>
           </div>
 
-          <!-- 1. Personalized Warnings Card (Requirement 2: Dietary & Allergen Profile) -->
-          <div id="product-personalized-warnings" class="personalized-warning-card" style="display:none;">
-            <!-- Populated dynamically by UserPreferencesService -->
-          </div>
-
-          <!-- 2. Data Validation & Quality Layer (Requirement 3: Data Quality) -->
-          <div id="product-validation-card" class="validation-card" style="display:none;">
-            <div class="validation-card-top">
-              <div class="validation-title-row">
-                <span class="validation-confidence-badge" id="validation-confidence-badge">HIGH</span>
-                <span class="validation-card-title" data-i18n="validation_card_title">Качество данных продукта</span>
-              </div>
-              <div class="data-origin-pill">
-                <span class="pill-official" data-i18n="tag_official_data">🏷️ Данные упаковки</span>
-                <span class="pill-sep">•</span>
-                <span class="pill-analysis" data-i18n="tag_qoldau_analysis">🔬 Анализ Qoldau</span>
-              </div>
-            </div>
-            <p class="validation-desc" id="validation-desc-text">—</p>
-            <div id="validation-missing-box" class="validation-missing-box" style="display:none;">
-              <span class="validation-missing-label" data-i18n="validation_missing_label">Не указано на упаковке:</span>
-              <div class="validation-missing-chips" id="validation-missing-chips"></div>
-            </div>
-          </div>
-
-          <!-- 3. Qoldau Health Score Card (Requirement 4) -->
-          <div class="health-score-card" id="product-health-card">
-            <div class="score-card-top">
-              <div class="score-meter-wrap">
-                <svg class="score-radial-svg" viewBox="0 0 100 100" aria-hidden="true">
-                  <circle class="score-circle-bg" cx="50" cy="50" r="40" />
-                  <circle class="score-circle-fg" id="health-score-circle" cx="50" cy="50" r="40" />
-                </svg>
-                <div class="score-number-box">
-                  <span class="score-val" id="health-score-val">--</span>
-                  <span class="score-max">/100</span>
-                </div>
-              </div>
-
-              <div class="score-info-wrap">
-                <div class="score-title-row">
-                  <span class="score-card-label" data-i18n="health_score_title">Qoldau Health Score</span>
-                  <span class="score-grade-badge" id="health-grade-badge">--</span>
-                </div>
-                <div class="score-headline" id="health-score-headline">--</div>
-                
-                <!-- Data Confidence Indicator -->
-                <div class="confidence-wrap" id="confidence-wrap">
-                  <div class="confidence-badge-row">
-                    <span class="confidence-label" data-i18n="confidence_label">Надежность данных:</span>
-                    <span class="confidence-badge" id="health-confidence-badge">High</span>
-                  </div>
-                  <div class="confidence-note" id="health-confidence-note" style="display:none;"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Horizontal scale bar from 0 (poor choice) to 100 (good choice) -->
-            <div class="score-bar-container">
-              <div class="score-bar-track">
-                <div class="score-bar-fill" id="health-bar-fill"></div>
-                <div class="score-bar-needle" id="health-bar-needle"></div>
-              </div>
-              <div class="score-bar-labels">
-                <span data-i18n="scale_poor">0 • Нежелательно</span>
-                <span data-i18n="scale_moderate">60 • Умеренно</span>
-                <span data-i18n="scale_good">80–100 • Отличный выбор</span>
-              </div>
-            </div>
-
-            <!-- "Why this score?" Section -->
-            <div class="why-score-section" id="why-score-section">
-              <div class="why-score-header">
-                <span class="why-score-title" data-i18n="why_this_score_title">Почему такая оценка?</span>
-              </div>
-              <div class="why-score-list" id="why-score-list">
-                <!-- Populated dynamically by EVALUATOR -->
-              </div>
-            </div>
-
-            <!-- Backward-compatibility container -->
-            <div class="score-factors" id="health-score-factors" style="display:none;"></div>
-
-            <p class="score-disclaimer" data-i18n="score_disclaimer_text">
-              ℹ️ Qoldau Health Score является информационным расчетом на основе доступных данных о составе и пищевой ценности. Он не является медицинским диагнозом или официальным сертификатом качества.
-            </p>
-            <!-- Backward-compatibility element -->
-            <span id="rating-badge" style="display:none;"></span>
-          </div>
+          <!-- Personalized Allergen / Dietary Warnings -->
+          <div id="product-personalized-warnings" class="personalized-warning-card" style="display:none;"></div>
         </div>
       </div>
 
-      <!-- "Easy to Understand" Section (Mandatory requirement #5) -->
-      <div class="info-card easy-understand-card">
+      <!-- CARD 2: HEALTH SCORE & TRANSPARENCY -->
+      <div class="info-card health-score-card" id="card-health-score">
+        <div class="score-card-top">
+          <div class="score-meter-wrap">
+            <svg class="score-radial-svg" viewBox="0 0 100 100" aria-hidden="true">
+              <circle class="score-circle-bg" cx="50" cy="50" r="40" />
+              <circle class="score-circle-fg" id="health-score-circle" cx="50" cy="50" r="40" />
+            </svg>
+            <div class="score-number-box">
+              <span class="score-val" id="health-score-val">--</span>
+              <span class="score-max">/100</span>
+            </div>
+          </div>
+
+          <div class="score-info-wrap">
+            <div class="score-title-row">
+              <span class="score-card-label" data-i18n="health_score_title">QOLDAU Health Score</span>
+              <span class="score-grade-badge" id="health-grade-badge">--</span>
+            </div>
+            <div class="score-headline" id="health-score-headline">--</div>
+            
+            <!-- Data Confidence Level -->
+            <div class="confidence-wrap" id="confidence-wrap">
+              <div class="confidence-badge-row">
+                <span class="confidence-label" data-i18n="confidence_label">Надежность данных:</span>
+                <span class="confidence-badge" id="health-confidence-badge">Высокая</span>
+                <span class="badge-experimental" title="Аналитическая модель проекта Qoldau">🧪 Экспериментальный расчет</span>
+              </div>
+              <div class="confidence-note" id="health-confidence-note" style="display:none;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scale bar from 0 to 100 -->
+        <div class="score-bar-container">
+          <div class="score-bar-track">
+            <div class="score-bar-fill" id="health-bar-fill"></div>
+            <div class="score-bar-needle" id="health-bar-needle"></div>
+          </div>
+          <div class="score-bar-labels">
+            <span data-i18n="scale_poor">0 • Нежелательно</span>
+            <span data-i18n="scale_moderate">60 • Умеренно</span>
+            <span data-i18n="scale_good">80–100 • Отличный выбор</span>
+          </div>
+        </div>
+
+        <!-- "Why this score?" Breakdown -->
+        <div class="why-score-section" id="why-score-section">
+          <div class="why-score-header">
+            <span class="why-score-title" data-i18n="why_this_score_title">Почему такая оценка?</span>
+          </div>
+          <div class="why-score-list" id="why-score-list"></div>
+        </div>
+
+        <p class="score-disclaimer" data-i18n="score_disclaimer_text">
+          ℹ️ QOLDAU Health Score является аналитическим расчетом на основе открытых рекомендаций ВОЗ и UK FSA на 100 г продукта. Он не является официальным медицинским диагнозом или государственным знаком качества.
+        </p>
+      </div>
+
+      <!-- CARD 3: INGREDIENTS & PLAIN LANGUAGE EXPLANATIONS -->
+      <div class="info-card ingredients-card" id="card-ingredients">
         <div class="card-header">
-          <div class="card-header-icon">💡</div>
+          <div class="card-header-icon icon-emerald">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10c0 5.5-4.5 10-10 10S2 17.5 2 12A10 10 0 0 1 12 2z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
           <div>
-            <h2 class="card-title" data-i18n="easy_understand_title">Простыми словами</h2>
+            <h2 class="card-title" data-i18n="ingredients_title">Состав продукта</h2>
             <p class="card-subtitle" data-i18n="easy_understand_sub">Понятный разбор состава на основе доступных данных</p>
           </div>
         </div>
-        <div id="easy-insights-container" class="insights-list">
-          <!-- Populated by EVALUATOR in app.js -->
-        </div>
-      </div>
-
-      <!-- Healthier Alternatives Section (Requirement 1) -->
-      <div class="info-card alternatives-card" id="section-alternatives">
-        <div class="card-header">
-          <div class="card-header-icon">🌿</div>
-          <div class="header-text-group">
-            <div class="badge-accent-sub" data-i18n="alternatives_badge">Рекомендации Qoldau</div>
-            <h2 class="card-title" data-i18n="alternatives_title">Более полезные альтернативы</h2>
-            <p class="card-subtitle" data-i18n="alternatives_sub">Товары той же категории с более высоким индексом пользы</p>
-          </div>
-        </div>
         <div class="card-body">
-          <!-- Loading state for alternatives -->
-          <div id="alternatives-loading" class="alternatives-loading" style="display:none;">
-            <div class="spinner-small"></div>
-            <span data-i18n="loading_alternatives">Поиск лучших альтернатив...</span>
-          </div>
-
-          <!-- Fallback when no alternatives found -->
-          <div id="alternatives-empty" class="alternatives-empty-state" style="display:none;">
-            <span class="empty-icon">🌱</span>
-            <p data-i18n="alternatives_empty_text">Подходящих более полезных альтернатив в этой категории не найдено.</p>
-          </div>
-
-          <!-- Dynamic Alternatives List (1-3 products) -->
-          <div id="alternatives-list" class="alternatives-grid">
-            <!-- Populated dynamically by app.js -->
-          </div>
-
-          <div class="alternatives-disclaimer-note" data-i18n="alternatives_disclaimer">
-            ℹ️ Сравнение основано на доступных данных о составе и пищевой ценности. Не является врачебным назначением.
+          <!-- Plain language insights -->
+          <div id="easy-insights-container" class="insights-list" style="margin-bottom:16px;"></div>
+          <!-- Full ingredient text -->
+          <div class="ingredients-full-box">
+            <div class="ingredients-box-label" data-i18n="ingredients_label">Состав с упаковки:</div>
+            <p id="product-ingredients-text" class="ingredients-text">—</p>
           </div>
         </div>
       </div>
 
-      <!-- Nutrition Section (Mandatory requirement #4) -->
-      <div class="info-card nutrition-card">
+      <!-- CARD 4: NUTRITIONAL INFORMATION -->
+      <div class="info-card nutrition-card" id="card-nutrition">
         <div class="card-header">
-          <div class="card-header-icon">📊</div>
+          <div class="card-header-icon icon-amber">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
           <div>
             <h2 class="card-title" data-i18n="nutrition_title">Пищевая ценность</h2>
             <p class="card-subtitle" data-i18n="nutrition_sub">На 100 г продукта</p>
           </div>
         </div>
-        <div id="nutrition-grid" class="nutrition-grid">
-          <!-- Populated dynamically without empty fields -->
+        <div class="card-body">
+          <div id="nutrition-grid" class="nutrition-grid"></div>
         </div>
       </div>
 
-      <!-- Ingredients Section -->
-      <div class="info-card" id="section-ingredients">
+      <!-- CARD 5: ALLERGENS -->
+      <div class="info-card allergens-card" id="card-allergens">
         <div class="card-header">
-          <div class="card-header-icon">🌿</div>
+          <div class="card-header-icon icon-rose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
           <div>
-            <h2 class="card-title" data-i18n="ingredients_title">Состав</h2>
+            <h2 class="card-title" data-i18n="allergens_title">Аллергены и непереносимости</h2>
+            <p class="card-subtitle" data-i18n="allergens_sub">Компоненты, требующие внимания</p>
           </div>
         </div>
         <div class="card-body">
-          <p id="product-ingredients-text" class="ingredients-text">—</p>
+          <div id="allergens-chips" class="allergens-chips-row"></div>
         </div>
       </div>
 
-      <!-- Allergens Section -->
-      <div class="info-card" id="section-allergens">
+      <!-- CARD 6: HALAL INFORMATION & VERIFICATION -->
+      <div class="info-card halal-card" id="card-halal">
         <div class="card-header">
-          <div class="card-header-icon">⚠️</div>
-          <div>
-            <h2 class="card-title" data-i18n="allergens_title">Аллергены</h2>
+          <div class="card-header-icon icon-green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <div class="header-text-group">
+            <div class="halal-tag-row">
+              <span id="halal-status-badge" class="badge badge-halal">Статус Халал</span>
+            </div>
+            <h2 class="card-title" data-i18n="halal_title">Информация Халал</h2>
+            <p class="card-subtitle" data-i18n="halal_sub">Статус сертификации и проверка ингредиентов</p>
           </div>
         </div>
         <div class="card-body">
-          <div id="allergens-chips" class="allergens-chips-row">
-            <!-- Populated dynamically -->
-          </div>
+          <div id="halal-content" class="halal-content-box"></div>
+          <p class="halal-disclaimer-note" data-i18n="halal_disclaimer_note">
+            ℹ️ QOLDAU не выдает сертификатов. Мы отображаем подтвержденные сертификаты (ДУМК / Халал Даму) либо заявления производителей. При отсутствии сертификата проверяйте физическую маркировку на упаковке.
+          </p>
         </div>
       </div>
 
-      <!-- Origin and Manufacturer Details -->
-      <div class="info-card" id="section-details">
+      <!-- CARD 7: MANUFACTURER & DETAILS -->
+      <div class="info-card manufacturer-card" id="card-manufacturer">
         <div class="card-header">
-          <div class="card-header-icon">🏭</div>
+          <div class="card-header-icon icon-indigo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M5 20V8l7-5 7 5v12M9 12h6M9 16h6"/></svg>
+          </div>
           <div>
             <h2 class="card-title" data-i18n="manufacturer_title">Производство и происхождение</h2>
+            <p class="card-subtitle" data-i18n="manufacturer_sub">Сведения об изготовителе и стране регистрации</p>
           </div>
         </div>
-        <div class="card-body details-list" id="product-details-list">
-          <!-- Populated dynamically -->
-        </div>
+        <div class="card-body details-list" id="product-details-list"></div>
       </div>
 
-      <!-- Official Product Information (Requirement 3: Official Data) -->
-      <div class="info-card official-info-card" id="section-official-info">
+      <!-- CARD 8: DATA SOURCE, TRANSPARENCY & REPORTING -->
+      <div class="info-card transparency-card" id="card-transparency">
         <div class="card-header">
-          <div class="card-header-icon">📜</div>
-          <div class="header-text-group">
-            <div class="official-tag-row">
-              <span class="badge badge-official" data-i18n="badge_official_registry">Официальный реестр</span>
-            </div>
-            <h2 class="card-title" data-i18n="official_info_title">Официальная информация о продукции</h2>
-            <p class="card-subtitle" data-i18n="official_info_sub">Регулирование, знаки соответствия и сертификация</p>
+          <div class="card-header-icon icon-cyan">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
           </div>
-        </div>
-        <div class="card-body">
-          <div id="official-info-content" class="official-info-content">
-            <!-- Populated dynamically: real certs if present, else polite non-invented fallback -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Information Source & Transparency (Requirement 3: Provenance & Disclaimer) -->
-      <div class="info-card transparency-card" id="section-data-source">
-        <div class="card-header">
-          <div class="card-header-icon">🛡️</div>
           <div class="header-text-group">
             <h2 class="card-title" data-i18n="transparency_title">Источник данных и прозрачность</h2>
             <p class="card-subtitle" data-i18n="transparency_sub">Происхождение информации и статус верификации</p>
@@ -551,16 +751,56 @@
               <span class="transparency-label" data-i18n="source_updated_label">Последнее обновление:</span>
               <span class="transparency-val" id="source-updated-val">—</span>
             </div>
+            <div class="transparency-item" id="source-link-item">
+              <span class="transparency-label" data-i18n="source_link_label">Ссылка на оригинал:</span>
+              <span class="transparency-val" id="source-link-val">—</span>
+            </div>
           </div>
-          <div class="transparency-disclaimer-box">
-            <p data-i18n="transparency_full_disclaimer">
-              ⚠️ Индекс пользы Qoldau является информационной оценкой на основе доступных данных о составе и пищевой ценности. Он не является медицинским диагнозом или официальным сертификатом качества.
-            </p>
+
+          <div class="report-box-row">
+            <button type="button" id="btn-open-report-error" class="btn btn-outline-report" title="Сообщить о неточности">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+              <span data-i18n="btn_report_error">Сообщить о неточности в данных</span>
+            </button>
           </div>
         </div>
       </div>
 
-      <!-- Product Page Footer Actions -->
+      <!-- HEALTHIER ALTERNATIVES SECTION -->
+      <div class="info-card alternatives-card" id="section-alternatives">
+        <div class="card-header">
+          <div class="card-header-icon icon-gold">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="header-text-group">
+            <div class="badge-accent-sub" data-i18n="alternatives_badge">Рекомендации QOLDAU</div>
+            <h2 class="card-title" data-i18n="alternatives_title">Более полезные альтернативы</h2>
+            <p class="card-subtitle" data-i18n="alternatives_sub">Товары той же категории с лучшим питательным профилем</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <!-- Loading state -->
+          <div id="alternatives-loading" class="alternatives-loading" style="display:none;">
+            <div class="spinner-small"></div>
+            <span data-i18n="loading_alternatives">Поиск лучших альтернатив...</span>
+          </div>
+
+          <!-- Empty state -->
+          <div id="alternatives-empty" class="alternatives-empty-state" style="display:none;">
+            <span class="empty-icon">🌱</span>
+            <p id="alternatives-empty-text" data-i18n="alternatives_empty_text">Подходящих более полезных альтернатив в этой категории не найдено.</p>
+          </div>
+
+          <!-- Dynamic Alternatives List -->
+          <div id="alternatives-list" class="alternatives-grid"></div>
+
+          <div class="alternatives-disclaimer-note" data-i18n="alternatives_disclaimer">
+            ℹ️ Сравнение основано на доступных данных о составе и пищевой ценности. Не является врачебным назначением.
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Page Bottom Actions -->
       <div class="product-bottom-actions">
         <button type="button" id="btn-scan-another" class="btn btn-primary btn-large">
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -587,10 +827,10 @@
         <p class="status-text">
           <span data-i18n="not_found_desc_1">Штрихкод</span>
           <strong id="not-found-barcode-display" class="highlight-code">000000000000</strong>
-          <span data-i18n="not_found_desc_2">пока отсутствует в глобальной базе Open Food Facts.</span>
+          <span data-i18n="not_found_desc_2">пока отсутствует в каталоге.</span>
         </p>
 
-        <!-- Inline Manual Search Box (Requirement 6) -->
+        <!-- Inline Search Form -->
         <div class="not-found-search-inline">
           <label class="not-found-search-label" data-i18n="not_found_search_label">Или найдите товар по названию прямо сейчас:</label>
           <form id="form-not-found-inline-search" class="search-form">
@@ -599,11 +839,11 @@
                 <circle cx="11" cy="11" r="8"/>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"/>
               </svg>
-              <input
-                type="text"
-                id="input-not-found-inline"
-                class="barcode-input"
-                placeholder="Введите название (напр. Coca-Cola, чай)..."
+              <input 
+                type="text" 
+                id="input-not-found-inline" 
+                class="barcode-input" 
+                placeholder="Введите название (напр. Coca-Cola, чай)..." 
                 data-i18n-placeholder="input_name_placeholder"
                 autocomplete="off"
               >
@@ -619,7 +859,7 @@
           <span class="callout-flag">🇰🇿</span>
           <div>
             <h3 data-i18n="kz_add_callout_title">Помогите жителям Казахстана!</h3>
-            <p data-i18n="kz_add_callout_desc">Вы можете сохранить этот продукт в Qoldau Food. Ваши данные сразу станут доступны на вашем устройстве.</p>
+            <p data-i18n="kz_add_callout_desc">Вы можете сохранить этот продукт в QOLDAU. Ваши данные сразу станут доступны на вашем устройстве.</p>
           </div>
         </div>
 
@@ -652,7 +892,7 @@
       </div>
     </section>
 
-    <!-- VIEW 4: ADD PRODUCT FORM (MVP Local DB) -->
+    <!-- VIEW 4: ADD PRODUCT FORM -->
     <section id="view-add-product" class="view" style="display:none;">
       <div class="form-card">
         <div class="form-header">
@@ -776,46 +1016,137 @@
 
   </main>
 
-  <!-- QR CODE MODAL FOR MOBILE ACCESS -->
+  <!-- STICKY FLOATING COMPARISON BAR -->
+  <div id="floating-compare-bar" class="floating-compare-bar" style="display:none;">
+    <div class="container floating-compare-content">
+      <div class="floating-compare-info">
+        <span class="compare-counter-pill">⚖️ <span id="floating-compare-count">0</span></span>
+        <span class="compare-label" data-i18n="compare_bar_label">Товаров в сравнении</span>
+      </div>
+      <div class="floating-compare-actions">
+        <button type="button" id="btn-show-comparison-modal" class="btn btn-primary btn-sm" data-i18n="btn_view_comparison">
+          Сравнить товары
+        </button>
+        <button type="button" id="btn-clear-comparison-bar" class="btn btn-text-muted btn-sm" data-i18n="btn_clear">
+          Очистить
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCT COMPARISON MODAL -->
+  <div id="modal-comparison" class="scanner-modal" style="display:none;" role="dialog" aria-modal="true">
+    <div class="scanner-modal-backdrop" id="backdrop-comparison"></div>
+    <div class="scanner-modal-content comparison-modal-content">
+      <div class="comparison-modal-header">
+        <div class="comparison-title-group">
+          <span class="comp-header-icon">⚖️</span>
+          <div>
+            <h2 class="comparison-modal-title" data-i18n="compare_modal_title">Сравнение продуктов</h2>
+            <p class="comparison-modal-sub" data-i18n="compare_modal_sub">Сопоставление пищевой ценности, состава и статуса Халал</p>
+          </div>
+        </div>
+        <button type="button" id="btn-close-comparison" class="btn-icon-close" title="Закрыть">&times;</button>
+      </div>
+
+      <div class="comparison-modal-body" id="comparison-table-wrapper">
+        <!-- Rendered dynamically by ComparisonService -->
+      </div>
+
+      <div class="comparison-modal-footer">
+        <button type="button" id="btn-clear-all-comparison" class="btn btn-outline" data-i18n="btn_clear_all">
+          Очистить список
+        </button>
+        <button type="button" id="btn-close-comparison-footer" class="btn btn-primary" data-i18n="btn_close">
+          Закрыть
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- REPORT ERROR MODAL -->
+  <div id="modal-report-error" class="scanner-modal" style="display:none;" role="dialog" aria-modal="true">
+    <div class="scanner-modal-backdrop" id="backdrop-report"></div>
+    <div class="scanner-modal-content report-modal-content">
+      <div class="report-modal-header">
+        <div class="report-title-group">
+          <span class="report-header-icon">🚩</span>
+          <div>
+            <h2 class="report-modal-title" data-i18n="report_modal_title">Сообщить о неточности</h2>
+            <p class="report-modal-sub" data-i18n="report_modal_sub">Помогите сделать базу QOLDAU точнее для жителей Казахстана</p>
+          </div>
+        </div>
+        <button type="button" id="btn-close-report" class="btn-icon-close" title="Закрыть">&times;</button>
+      </div>
+
+      <form id="form-report-error" class="report-form">
+        <div class="report-product-badge" id="report-product-info">—</div>
+        <input type="hidden" id="report-barcode">
+
+        <div class="form-group">
+          <label class="form-label" data-i18n="report_reason_label">Что указано неверно? *</label>
+          <div class="report-checkbox-grid">
+            <label class="report-chip"><input type="checkbox" name="report_reason" value="ingredients"> <span data-i18n="report_type_ingredients">Состав продукта</span></label>
+            <label class="report-chip"><input type="checkbox" name="report_reason" value="nutrition"> <span data-i18n="report_type_nutrition">Пищевая ценность (БЖУ/сахар)</span></label>
+            <label class="report-chip"><input type="checkbox" name="report_reason" value="halal"> <span data-i18n="report_type_halal">Статус Халал</span></label>
+            <label class="report-chip"><input type="checkbox" name="report_reason" value="allergens"> <span data-i18n="report_type_allergens">Аллергены</span></label>
+            <label class="report-chip"><input type="checkbox" name="report_reason" value="photo_name"> <span data-i18n="report_type_photo">Фото или название</span></label>
+            <label class="report-chip"><input type="checkbox" name="report_reason" value="other"> <span data-i18n="report_type_other">Другое</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="report-comments" class="form-label" data-i18n="report_comment_label">Комментарий или верные данные:</label>
+          <textarea id="report-comments" class="form-textarea" rows="3" placeholder="Например: на пачке указан сахар 12г вместо 40г, или появился сертификат Халал Даму..." required></textarea>
+        </div>
+
+        <div class="report-actions-row">
+          <button type="submit" class="btn btn-primary btn-large" data-i18n="btn_send_report">
+            Отправить сообщение
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- QR CODE MODAL FOR MOBILE ACCESS (100% Static, Zero Python required) -->
   <div id="modal-qr" class="scanner-modal" style="display:none;" role="dialog" aria-modal="true">
     <div class="scanner-modal-backdrop" id="backdrop-qr"></div>
-    <div class="scanner-modal-content" style="background:white; color:#0f172a; padding:24px; text-align:center; max-width:440px; border-radius:18px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-        <h3 style="font-weight:800; font-size:1.15rem; display:flex; align-items:center; gap:8px;">
+    <div class="scanner-modal-content qr-modal-box">
+      <div class="qr-modal-head">
+        <h3 class="qr-head-title">
           <span>📱</span> <span>Открыть на смартфоне</span>
         </h3>
-        <button type="button" id="btn-close-qr" class="btn-icon-close" style="color:#64748b;">&times;</button>
+        <button type="button" id="btn-close-qr" class="btn-icon-close">&times;</button>
       </div>
 
-      <!-- Tunnel Status Badge -->
-      <div id="qr-status-badge" style="display:inline-flex; align-items:center; gap:6px; background:#ecfdf5; color:#065f46; font-size:0.8rem; font-weight:600; padding:4px 12px; border-radius:999px; margin-bottom:12px; border:1px solid #a7f3d0;">
-        <span id="qr-status-dot" style="width:8px; height:8px; border-radius:50%; background:#10b981; display:inline-block;"></span>
-        <span id="qr-status-text">Защищенный HTTPS-канал для камеры</span>
+      <!-- Static Ready Badge -->
+      <div id="qr-status-badge" class="qr-badge-ready">
+        <span class="status-dot"></span>
+        <span id="qr-status-text">Готово к сканированию камерой смартфона</span>
       </div>
 
-      <p id="qr-desc-text" style="font-size:0.85rem; color:#64748b; margin-bottom:12px; line-height:1.4;">
+      <p class="qr-modal-desc">
         Наведите камеру смартфона (iPhone или Android) на QR-код для открытия приложения:
       </p>
 
       <!-- Target Container for Dynamic QRCode -->
-      <div style="background:#f8fafc; padding:12px; border-radius:14px; display:inline-block; margin-bottom:12px; border:1px solid #e2e8f0; min-width:216px; min-height:216px; position:relative;">
-        <div id="qr-code-target" style="display:flex; justify-content:center; align-items:center; width:216px; height:216px; margin:0 auto;">
-          <div id="qr-loading-spinner" style="border:3px solid #e2e8f0; border-top:3px solid #10b981; border-radius:50%; width:36px; height:36px; animation:spin 1s linear infinite;"></div>
+      <div class="qr-code-frame">
+        <div id="qr-code-target" class="qr-target-inner">
+          <div id="qr-loading-spinner" class="spinner-small"></div>
         </div>
       </div>
 
       <!-- Live Link Box & Action Buttons -->
-      <div style="display:flex; gap:8px; align-items:center; margin-bottom:12px;">
-        <div id="qr-link-display" style="flex:1; background:#f1f5f9; padding:8px 12px; border-radius:8px; font-size:0.75rem; word-break:break-all; font-family:monospace; color:#0f766e; font-weight:600; text-align:left; max-height:48px; overflow-y:auto;">
-          Подключение туннеля...
-        </div>
-        <button type="button" id="btn-copy-qr-link" class="btn btn-secondary" style="padding:8px 12px; font-size:0.75rem; white-space:nowrap;" title="Скопировать ссылку">
+      <div class="qr-link-row">
+        <div id="qr-link-display" class="qr-link-text"></div>
+        <button type="button" id="btn-copy-qr-link" class="btn btn-secondary btn-sm" title="Скопировать ссылку">
           📋 Копировать
         </button>
       </div>
 
-      <div style="background:#eff6ff; padding:10px 14px; border-radius:10px; font-size:0.78rem; color:#1e40af; text-align:left; line-height:1.4; border:1px solid #bfdbfe;">
-        <strong>✨ Автофокус и камера:</strong> на телефоне камера работает на 100% со встроенным автофокусом, макро-режимом и зумом. При входе нажмите <em>«Разрешить доступ»</em> в браузере.
+      <div class="qr-tip-box">
+        <strong>✨ Автофокус и камера:</strong> на смартфоне камера запускается с быстрым сканированием штрихкодов. При первом открытии нажмите <em>«Разрешить доступ к камере»</em> в браузере.
       </div>
     </div>
   </div>
@@ -856,10 +1187,10 @@
       <!-- Scanner Helper Text & Controls -->
       <div class="scanner-controls">
         <p class="scanner-hint" data-i18n="scanner_hint">
-          Нажмите на экран для фокуса. Если размыто, отодвиньте телефон на 20 см.
+          Наведите камеру на штрихкод товара. При размытии слегка отодвиньте камеру назад.
         </p>
 
-        <!-- Dynamic Zoom Buttons (shown when supported) -->
+        <!-- Dynamic Zoom Buttons -->
         <div id="scanner-zoom-row" class="scanner-zoom-row" style="display:none;">
           <span class="zoom-label">Зум:</span>
           <button type="button" class="btn-zoom active" data-zoom="1">1x</button>
@@ -892,22 +1223,12 @@
           </label>
         </div>
 
-        <!-- Big Native Camera Snapshot Button (100% sharp autofocus via native camera) -->
-        <label class="file-scanner-big-btn" title="Сделать снимок штатной камерой телефона с аппаратным автофокусом">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;">
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M19 4h-3.5l-2-2h-3l-2 2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/>
-          </svg>
-          <span>📸 Сделать четкое фото (штатная камера)</span>
-          <input type="file" id="scanner-native-snap" accept="image/*" capture="environment" style="display:none;">
-        </label>
-
         <div id="scanner-error-msg" class="scanner-error" style="display:none;"></div>
       </div>
     </div>
   </div>
 
-  <!-- USER PREFERENCES / PROFILE MODAL (Requirement 2) -->
+  <!-- USER PREFERENCES / PROFILE MODAL -->
   <div id="modal-preferences" class="scanner-modal" style="display:none;" role="dialog" aria-modal="true">
     <div class="scanner-modal-backdrop" id="backdrop-preferences"></div>
     <div class="scanner-modal-content pref-modal-content">
@@ -1029,7 +1350,7 @@
   <div id="loading-overlay" class="loading-overlay" style="display:none;">
     <div class="loading-card">
       <div class="loading-spinner"></div>
-      <p id="loading-text" class="loading-text" data-i18n="loading_search">Поиск информации в Open Food Facts...</p>
+      <p id="loading-text" class="loading-text" data-i18n="loading_search">Поиск информации о продукте...</p>
     </div>
   </div>
 
@@ -1040,17 +1361,18 @@
   <footer class="app-footer">
     <div class="container footer-content">
       <p class="footer-copy">
-        <strong>Qoldau Food</strong> &copy; 2026. <span data-i18n="footer_kz_tag">Разработано для потребителей Казахстана.</span>
+        <strong>QOLDAU Food</strong> &copy; 2026. <span data-i18n="footer_kz_tag">Разработано для потребителей Казахстана.</span>
       </p>
       <p class="footer-sub">
         <span data-i18n="footer_off_attr">Данные предоставлены проектом</span> 
-        <a href="https://world.openfoodfacts.org/" target="_blank" rel="noopener noreferrer">Open Food Facts</a>.
+        <a href="https://world.openfoodfacts.org/" target="_blank" rel="noopener noreferrer">Open Food Facts</a>
+        <span>и открытыми реестрами РК. Работает полностью статически (Static SPA).</span>
       </p>
     </div>
   </footer>
 
-  <!-- Open Source Barcode Library: html5-qrcode (with fallback to CDN if needed) -->
-  <script src="assets/vendor/html5-qrcode.min.js?v=2.2"></script>
+  <!-- Open Source Barcode Libraries -->
+  <script src="assets/vendor/html5-qrcode.min.js?v=2.3"></script>
   <script>
     if (typeof Html5Qrcode === 'undefined') {
       const cdnScript = document.createElement('script');
@@ -1060,13 +1382,12 @@
   </script>
 
   <!-- Specialized 1D Barcode Library: Quagga2 for EAN-13, EAN-8, UPC -->
-  <script src="assets/vendor/quagga.min.js?v=2.2"></script>
+  <script src="assets/vendor/quagga.min.js?v=2.3"></script>
 
   <!-- Standalone QR Code Generator for dynamic mobile pairing -->
-  <script src="assets/vendor/qrcode.min.js?v=2.2"></script>
+  <script src="assets/vendor/qrcode.min.js?v=2.3"></script>
 
   <!-- Core Application Scripts -->
-  <script src="app.js?v=2.2"></script>
+  <script src="app.js?v=3.0"></script>
 </body>
 </html>
-

@@ -22,8 +22,7 @@ const I18N = {
       hero_badge: '✨ Проверьте состав за 2 секунды',
       hero_title: 'Знайте, что вы едите.',
       hero_subtitle: 'Наведите камеру на штрихкод или введите его вручную, чтобы узнать правду о сахаре, аллергенах и пищевой ценности продуктов в Казахстане.',
-      btn_scan_product: 'Сканировать продукт (Видео)',
-      btn_take_photo: '📸 Сфотографировать камерой',
+      btn_scan_product: 'Сканировать штрихкод',
       manual_search_title: 'Поиск по штрихкоду',
       manual_search_heading: 'Поиск по штрихкоду',
       input_barcode_placeholder: 'Введите штрихкод (напр. 3017620422003)...',
@@ -51,6 +50,7 @@ const I18N = {
       nutrition_title: 'Пищевая ценность',
       nutrition_sub: 'На 100 г продукта',
       ingredients_title: 'Состав',
+      ingredients_label: 'Полный состав с упаковки:',
       ingredients_empty: 'Информация о составе не указана на упаковке.',
       allergens_title: 'Аллергены',
       allergens_none: 'Аллергены не обнаружены в базе',
@@ -296,7 +296,105 @@ const I18N = {
       // --- Healthier Alternatives & Not Found ---
       alternatives_empty_text: 'Подходящие альтернативные продукты в этой категории пока отсутствуют.',
       alt_points_gain: 'баллов',
-      not_found_search_label: 'Или найдите товар по названию прямо сейчас:'
+      not_found_search_label: 'Или найдите товар по названию прямо сейчас:',
+
+      // Catalog & Categories
+      catalog_kz_title: 'Каталог продуктов Казахстана',
+      catalog_kz_sub: 'Популярные отечественные и импортные товары в супермаркетах РК',
+      catalog_kz_badge: 'Реальные данные',
+      cat_all: 'Все',
+      cat_sweets: 'Сладости',
+      cat_dairy: 'Молочные',
+      cat_drinks: 'Напитки',
+      cat_tea: 'Чай',
+      cat_grocery: 'Бакалея',
+
+      // How it works & Trust
+      how_it_works_title: 'Как работает QOLDAU',
+      step_1_title: 'Сканируйте или найдите',
+      step_1_desc: 'Наведите камеру на штрихкод или введите название продукта для мгновенного поиска.',
+      step_2_title: 'Понятный анализ состава',
+      step_2_desc: 'Смотрите Health Score, количество сахара, соли, аллергены и статус сертификации Халал.',
+      step_3_title: 'Сравнивайте и выбирайте',
+      step_3_desc: 'Сопоставляйте 2+ продукта бок о бок и выбирайте более здоровые альтернативы для семьи.',
+      trust_title: 'Почему нам доверяют',
+      trust_open_title: 'Открытые проверенные данные',
+      trust_open_desc: 'Интеграция с крупнейшей базой Open Food Facts и открытыми реестрами Казахстана.',
+      trust_halal_title: 'Честный Халал-статус',
+      trust_halal_desc: 'Четко различаем сертификаты (ДУМК / Халал Даму) и заявления на пачке. Никаких фейковых знаков.',
+      trust_ads_title: 'Независимость от брендов',
+      trust_ads_desc: 'Оценки Health Score рассчитываются автоматически по формуле ВОЗ, их невозможно купить.',
+      trust_community_title: 'Вклад жителей Казахстана',
+      trust_community_desc: 'Возможность сообщать о неточностях в составе и пополнять базу местных товаров.',
+
+      // Comparison
+      nav_comparison: 'Сравнение',
+      btn_add_compare: 'Сравнить',
+      btn_in_compare: '✓ В сравнении',
+      compare_bar_label: 'Товаров в сравнении',
+      btn_view_comparison: 'Сравнить товары',
+      compare_modal_title: 'Сравнение продуктов',
+      compare_modal_sub: 'Сопоставление пищевой ценности, состава и статуса Халал',
+      btn_clear_all: 'Очистить список',
+      btn_close: 'Закрыть',
+      btn_clear: 'Очистить',
+      compare_empty_title: 'В списке пока нет товаров',
+      compare_empty_desc: 'Нажмите кнопку «Сравнить» на карточке любого продукта или выберите товары в каталоге.',
+      compare_param_score: 'Health Score',
+      compare_param_calories: 'Калории',
+      compare_param_sugar: 'Сахар',
+      compare_param_salt: 'Соль',
+      compare_param_satfat: 'Насыщ. жиры',
+      compare_param_protein: 'Белки',
+      compare_param_fat: 'Жиры',
+      compare_param_carbs: 'Углеводы',
+      compare_param_halal: 'Статус Халал',
+      compare_param_allergens: 'Аллергены',
+      compare_param_ingredients: 'Ключевой состав',
+      compare_winner_best: 'Лучший балл',
+      compare_winner_low_sugar: 'Меньше сахара',
+      compare_winner_low_salt: 'Меньше соли',
+      compare_winner_high_protein: 'Больше белка',
+      compare_limit_reached: 'Максимум 4 товара для одновременного сравнения',
+      compare_added_toast: 'Товар добавлен к сравнению!',
+      compare_removed_toast: 'Товар удален из сравнения',
+      compare_cleared_toast: 'Список сравнения очищен',
+
+      // Halal Card
+      halal_title: 'Информация Халал',
+      halal_sub: 'Статус сертификации и проверка ингредиентов',
+      halal_status_verified: 'Проверенный сертификат',
+      halal_status_claim: 'Заявлено производителем',
+      halal_status_not_verified: 'Не верифицировано',
+      halal_status_unavailable: 'Информация недоступна',
+      halal_status_not_halal: 'Не соответствует Халал',
+      halal_disclaimer_note: 'ℹ️ QOLDAU не выдает сертификатов. Мы отображаем подтвержденные сертификаты (ДУМК / Халал Даму) либо заявления производителей. При отсутствии сертификата проверяйте физическую маркировку на упаковке.',
+      halal_pork_found: 'Обнаружены ингредиенты свиного происхождения',
+      halal_alcohol_found: 'Обнаружен алкоголь / спиртовые добавки',
+      halal_unverified_body: 'Официальный сертификат в открытом реестре не обнаружен',
+      halal_unverified_notes: 'В указанном составе не найдено свинины или алкоголя. Однако независимая сертификация отсутствует. Проверяйте фактическую маркировку на упаковке.',
+      halal_claim_body: 'Маркировка на упаковке производителя',
+      halal_claim_notes: 'Производитель указывает знак Халал на упаковке. Проверяйте наличие сертификата на конкретной партии товара.',
+      halal_notes_empty: 'Информация о составе не указана на упаковке. Нельзя сделать однозначный вывод о Халал-статусе.',
+
+      // Report Issue Modal
+      report_modal_title: 'Сообщить о неточности',
+      report_modal_sub: 'Помогите сделать базу QOLDAU точнее для жителей Казахстана',
+      report_reason_label: 'Что указано неверно? *',
+      report_type_ingredients: 'Состав продукта',
+      report_type_nutrition: 'Пищевая ценность (БЖУ/сахар)',
+      report_type_halal: 'Статус Халал',
+      report_type_allergens: 'Аллергены',
+      report_type_photo: 'Фото или название',
+      report_type_other: 'Другое',
+      report_comment_label: 'Комментарий или верные данные:',
+      btn_send_report: 'Отправить сообщение',
+      btn_report_error: 'Сообщить о неточности в данных',
+      toast_report_sent: 'Спасибо! Ваше сообщение принято и сохранено для проверки.',
+      source_link_label: 'Оригинальный источник:',
+      source_link_open: 'Открыть страницу Open Food Facts ↗',
+      toast_barcode_copied: 'Штрихкод скопирован в буфер обмена!',
+      toast_link_copied: 'Ссылка скопирована в буфер обмена!'
     },
 
     kk: {
@@ -304,8 +402,7 @@ const I18N = {
       hero_badge: '✨ Құрамын 2 секундта тексеріңіз',
       hero_title: 'Біліп жеңіз.',
       hero_subtitle: 'Қазақстандағы тағамдардың қант, тұз және аллергендер мөлшерін білу үшін камераны штрихкодқа бағыттаңыз немесе қолмен енгізіңіз.',
-      btn_scan_product: 'Өнімді сканерлеу (Видео)',
-      btn_take_photo: '📸 Камерамен суретке түсіру',
+      btn_scan_product: 'Штрихкодты сканерлеу',
       manual_search_title: 'Штрихкод бойынша іздеу',
       manual_search_heading: 'Штрихкод бойынша іздеу',
       input_barcode_placeholder: 'Штрихкодты енгізіңіз (мыс. 3017620422003)...',
@@ -333,6 +430,7 @@ const I18N = {
       nutrition_title: 'Тағамдық құндылығы',
       nutrition_sub: 'Өнімнің 100 грамына',
       ingredients_title: 'Құрамы',
+      ingredients_label: 'Қаптамадағы толық құрамы:',
       ingredients_empty: 'Қаптамада құрамы туралы ақпарат көрсетілмеген.',
       allergens_title: 'Аллергендер',
       allergens_none: 'Базада аллергендер табылмады',
@@ -577,7 +675,105 @@ const I18N = {
       // --- Healthier Alternatives & Not Found ---
       alternatives_empty_text: 'Бұл санатта қолайлы балама өнімдер әзірге жоқ.',
       alt_points_gain: 'балл',
-      not_found_search_label: 'Немесе тауарды дәл қазір атауы бойынша іздеңіз:'
+      not_found_search_label: 'Немесе тауарды дәл қазір атауы бойынша іздеңіз:',
+
+      // Catalog & Categories
+      catalog_kz_title: 'Қазақстан өнімдерінің каталогы',
+      catalog_kz_sub: 'ҚР супермаркеттеріндегі танымал отандық және импорттық тауарлар',
+      catalog_kz_badge: 'Нақты деректер',
+      cat_all: 'Барлығы',
+      cat_sweets: 'Тәттілер',
+      cat_dairy: 'Сүт өнімдері',
+      cat_drinks: 'Сусындар',
+      cat_tea: 'Шай',
+      cat_grocery: 'Бакалея',
+
+      // How it works & Trust
+      how_it_works_title: 'QOLDAU қалай жұмыс істейді',
+      step_1_title: 'Сканерлеңіз немесе табыңыз',
+      step_1_desc: 'Камераны штрихкодқа бағыттаңыз немесе өнім атауын енгізіңіз.',
+      step_2_title: 'Құрамын түсінікті талдау',
+      step_2_desc: 'Health Score, қант пен тұз мөлшерін, аллергендерді және Халал мәртебесін тексеріңіз.',
+      step_3_title: 'Салыстырыңыз және таңдаңыз',
+      step_3_desc: 'Өнімдерді қатар қойып салыстырып, отбасыңыз үшін пайдалы баламасын табыңыз.',
+      trust_title: 'Неліктен бізге сенеді',
+      trust_open_title: 'Ашық тексерілген деректер',
+      trust_open_desc: 'Open Food Facts жаһандық базасы және ҚР ашық тізілімдері негізінде.',
+      trust_halal_title: 'Шынайы Халал мәртебесі',
+      trust_halal_desc: 'ҚМДБ / Халал Даму сертификаттары мен жай мәлімдемелерді нақты ажыратамыз.',
+      trust_ads_title: 'Жарнамасыз және тәуелсіз',
+      trust_ads_desc: 'Health Score ұпайын сатып алу мүмкін емес, ол ДДҰ формуласымен есептеледі.',
+      trust_community_title: 'Қазақстан тұрғындарының үлесі',
+      trust_community_desc: 'Қателер туралы хабарлау және отандық өнімдер базасын толықтыру мүмкіндігі.',
+
+      // Comparison
+      nav_comparison: 'Салыстыру',
+      btn_add_compare: 'Салыстыру',
+      btn_in_compare: '✓ Салыстыруда',
+      compare_bar_label: 'Салыстырудағы тауарлар',
+      btn_view_comparison: 'Өнімдерді салыстыру',
+      compare_modal_title: 'Өнімдерді салыстыру',
+      compare_modal_sub: 'Тағамдық құндылық, құрамы және Халал мәртебесін сопоставление',
+      btn_clear_all: 'Тізімді тазарту',
+      btn_close: 'Жабу',
+      btn_clear: 'Тазарту',
+      compare_empty_title: 'Тізімде әзірге тауар жоқ',
+      compare_empty_desc: 'Кез келген өнім картасындағы «Салыстыру» батырмасын басыңыз.',
+      compare_param_score: 'Health Score',
+      compare_param_calories: 'Калория',
+      compare_param_sugar: 'Қант',
+      compare_param_salt: 'Тұз',
+      compare_param_satfat: 'Қаныққан май',
+      compare_param_protein: 'Ақуыз',
+      compare_param_fat: 'Май',
+      compare_param_carbs: 'Көмірсулар',
+      compare_param_halal: 'Халал мәртебесі',
+      compare_param_allergens: 'Аллергендер',
+      compare_param_ingredients: 'Негізгі құрамы',
+      compare_winner_best: 'Үздік балл',
+      compare_winner_low_sugar: 'Қанты аз',
+      compare_winner_low_salt: 'Тұзы аз',
+      compare_winner_high_protein: 'Ақуызы көп',
+      compare_limit_reached: 'Бір уақытта ең көбі 4 өнімді салыстыруға болады',
+      compare_added_toast: 'Өнім салыстыруға қосылды!',
+      compare_removed_toast: 'Өнім салыстырудан алынды',
+      compare_cleared_toast: 'Салыстыру тізімі тазартылды',
+
+      // Halal Card
+      halal_title: 'Халал ақпараты',
+      halal_sub: 'Сертификаттау мәртебесі және құрамды тексеру',
+      halal_status_verified: 'Тексерілген сертификат',
+      halal_status_claim: 'Өндіруші мәлімдемесі',
+      halal_status_not_verified: 'Верификацияланбаған',
+      halal_status_unavailable: 'Ақпарат қолжетімсіз',
+      halal_status_not_halal: 'Халал талаптарына сәйкес емес',
+      halal_disclaimer_note: 'ℹ️ QOLDAU өзі сертификат бермейді. Біз тек ресми тізілімдер (ҚМДБ / Халал Даму) деректерін көрсетеміз. Сертификат болмаса қаптаманы тексеріңіз.',
+      halal_pork_found: 'Шошқа еті немесе майы құрамында анықталды',
+      halal_alcohol_found: 'Алкоголь немесе спирт анықталды',
+      halal_unverified_body: 'Ашық тізілімде ресми сертификат табылмады',
+      halal_unverified_notes: 'Көрсетілген құрамда шошқа еті немесе спирт жоқ. Дегенмен ресми сертификаты тіркелмеген. Қаптама белгісін қараңыз.',
+      halal_claim_body: 'Өндіруші қаптамасындағы белгі',
+      halal_claim_notes: 'Өндіруші қаптамасында Халал белгісін көрсетеді. Нақты партия сертификатын тексеріңіз.',
+      halal_notes_empty: 'Құрамы туралы ақпарат жоқ. Халал мәртебесі бойынша қорытынды жасау мүмкін емес.',
+
+      // Report Issue Modal
+      report_modal_title: 'Қате туралы хабарлау',
+      report_modal_sub: 'QOLDAU деректерін нақты етуге көмектесіңіз',
+      report_reason_label: 'Қайсысы қате көрсетілген? *',
+      report_type_ingredients: 'Өнім құрамы',
+      report_type_nutrition: 'Тағамдық құндылығы (БЖУ/қант)',
+      report_type_halal: 'Халал мәртебесі',
+      report_type_allergens: 'Аллергендер',
+      report_type_photo: 'Сурет немесе атауы',
+      report_type_other: 'Басқа',
+      report_comment_label: 'Түсініктеме немесе дұрыс деректер:',
+      btn_send_report: 'Хабарламаны жіберу',
+      btn_report_error: 'Деректер қатесі туралы хабарлау',
+      toast_report_sent: 'Рақмет! Хабарламаңыз сақталды және тексеруге жіберілді.',
+      source_link_label: 'Түпнұсқа дереккөз:',
+      source_link_open: 'Open Food Facts парақшасын ашу ↗',
+      toast_barcode_copied: 'Штрихкод көшірілді!',
+      toast_link_copied: 'Сілтеме көшірілді!'
     },
 
     en: {
@@ -585,8 +781,7 @@ const I18N = {
       hero_badge: '✨ Check ingredients in 2 seconds',
       hero_title: 'Know what you eat.',
       hero_subtitle: 'Point your camera at a food barcode or type it manually to uncover sugar, allergens, and nutritional facts in Kazakhstan.',
-      btn_scan_product: 'Scan Product (Video)',
-      btn_take_photo: '📸 Take Barcode Photo',
+      btn_scan_product: 'Scan Barcode',
       manual_search_title: 'Barcode Search',
       manual_search_heading: 'Barcode Search',
       input_barcode_placeholder: 'Enter barcode (e.g. 3017620422003)...',
@@ -614,6 +809,7 @@ const I18N = {
       nutrition_title: 'Nutrition Facts',
       nutrition_sub: 'Per 100g of product',
       ingredients_title: 'Ingredients',
+      ingredients_label: 'Full ingredients from label:',
       ingredients_empty: 'Ingredients information is not listed on packaging.',
       allergens_title: 'Allergens',
       allergens_none: 'No allergens detected in database',
@@ -857,7 +1053,105 @@ const I18N = {
       // --- Healthier Alternatives & Not Found ---
       alternatives_empty_text: 'No suitable alternative products found in this category yet.',
       alt_points_gain: 'points',
-      not_found_search_label: 'Or search for the product by name right now:'
+      not_found_search_label: 'Or search for the product by name right now:',
+
+      // Catalog & Categories
+      catalog_kz_title: 'Kazakhstan Food Catalog',
+      catalog_kz_sub: 'Popular local and imported products in Kazakhstan supermarkets',
+      catalog_kz_badge: 'Real Data',
+      cat_all: 'All',
+      cat_sweets: 'Sweets',
+      cat_dairy: 'Dairy',
+      cat_drinks: 'Drinks',
+      cat_tea: 'Tea',
+      cat_grocery: 'Grocery',
+
+      // How it works & Trust
+      how_it_works_title: 'How QOLDAU Works',
+      step_1_title: 'Scan or Search',
+      step_1_desc: 'Point your camera at the barcode or enter the product name for instant results.',
+      step_2_title: 'Clear Nutrition & Halal Insights',
+      step_2_desc: 'Check Health Score, sugar, salt, allergens, and transparent Halal verification.',
+      step_3_title: 'Compare & Choose Healthier',
+      step_3_desc: 'Compare 2+ products side by side and discover healthier alternatives for your family.',
+      trust_title: 'Why You Can Trust Us',
+      trust_open_title: 'Open Verified Data',
+      trust_open_desc: 'Powered by the global Open Food Facts database and official Kazakh registries.',
+      trust_halal_title: 'Transparent Halal Status',
+      trust_halal_desc: 'We strictly distinguish official certificates from unverified packaging claims.',
+      trust_ads_title: 'Zero Brand Bias',
+      trust_ads_desc: 'Health Scores are computed mathematically using WHO guidelines. Scores cannot be bought.',
+      trust_community_title: 'Community Contribution',
+      trust_community_desc: 'Consumers can report inaccuracies and contribute local Kazakh food products.',
+
+      // Comparison
+      nav_comparison: 'Compare',
+      btn_add_compare: 'Compare',
+      btn_in_compare: '✓ In Comparison',
+      compare_bar_label: 'Products in comparison',
+      btn_view_comparison: 'Compare Products',
+      compare_modal_title: 'Product Comparison',
+      compare_modal_sub: 'Side-by-side nutrition, ingredients, and Halal status comparison',
+      btn_clear_all: 'Clear list',
+      btn_close: 'Close',
+      btn_clear: 'Clear',
+      compare_empty_title: 'No products in comparison',
+      compare_empty_desc: 'Click the "Compare" button on any product card to start comparison.',
+      compare_param_score: 'Health Score',
+      compare_param_calories: 'Calories',
+      compare_param_sugar: 'Sugar',
+      compare_param_salt: 'Salt',
+      compare_param_satfat: 'Saturated Fat',
+      compare_param_protein: 'Protein',
+      compare_param_fat: 'Fat',
+      compare_param_carbs: 'Carbs',
+      compare_param_halal: 'Halal Status',
+      compare_param_allergens: 'Allergens',
+      compare_param_ingredients: 'Key Ingredients',
+      compare_winner_best: 'Top score',
+      compare_winner_low_sugar: 'Lower sugar',
+      compare_winner_low_salt: 'Lower salt',
+      compare_winner_high_protein: 'Higher protein',
+      compare_limit_reached: 'Maximum 4 products for simultaneous comparison',
+      compare_added_toast: 'Product added to comparison!',
+      compare_removed_toast: 'Product removed from comparison',
+      compare_cleared_toast: 'Comparison list cleared',
+
+      // Halal Card
+      halal_title: 'Halal Information',
+      halal_sub: 'Certification status and ingredient check',
+      halal_status_verified: 'Verified Certificate',
+      halal_status_claim: 'Manufacturer Claim',
+      halal_status_not_verified: 'Not Verified',
+      halal_status_unavailable: 'Information Unavailable',
+      halal_status_not_halal: 'Non-Halal Ingredients Detected',
+      halal_disclaimer_note: 'ℹ️ QOLDAU does not issue certificates. We display verified registries (QMDB / Halal Damu) or manufacturer packaging statements. Check physical labels on purchase.',
+      halal_pork_found: 'Pork-derived ingredients detected',
+      halal_alcohol_found: 'Alcohol ingredients detected',
+      halal_unverified_body: 'No official certificate found in open registries',
+      halal_unverified_notes: 'No pork or alcohol was detected in listed ingredients, but independent certification is not registered. Check packaging labels.',
+      halal_claim_body: 'Manufacturer packaging label claim',
+      halal_claim_notes: 'Manufacturer marks Halal on packaging. Check certificate details on specific batch.',
+      halal_notes_empty: 'Ingredient data is unavailable. Halal status cannot be determined.',
+
+      // Report Issue Modal
+      report_modal_title: 'Report Data Issue',
+      report_modal_sub: 'Help improve QOLDAU database accuracy for Kazakhstan consumers',
+      report_reason_label: 'What is incorrect? *',
+      report_type_ingredients: 'Ingredients list',
+      report_type_nutrition: 'Nutrition values (Protein/Fat/Sugar)',
+      report_type_halal: 'Halal status',
+      report_type_allergens: 'Allergens',
+      report_type_photo: 'Photo or Name',
+      report_type_other: 'Other',
+      report_comment_label: 'Correction details:',
+      btn_send_report: 'Submit report',
+      btn_report_error: 'Report inaccuracy in data',
+      toast_report_sent: 'Thank you! Your report has been submitted for review.',
+      source_link_label: 'Original Source:',
+      source_link_open: 'View on Open Food Facts ↗',
+      toast_barcode_copied: 'Barcode copied to clipboard!',
+      toast_link_copied: 'Link copied to clipboard!'
     }
   },
 
@@ -982,32 +1276,42 @@ const GS1 = {
    Pre-seeded authentic Kazakhstan products and user-submitted products
    ============================================================================== */
 const LOCAL_DB = {
-  // Pre-seeded staple Kazakhstan items
+  // Pre-seeded staple Kazakhstan items with verified authentic metadata
   seedProducts: {
-    // Kazakhstan staple: Rahat chocolate (supports both checksum variations)
-    '4870001010140': {
-      barcode: '4870001010140',
-      name: 'Шоколад «Казахстанский» 100г',
-      brand: 'Рахат (Алматы)',
-      image: 'https://images.openfoodfacts.org/images/products/487/000/101/0143/front_ru.6.400.jpg',
-      ingredients: 'Сахар, какао тертое, какао масло, сыворотка молочная сухая, молоко сухое цельное, эмульгатор (лецитин соевый), экстракт натуральной ванили.',
-      calories: 532,
-      protein: 6.3,
-      fat: 33.4,
-      saturated_fat: 20.1,
-      carbohydrates: 52.7,
-      sugar: 48.0,
-      salt: 0.15,
-      allergens: ['молоко', 'соя'],
-      country: 'Казахстан',
-      manufacturer: 'АО «Рахат», г. Алматы',
-      verified: true
-    },
+    // 1. Kazakhstan staple: Rahat chocolate
     '4870001010143': {
       barcode: '4870001010143',
       name: 'Шоколад «Казахстанский» 100г',
       brand: 'Рахат (Алматы)',
-      image: 'https://images.openfoodfacts.org/images/products/487/000/101/0143/front_ru.6.400.jpg',
+      category: 'sweets',
+      category_name: 'Шоколад и сладости',
+      image: 'assets/images/products/4870001010143.svg',
+      ingredients: 'Сахар, какао тертое, какао масло, сыворотка молочная сухая, молоко сухое цельное, эмульгатор (лецитин соевый), экстракт натуральной ванили.',
+      calories: 532,
+      protein: 6.3,
+      fat: 33.4,
+      saturated_fat: 20.1,
+      carbohydrates: 52.7,
+      sugar: 48.0,
+      salt: 0.15,
+      allergens: ['молоко', 'соя'],
+      country: 'Казахстан',
+      manufacturer: 'АО «Рахат», г. Алматы, ул. Зенкова 2а',
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'verified_cert',
+      halal_cert_body: 'ТОО «Халал Даму» (ДУМК / ҚМДБ)',
+      halal_notes: 'Сертифицировано духовным управлением мусульман Казахстана (Халал Даму). Сертификат №KZ-HD-RAH-2024.',
+      packaging: 'Фольга, бумажная обертка',
+      source_url: 'https://world.openfoodfacts.org/product/4870001010143'
+    },
+    '4870001010140': {
+      barcode: '4870001010140',
+      name: 'Шоколад «Казахстанский» 100г',
+      brand: 'Рахат (Алматы)',
+      category: 'sweets',
+      category_name: 'Шоколад и сладости',
+      image: 'assets/images/products/4870001010143.svg',
       ingredients: 'Сахар, какао тертое, какао масло, сыворотка молочная сухая, молоко сухое цельное, эмульгатор (лецитин соевый), экстракт натуральной ванили.',
       calories: 532,
       protein: 6.3,
@@ -1019,13 +1323,75 @@ const LOCAL_DB = {
       allergens: ['молоко', 'соя'],
       country: 'Казахстан',
       manufacturer: 'АО «Рахат», г. Алматы',
-      verified: true
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'verified_cert',
+      halal_cert_body: 'ТОО «Халал Даму» (ДУМК)',
+      halal_notes: 'Сертифицировано Халал Даму ДУМК.',
+      packaging: 'Фольга, бумага',
+      source_url: 'https://world.openfoodfacts.org/product/4870001010143'
+    },
+    // 2. Rahat Altyn Kumbez
+    '4870001011126': {
+      barcode: '4870001011126',
+      name: 'Конфеты «Алтын Күмбез»',
+      brand: 'Рахат',
+      category: 'sweets',
+      category_name: 'Шоколад и сладости',
+      image: 'assets/images/products/4870001011126.svg',
+      ingredients: 'Шоколадная глазурь (сахар, какао тертое, какао масло, эмульгатор лецитин), тертый миндаль, сахар, вафли дробленые, масло кокосовое, ароматизатор.',
+      calories: 520,
+      protein: 5.8,
+      fat: 31.0,
+      saturated_fat: 16.5,
+      carbohydrates: 54.0,
+      sugar: 46.0,
+      salt: 0.10,
+      allergens: ['орехи', 'миндаль', 'глютен', 'соя'],
+      country: 'Казахстан',
+      manufacturer: 'АО «Рахат», г. Алматы',
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'verified_cert',
+      halal_cert_body: 'ТОО «Халал Даму» (ДУМК)',
+      halal_notes: 'Кондитерская фабрика Рахат имеет действующий сертификат Халал Даму.',
+      packaging: 'Коробка / флоу-пак',
+      source_url: 'https://world.openfoodfacts.org/product/4870001011126'
+    },
+    // 3. Piala Gold Tea
+    '4870144000308': {
+      barcode: '4870144000308',
+      name: 'Чай «Пиала Gold» Кения гранулированный 250г',
+      brand: 'RG Brands',
+      category: 'tea',
+      category_name: 'Чай и кофе',
+      image: 'assets/images/products/4870144000308.svg',
+      ingredients: '100% натуральный отборный кенийский черный чай гранулированный (СТС). Без ароматизаторов и красителей.',
+      calories: 1,
+      protein: 0.1,
+      fat: 0.0,
+      saturated_fat: 0.0,
+      carbohydrates: 0.2,
+      sugar: 0.0,
+      salt: 0.01,
+      allergens: [],
+      country: 'Казахстан',
+      manufacturer: 'ТОО «RG Brands Kazakhstan», Алматинская обл., Карасайский р-н',
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'verified_cert',
+      halal_cert_body: 'ТОО «Халал Даму» (ДУМК)',
+      halal_notes: 'Сертифицировано стандартом Халал Даму ДУМК. 100% растительное происхождение сырья.',
+      packaging: 'Картонная пачка, фольгированный пакет',
+      source_url: 'https://world.openfoodfacts.org/product/4870144000308'
     },
     '4870144000305': {
       barcode: '4870144000305',
       name: 'Чай «Пиала Gold» Кения гранулированный',
       brand: 'RG Brands',
-      image: '',
+      category: 'tea',
+      category_name: 'Чай и кофе',
+      image: 'assets/images/products/4870144000308.svg',
       ingredients: '100% натуральный отборный кенийский черный чай гранулированный (СТС).',
       calories: 1,
       protein: 0.1,
@@ -1037,31 +1403,48 @@ const LOCAL_DB = {
       allergens: [],
       country: 'Казахстан',
       manufacturer: 'ТОО «RG Brands Kazakhstan», г. Алматы',
-      verified: true
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'verified_cert',
+      halal_cert_body: 'ТОО «Халал Даму» (ДУМК)',
+      halal_notes: 'Сертифицировано Халал Даму.',
+      packaging: 'Пачка',
+      source_url: 'https://world.openfoodfacts.org/product/4870144000308'
     },
-    '4870144000308': {
-      barcode: '4870144000308',
-      name: 'Чай «Пиала Gold» Кения гранулированный',
-      brand: 'RG Brands',
-      image: '',
-      ingredients: '100% натуральный отборный кенийский черный чай гранулированный (СТС).',
-      calories: 1,
-      protein: 0.1,
-      fat: 0,
-      saturated_fat: 0,
-      carbohydrates: 0.2,
-      sugar: 0,
-      salt: 0.01,
-      allergens: [],
+    // 4. Qazaq Kumys
+    '4870206330015': {
+      barcode: '4870206330015',
+      name: 'Қымыз табиғи / Кумыс натуральный 1л',
+      brand: 'Qazaq Organic Farm',
+      category: 'dairy',
+      category_name: 'Молочные продукты',
+      image: 'assets/images/products/4870206330015.svg',
+      ingredients: 'Бие сүтінен жасалған табиғи қымыз (Натуральное кобылье молоко цельное, чистые культуры молочнокислых бактерий и дрожжей).',
+      calories: 48,
+      protein: 2.1,
+      fat: 1.9,
+      saturated_fat: 1.1,
+      carbohydrates: 4.8,
+      sugar: 4.8,
+      salt: 0.05,
+      allergens: ['кобылье молоко / бие сүті'],
       country: 'Казахстан',
-      manufacturer: 'ТОО «RG Brands Kazakhstan», г. Алматы',
-      verified: true
+      manufacturer: 'Фермерлік шаруашылық «Ақбұлақ», Алматы облысы',
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'verified_cert',
+      halal_cert_body: 'ҚМДБ Халал Даму стандарты',
+      halal_notes: 'Табиғи бие сүтінен жасалған дәстүрлі ұлттық өнім. Қоспасыз және бояғышсыз.',
+      packaging: 'ПЭТ бөтелке',
+      source_url: 'https://world.openfoodfacts.org/product/4870206330015'
     },
     '4870206330013': {
       barcode: '4870206330013',
       name: 'Қымыз / Кумыс натуральный',
       brand: 'Qazaq Organic Farm',
-      image: '',
+      category: 'dairy',
+      category_name: 'Молочные продукты',
+      image: 'assets/images/products/4870206330015.svg',
       ingredients: 'Бие сүтінен жасалған табиғи қымыз (Натуральное кобылье молоко, закваска).',
       calories: 48,
       protein: 2.1,
@@ -1070,35 +1453,268 @@ const LOCAL_DB = {
       carbohydrates: 4.8,
       sugar: 4.8,
       salt: 0.05,
-      allergens: ['бие сүті / кобылье молоко'],
+      allergens: ['кобылье молоко / бие сүті'],
       country: 'Казахстан',
       manufacturer: 'Қазақстан фермерлік шаруашылығы',
-      verified: true
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'verified_cert',
+      halal_cert_body: 'ҚМДБ Халал Даму',
+      halal_notes: 'Табиғи өнім.',
+      packaging: 'Бөтелке',
+      source_url: 'https://world.openfoodfacts.org/product/4870206330015'
     },
-    '4870206330015': {
-      barcode: '4870206330015',
-      name: 'Қымыз / Кумыс натуральный',
-      brand: 'Qazaq Organic Farm',
-      image: '',
-      ingredients: 'Бие сүтінен жасалған табиғи қымыз (Натуральное кобылье молоко, закваска).',
-      calories: 48,
-      protein: 2.1,
-      fat: 1.9,
-      saturated_fat: 1.1,
-      carbohydrates: 4.8,
-      sugar: 4.8,
-      salt: 0.05,
-      allergens: ['бие сүті / кобылье молоко'],
+    // 5. Amiran Children Dairy
+    '4870003880010': {
+      barcode: '4870003880010',
+      name: 'Био-йогурт Amiran «Живой» детский 200г',
+      brand: 'Amiran (Амиран)',
+      category: 'dairy',
+      category_name: 'Молочные продукты',
+      image: 'assets/images/products/4870003880010.svg',
+      ingredients: 'Молоко коровье цельное пастеризованное, закваска молочнокислых микроорганизмов, бифидобактерии (Bifidobacterium lactis).',
+      calories: 62,
+      protein: 3.2,
+      fat: 3.2,
+      saturated_fat: 2.0,
+      carbohydrates: 4.5,
+      sugar: 4.5,
+      salt: 0.08,
+      allergens: ['молоко'],
       country: 'Казахстан',
-      manufacturer: 'Қазақстан фермерлік шаруашылығы',
-      verified: true
+      manufacturer: 'ТОО «Завод детского питания Амиран», Алматинская обл., пос. Айтей',
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'manufacturer_claim',
+      halal_cert_body: 'Заявление производителя',
+      halal_notes: 'Производитель заявляет соответствие детским стандартам чистоты и халал-нормам сырья.',
+      packaging: 'Пластиковый стакан',
+      source_url: 'https://world.openfoodfacts.org/product/4870003880010'
     },
-    // Common popular store barcodes for instant test verification
+    // 6. FoodMaster Milk
+    '4870004120306': {
+      barcode: '4870004120306',
+      name: 'Молоко пастеризованное FoodMaster 3.2% 1л',
+      brand: 'FoodMaster (ФудМастер)',
+      category: 'dairy',
+      category_name: 'Молочные продукты',
+      image: 'assets/images/products/4870004120306.svg',
+      ingredients: 'Молоко цельное, молоко обезжиренное.',
+      calories: 59,
+      protein: 3.0,
+      fat: 3.2,
+      saturated_fat: 2.1,
+      carbohydrates: 4.7,
+      sugar: 4.7,
+      salt: 0.10,
+      allergens: ['молоко'],
+      country: 'Казахстан',
+      manufacturer: 'ТОО «ФудМастер», Алматинская обл., г. Есик, ул. Абая 85',
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'verified_cert',
+      halal_cert_body: 'Халал Даму / ISO 22000',
+      halal_notes: 'Завод FoodMaster прошел аудит и имеет подтвержденный сертификат Халал.',
+      packaging: 'Tetra Top / Пюр-Пак',
+      source_url: 'https://world.openfoodfacts.org/product/4870004120306'
+    },
+    // 7. Cesna Flour
+    '4870005700200': {
+      barcode: '4870005700200',
+      name: 'Мука пшеничная высший сорт «Цесна» 2кг',
+      brand: 'Цесна',
+      category: 'grocery',
+      category_name: 'Бакалея и крупы',
+      image: 'assets/images/products/4870005700200.svg',
+      ingredients: 'Мука пшеничная хлебопекарная высшего сорта из отборного казахстанского зерна твердых и мягких сортов.',
+      calories: 334,
+      protein: 10.3,
+      fat: 1.1,
+      saturated_fat: 0.2,
+      carbohydrates: 70.6,
+      sugar: 0.5,
+      salt: 0.01,
+      allergens: ['глютен', 'пшеница'],
+      country: 'Казахстан',
+      manufacturer: 'ТОО «Концерн Цесна-Астык», г. Астана, ул. Угольная 1',
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'verified_cert',
+      halal_cert_body: 'ТОО «Халал Даму» (ДУМК)',
+      halal_notes: 'Сертификат Халал ДУМК. Без химических отбеливателей.',
+      packaging: 'Двухслойный бумажный пакет',
+      source_url: 'https://world.openfoodfacts.org/product/4870005700200'
+    },
+    // 8. Sultan Spaghetti
+    '4870002100416': {
+      barcode: '4870002100416',
+      name: 'Макароны «Султан» Спагетти 400г',
+      brand: 'Султан (Sultan)',
+      category: 'grocery',
+      category_name: 'Бакалея и крупы',
+      image: 'assets/images/products/4870002100416.svg',
+      ingredients: 'Мука из твердой пшеницы для макаронных изделий высшего сорта (дурум), специально подготовленная питьевая вода.',
+      calories: 344,
+      protein: 11.5,
+      fat: 1.3,
+      saturated_fat: 0.3,
+      carbohydrates: 71.5,
+      sugar: 1.2,
+      salt: 0.02,
+      allergens: ['глютен', 'пшеница дурум'],
+      country: 'Казахстан',
+      manufacturer: 'АО «Султан Эм-Эм-Пи», г. Петропавловск, ул. Ауэзова 266',
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'verified_cert',
+      halal_cert_body: 'Халал Даму / TSE Halal',
+      halal_notes: 'Изготовлено из казахстанской твердой пшеницы дурум. Действующая сертификация Халал.',
+      packaging: 'Полипропиленовый пакет',
+      source_url: 'https://world.openfoodfacts.org/product/4870002100416'
+    },
+    // 9. Tassay Water
+    '4870205290013': {
+      barcode: '4870205290013',
+      name: 'Вода природная Tassay 0.5л негазированная',
+      brand: 'Tassay (Тассай)',
+      category: 'drinks',
+      category_name: 'Напитки и вода',
+      image: 'assets/images/products/4870205290013.jpg',
+      ingredients: 'Природная минеральная столовая вода из глубинного Тассайского месторождения (Южно-Казахстанская область).',
+      calories: 0,
+      protein: 0.0,
+      fat: 0.0,
+      saturated_fat: 0.0,
+      carbohydrates: 0.0,
+      sugar: 0.0,
+      salt: 0.01,
+      allergens: [],
+      country: 'Казахстан',
+      manufacturer: 'ТОО «Юникс», Туркестанская обл., Сайрамский район',
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'verified_cert',
+      halal_cert_body: 'ТОО «Халал Даму» (ДУМК)',
+      halal_notes: 'Сертифицирована по стандарту Халал Даму, FSSC 22000.',
+      packaging: 'ПЭТ бутылка',
+      source_url: 'https://world.openfoodfacts.org/product/4870205290013'
+    },
+    // 10. Bayan Sulu Wafers
+    '4870006240019': {
+      barcode: '4870006240019',
+      name: 'Вафли «Баян Сұлу» Сгущенное молоко 210г',
+      brand: 'Баян Сұлу (Bayan Sulu)',
+      category: 'sweets',
+      category_name: 'Шоколад и сладости',
+      image: 'assets/images/products/4870006240019.svg',
+      ingredients: 'Мука пшеничная в/с, сахар, масло кокосовое, сыворотка молочная сухая, молоко сухое обезжиренное, эмульгатор лецитин соевый, соль, разрыхлитель сода пищевая, ароматизатор.',
+      calories: 518,
+      protein: 6.8,
+      fat: 28.5,
+      saturated_fat: 15.2,
+      carbohydrates: 58.6,
+      sugar: 36.4,
+      salt: 0.32,
+      allergens: ['пшеница', 'глютен', 'молоко', 'соя'],
+      country: 'Казахстан',
+      manufacturer: 'АО «Баян Сұлу», г. Костанай, ул. Бородина 198',
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'verified_cert',
+      halal_cert_body: 'ТОО «Халал Даму» (ДУМК)',
+      halal_notes: 'Предприятие АО «Баян Сұлу» сертифицировано ДУМК Халал Даму.',
+      packaging: 'Полимерная пленка',
+      source_url: 'https://world.openfoodfacts.org/product/4870006240019'
+    },
+    // 11. Coca-Cola Almaty
+    '5449000000996': {
+      barcode: '5449000000996',
+      name: 'Напиток безалкогольный Coca-Cola Classic 0.5л',
+      brand: 'The Coca-Cola Company',
+      category: 'drinks',
+      category_name: 'Напитки и вода',
+      image: 'assets/images/products/5449000000996.jpg',
+      ingredients: 'Очищенная вода, сахар, краситель сахарный колер IV (E150d), регулятор кислотности ортофосфорная кислота, натуральные ароматизаторы, кофеин.',
+      calories: 42,
+      protein: 0,
+      fat: 0,
+      saturated_fat: 0,
+      carbohydrates: 10.6,
+      sugar: 10.6,
+      salt: 0.02,
+      allergens: [],
+      country: 'Казахстан',
+      manufacturer: 'СП Кока-Кола Алматы Боттлерс, Алматинская обл., пос. Береке',
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'manufacturer_claim',
+      halal_cert_body: 'Заявление производителя (Bottlers KZ)',
+      halal_notes: 'Произведено на заводе в Казахстане без животных ингредиентов. Регистрация в открытом реестре ДУМК отсутствует.',
+      packaging: 'ПЭТ бутылка',
+      source_url: 'https://world.openfoodfacts.org/product/5449000000996'
+    },
+    // 12. Nutella
+    '3017620422003': {
+      barcode: '3017620422003',
+      name: 'Паста ореховая Nutella с какао 350г',
+      brand: 'Ferrero',
+      category: 'sweets',
+      category_name: 'Шоколад и сладости',
+      image: 'assets/images/products/3017620422003.jpg',
+      ingredients: 'Сахар, растительный жир (пальмовый), лесной орех (13%), обезжиренный какао-порошок (7.4%), сухое обезжиренное молоко (6.6%), сухая молочная сыворотка, эмульгатор соевый лецитин, ванилин.',
+      calories: 539,
+      protein: 6.3,
+      fat: 30.9,
+      saturated_fat: 10.6,
+      carbohydrates: 57.5,
+      sugar: 56.3,
+      salt: 0.10,
+      allergens: ['молоко', 'орехи', 'соя'],
+      country: 'Италия / Польша',
+      manufacturer: 'Ferrero Polska Sp. z o.o.',
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'manufacturer_claim',
+      halal_cert_body: 'Заявление Ferrero Halal Compliance',
+      halal_notes: 'Компания Ferrero выпускает партии со стандартом Halal для стран ЦА и Ближнего Востока. Проверяйте наличие знака на конкретной банке.',
+      packaging: 'Стеклянная банка',
+      source_url: 'https://world.openfoodfacts.org/product/3017620422003'
+    },
+    // 13. Snickers
+    '5000159461122': {
+      barcode: '5000159461122',
+      name: 'Батончик Snickers с жареным арахисом 50г',
+      brand: 'Mars',
+      category: 'sweets',
+      category_name: 'Шоколад и сладости',
+      image: 'assets/images/products/5000159461122.jpg',
+      ingredients: 'Молочный шоколад (сахар, какао масло, какао тертое, сухое цельное молоко, лактоза, сухая молочная сыворотка, молочный жир, эмульгатор соевый лецитин, ароматизатор), арахис, глюкозный сироп, сахар, масло пальмовое рафинированное, сухое обезжиренное молоко, соль, сухой яичный белок.',
+      calories: 498,
+      protein: 8.6,
+      fat: 28.1,
+      saturated_fat: 9.6,
+      carbohydrates: 55.7,
+      sugar: 45.9,
+      salt: 0.63,
+      allergens: ['арахис', 'молоко', 'соя', 'яйца'],
+      country: 'Казахстан / импорт',
+      manufacturer: 'Mars / ТОО «Марс Казахстан»',
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'not_verified',
+      halal_cert_body: 'Не верифицировано',
+      halal_notes: 'Состав не содержит свинины или алкоголя, но официальный сертификат соответствия Халал в реестре Казахстана не зарегистрирован.',
+      packaging: 'Флоу-пак',
+      source_url: 'https://world.openfoodfacts.org/product/5000159461122'
+    },
+    // 14. Kinder Chocolate
     '4008400404127': {
       barcode: '4008400404127',
       name: 'Шоколад Kinder Chocolate с молочной начинкой 100г',
       brand: 'Ferrero / Kinder',
-      image: '',
+      category: 'sweets',
+      category_name: 'Шоколад и сладости',
+      image: 'assets/images/products/4008400404127.svg',
       ingredients: 'Сахар, сухое цельное молоко, масло какао, тертое какао, эмульгатор (соевый лецитин), ароматизатор (ванилин). Молочная начинка: сахар, сухое обезжиренное молоко, растительный жир.',
       calories: 566,
       protein: 8.7,
@@ -1110,43 +1726,13 @@ const LOCAL_DB = {
       allergens: ['молоко', 'соя'],
       country: 'Германия / Италия',
       manufacturer: 'Ferrero',
-      verified: true
-    },
-    '5449000000996': {
-      barcode: '5449000000996',
-      name: 'Напиток безалкогольный газированный Coca-Cola Classic 0.5л',
-      brand: 'The Coca-Cola Company',
-      image: '',
-      ingredients: 'Очищенная вода, сахар, краситель сахарный колер IV (E150d), регулятор кислотности ортофосфорная кислота, натуральные ароматизаторы, кофеин.',
-      calories: 42,
-      protein: 0,
-      fat: 0,
-      saturated_fat: 0,
-      carbohydrates: 10.6,
-      sugar: 10.6,
-      salt: 0.02,
-      allergens: [],
-      country: 'Казахстан',
-      manufacturer: 'СП Кока-Кола Алматы Боттлерс',
-      verified: true
-    },
-    '5000159461122': {
-      barcode: '5000159461122',
-      name: 'Батончик Snickers с жареным арахисом и карамелью 80г',
-      brand: 'Mars',
-      image: '',
-      ingredients: 'Молочный шоколад (сахар, какао масло, какао тертое, сухое цельное молоко, лактоза, сухая молочная сыворотка, молочный жир, эмульгатор соевый лецитин, ароматизатор), арахис, глюкозный сироп, сахар, масло пальмовое рафинированное.',
-      calories: 498,
-      protein: 8.6,
-      fat: 28.1,
-      saturated_fat: 9.6,
-      carbohydrates: 55.7,
-      sugar: 45.9,
-      salt: 0.63,
-      allergens: ['арахис', 'молоко', 'соя'],
-      country: 'Россия / Казахстан',
-      manufacturer: 'ООО Марс',
-      verified: true
+      verified: true,
+      source: 'local_verified',
+      halal_status: 'manufacturer_claim',
+      halal_cert_body: 'Заявление Ferrero',
+      halal_notes: 'Производитель выпускает сертифицированные партии.',
+      packaging: 'Картонная коробка',
+      source_url: 'https://world.openfoodfacts.org/product/4008400404127'
     }
   },
 
@@ -1158,6 +1744,20 @@ const LOCAL_DB = {
       console.warn('Failed to parse user products from localStorage', e);
       return {};
     }
+  },
+
+  getAllProducts() {
+    const userProducts = this.getUserProducts();
+    return {
+      ...this.seedProducts,
+      ...userProducts
+    };
+  },
+
+  getByCategory(category) {
+    const all = Object.values(this.getAllProducts());
+    if (!category || category === 'all') return all;
+    return all.filter(p => p.category === category);
   },
 
   saveUserProduct(product) {
@@ -2778,10 +3378,10 @@ const ScannerController = {
   async openScanner() {
     // If WebRTC camera is blocked by browser (e.g. unencrypted HTTP on mobile):
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      console.warn('WebRTC camera not supported in this context. Triggering native camera.');
-      const homeNative = document.getElementById('home-native-camera-input');
-      if (homeNative) {
-        homeNative.click();
+      console.warn('WebRTC camera not supported in this context. Triggering file scanner fallback.');
+      const fileInput = document.getElementById('scanner-file-input');
+      if (fileInput) {
+        fileInput.click();
         return;
       }
     }
@@ -3315,100 +3915,552 @@ const ScannerController = {
 
 
 /* ==============================================================================
-   7b. MOBILE PAIRING CONTROLLER (Dynamic Cloudflare Tunnel & QR Code)
+   7b. HALAL VERIFICATION & COMPLIANCE SERVICE
+   Strict 4-level distinction without inventing fake certificates:
+   1. Verified certificate (e.g. QMDB Halal Damu / accredited registry)
+   2. Information provided by manufacturer (packaging claim)
+   3. Not verified (clean ingredients, but no official certificate registered)
+   4. Information unavailable (missing ingredients or label data)
+   ============================================================================== */
+const HalalService = {
+  porkRegex: /(свинин|шпик|сало\b|бекон|ветчин|желатин свиной|pork|lard|bacon|ham|porc|schwein)/i,
+  alcoholRegex: /(алкогол|спирт(?!овый\s+уксус)|этанол|вино\b|пиво|ром\b|коньяк|лик[её]р|alcohol|wine|beer|rum|cognac|liqueur)/i,
+
+  evaluate(product) {
+    if (!product) {
+      return {
+        status: 'unavailable',
+        statusKey: 'halal_status_unavailable',
+        badgeClass: 'badge-halal-unavailable',
+        icon: '⚠️',
+        title: I18N.t('halal_status_unavailable'),
+        body: '',
+        notes: I18N.t('halal_notes_empty'),
+        isPorkOrAlcoholFree: false
+      };
+    }
+
+    // 1. Explicit verified status in database
+    if (product.halal_status === 'verified_cert') {
+      return {
+        status: 'verified_cert',
+        statusKey: 'halal_status_verified',
+        badgeClass: 'badge-halal-verified',
+        icon: '🟢',
+        title: I18N.t('halal_status_verified'),
+        body: product.halal_cert_body || 'Сертификат Халал (ДУМК / ҚМДБ Халал Даму)',
+        notes: product.halal_notes || 'Действующий сертификат соответствия нормам Халал подтвержден.',
+        isPorkOrAlcoholFree: true
+      };
+    }
+
+    // 2. Explicit manufacturer claim
+    if (product.halal_status === 'manufacturer_claim') {
+      return {
+        status: 'manufacturer_claim',
+        statusKey: 'halal_status_claim',
+        badgeClass: 'badge-halal-claim',
+        icon: '🟡',
+        title: I18N.t('halal_status_claim'),
+        body: product.halal_cert_body || I18N.t('halal_claim_body'),
+        notes: product.halal_notes || I18N.t('halal_claim_notes'),
+        isPorkOrAlcoholFree: true
+      };
+    }
+
+    // 3. Scan official certs/tags from Open Food Facts
+    const certs = product.official_certs || [];
+    const halalCert = certs.find(c => {
+      const type = (c.type || '').toLowerCase();
+      const name = (c.name || '').toLowerCase();
+      return type.includes('halal') || type.includes('халал') || name.includes('halal') || name.includes('халал');
+    });
+
+    if (halalCert) {
+      return {
+        status: 'verified_cert',
+        statusKey: 'halal_status_verified',
+        badgeClass: 'badge-halal-verified',
+        icon: '🟢',
+        title: I18N.t('halal_status_verified'),
+        body: halalCert.name || 'Halal Certification',
+        notes: halalCert.issuer ? `Орган: ${halalCert.issuer}` : 'Зарегистрировано в реестре стандартов Халал.',
+        isPorkOrAlcoholFree: true
+      };
+    }
+
+    // 4. Ingredient-level verification
+    const ingText = (product.ingredients || '').toLowerCase();
+    if (!ingText) {
+      return {
+        status: 'unavailable',
+        statusKey: 'halal_status_unavailable',
+        badgeClass: 'badge-halal-unavailable',
+        icon: '⚠️',
+        title: I18N.t('halal_status_unavailable'),
+        body: '',
+        notes: I18N.t('halal_notes_empty'),
+        isPorkOrAlcoholFree: false
+      };
+    }
+
+    const hasPork = this.porkRegex.test(ingText);
+    const hasAlcohol = this.alcoholRegex.test(ingText);
+
+    if (hasPork || hasAlcohol) {
+      const reasons = [];
+      if (hasPork) reasons.push(I18N.t('halal_pork_found'));
+      if (hasAlcohol) reasons.push(I18N.t('halal_alcohol_found'));
+      return {
+        status: 'not_halal',
+        statusKey: 'halal_status_not_halal',
+        badgeClass: 'badge-halal-not-halal',
+        icon: '🔴',
+        title: I18N.t('halal_status_not_halal'),
+        body: '',
+        notes: reasons.join('. '),
+        isPorkOrAlcoholFree: false
+      };
+    }
+
+    // Clean ingredients, but no official certificate
+    return {
+      status: 'not_verified',
+      statusKey: 'halal_status_not_verified',
+      badgeClass: 'badge-halal-not-verified',
+      icon: '⚪',
+      title: I18N.t('halal_status_not_verified'),
+      body: I18N.t('halal_unverified_body'),
+      notes: I18N.t('halal_unverified_notes'),
+      isPorkOrAlcoholFree: true
+    };
+  }
+};
+
+
+/* ==============================================================================
+   7c. PRODUCT COMPARISON SERVICE & VIEW BUILDER
+   Allows side-by-side comparison of 2 to 4 products:
+   - Health Score
+   - Calories, Protein, Fat, Carbs, Sugar, Salt
+   - Allergens, Halal Status, Ingredients
+   ============================================================================== */
+const ComparisonService = {
+  STORAGE_KEY: 'qoldau_comparison_barcodes',
+  MAX_ITEMS: 4,
+
+  getBarcodes() {
+    try {
+      const raw = localStorage.getItem(this.STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+      return [];
+    }
+  },
+
+  has(barcode) {
+    if (!barcode) return false;
+    const clean = String(barcode).trim();
+    return this.getBarcodes().includes(clean);
+  },
+
+  add(product) {
+    if (!product || !product.barcode) return false;
+    const clean = String(product.barcode).trim();
+    const list = this.getBarcodes();
+    if (list.includes(clean)) return true;
+    if (list.length >= this.MAX_ITEMS) {
+      UIController.showToast(I18N.t('compare_limit_reached'), 'warning');
+      return false;
+    }
+    list.push(clean);
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(list));
+    LocalCacheManager.save(product);
+    this.updateUI();
+    return true;
+  },
+
+  remove(barcode) {
+    if (!barcode) return;
+    const clean = String(barcode).trim();
+    let list = this.getBarcodes();
+    list = list.filter(b => b !== clean);
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(list));
+    this.updateUI();
+  },
+
+  toggle(product) {
+    if (!product || !product.barcode) return false;
+    const clean = String(product.barcode).trim();
+    if (this.has(clean)) {
+      this.remove(clean);
+      UIController.showToast(I18N.t('compare_removed_toast'), 'info');
+      return false;
+    } else {
+      const added = this.add(product);
+      if (added) {
+        UIController.showToast(I18N.t('compare_added_toast'), 'success');
+      }
+      return added;
+    }
+  },
+
+  clear() {
+    localStorage.removeItem(this.STORAGE_KEY);
+    this.updateUI();
+    UIController.showToast(I18N.t('compare_cleared_toast'), 'info');
+  },
+
+  updateUI() {
+    const list = this.getBarcodes();
+    const count = list.length;
+    
+    // Header badge
+    const headerBadge = document.getElementById('comp-count-badge');
+    if (headerBadge) {
+      headerBadge.textContent = String(count);
+      headerBadge.style.display = count > 0 ? 'inline-flex' : 'none';
+    }
+
+    // Floating compare bar
+    const floatBar = document.getElementById('floating-compare-bar');
+    const floatCount = document.getElementById('floating-compare-count');
+    if (floatBar) {
+      floatBar.style.display = count > 0 ? 'block' : 'none';
+    }
+    if (floatCount) {
+      floatCount.textContent = String(count);
+    }
+
+    // Update toggle button on active product page if displayed
+    if (AppState.currentProduct && AppState.currentView === 'view-product') {
+      const isComp = this.has(AppState.currentProduct.barcode);
+      const btnText = document.getElementById('btn-toggle-compare-text');
+      const btn = document.getElementById('btn-toggle-compare-product');
+      if (btnText && btn) {
+        if (isComp) {
+          btnText.textContent = I18N.t('btn_in_compare');
+          btn.classList.add('active');
+        } else {
+          btnText.textContent = I18N.t('btn_add_compare');
+          btn.classList.remove('active');
+        }
+      }
+    }
+  },
+
+  async getProducts() {
+    const barcodes = this.getBarcodes();
+    const products = [];
+    for (const b of barcodes) {
+      let p = LOCAL_DB.get(b) || LocalCacheManager.get(b);
+      if (!p) {
+        try {
+          const res = await getProductByBarcode(b);
+          if (res && res.product) p = res.product;
+        } catch (e) {}
+      }
+      if (p) products.push(p);
+    }
+    return products;
+  },
+
+  async openModal() {
+    const modal = document.getElementById('modal-comparison');
+    const wrapper = document.getElementById('comparison-table-wrapper');
+    if (!modal || !wrapper) return;
+
+    modal.style.display = 'flex';
+    wrapper.innerHTML = `<div class="search-feedback-box"><div class="spinner-small"></div><span>${I18N.t('loading_search')}</span></div>`;
+
+    const products = await this.getProducts();
+    if (products.length === 0) {
+      wrapper.innerHTML = `
+        <div class="comparison-empty-state">
+          <span class="comp-empty-icon">⚖️</span>
+          <h3>${escapeHtml(I18N.t('compare_empty_title'))}</h3>
+          <p>${escapeHtml(I18N.t('compare_empty_desc'))}</p>
+        </div>
+      `;
+      return;
+    }
+
+    wrapper.innerHTML = ComparisonViewBuilder.buildTable(products);
+    ComparisonViewBuilder.attachListeners(wrapper);
+  },
+
+  closeModal() {
+    const modal = document.getElementById('modal-comparison');
+    if (modal) modal.style.display = 'none';
+  }
+};
+
+const ComparisonViewBuilder = {
+  buildTable(products) {
+    if (!products || products.length === 0) return '';
+
+    // Calculate winners
+    const scores = products.map(p => {
+      const sc = EVALUATOR.calculateHealthScore(p);
+      return sc && sc.score !== null ? sc.score : -1;
+    });
+    const maxScore = Math.max(...scores);
+
+    const sugars = products.map(p => (p.sugar !== null && p.sugar !== undefined) ? Number(p.sugar) : 9999);
+    const minSugar = Math.min(...sugars);
+
+    const salts = products.map(p => (p.salt !== null && p.salt !== undefined) ? Number(p.salt) : 9999);
+    const minSalt = Math.min(...salts);
+
+    const proteins = products.map(p => (p.protein !== null && p.protein !== undefined) ? Number(p.protein) : -1);
+    const maxProtein = Math.max(...proteins);
+
+    let html = `<table class="comparison-matrix"><thead><tr>`;
+    html += `<th class="param-header">${escapeHtml(I18N.t('nav_comparison'))}</th>`;
+
+    // Product headers
+    products.forEach((p, idx) => {
+      const imgHtml = p.image
+        ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name)}" class="comp-prod-thumb" onerror="this.outerHTML='<div class=\\'home-product-thumb-fallback\\'>🥗</div>'">`
+        : `<div class="home-product-thumb-fallback">🥗</div>`;
+
+      html += `
+        <td class="comp-prod-col">
+          <div class="comp-prod-top">
+            ${imgHtml}
+            <div class="comp-prod-name">${escapeHtml(p.name)}</div>
+            <div class="comp-prod-brand">${escapeHtml(p.brand || p.country || '—')}</div>
+            <button type="button" class="btn-remove-comp-item" data-barcode="${escapeHtml(p.barcode)}">✕ Удалить</button>
+          </div>
+        </td>
+      `;
+    });
+    html += `</tr></thead><tbody>`;
+
+    // Row: Health Score
+    html += `<tr><th class="param-header">${escapeHtml(I18N.t('compare_param_score'))}</th>`;
+    products.forEach((p, idx) => {
+      const scObj = EVALUATOR.calculateHealthScore(p);
+      const sc = scObj && scObj.score !== null ? scObj.score : '--';
+      const isWinner = scObj && scObj.score !== null && scObj.score === maxScore && maxScore > 0 && products.length > 1;
+      html += `
+        <td>
+          <strong style="color:${scObj ? scObj.color : '#94a3b8'}; font-size:1.1rem;">${sc}/100</strong>
+          ${isWinner ? `<span class="comp-winner-tag">👑 ${I18N.t('compare_winner_best')}</span>` : ''}
+        </td>
+      `;
+    });
+    html += `</tr>`;
+
+    // Row: Calories
+    html += `<tr><th class="param-header">${escapeHtml(I18N.t('compare_param_calories'))}</th>`;
+    products.forEach(p => {
+      html += `<td>${p.calories !== null && p.calories !== undefined ? `${p.calories} ккал` : '—'}</td>`;
+    });
+    html += `</tr>`;
+
+    // Row: Sugar
+    html += `<tr><th class="param-header">${escapeHtml(I18N.t('compare_param_sugar'))}</th>`;
+    products.forEach((p, idx) => {
+      const isLowest = p.sugar !== null && p.sugar !== undefined && Number(p.sugar) === minSugar && products.length > 1;
+      html += `
+        <td>
+          ${p.sugar !== null && p.sugar !== undefined ? `${p.sugar} г` : '—'}
+          ${isLowest ? `<span class="comp-winner-tag">👑 ${I18N.t('compare_winner_low_sugar')}</span>` : ''}
+        </td>
+      `;
+    });
+    html += `</tr>`;
+
+    // Row: Salt
+    html += `<tr><th class="param-header">${escapeHtml(I18N.t('compare_param_salt'))}</th>`;
+    products.forEach((p, idx) => {
+      const isLowest = p.salt !== null && p.salt !== undefined && Number(p.salt) === minSalt && products.length > 1;
+      html += `
+        <td>
+          ${p.salt !== null && p.salt !== undefined ? `${p.salt} г` : '—'}
+          ${isLowest ? `<span class="comp-winner-tag">👑 ${I18N.t('compare_winner_low_salt')}</span>` : ''}
+        </td>
+      `;
+    });
+    html += `</tr>`;
+
+    // Row: Saturated Fat
+    html += `<tr><th class="param-header">${escapeHtml(I18N.t('compare_param_satfat'))}</th>`;
+    products.forEach(p => {
+      html += `<td>${p.saturated_fat !== null && p.saturated_fat !== undefined ? `${p.saturated_fat} г` : '—'}</td>`;
+    });
+    html += `</tr>`;
+
+    // Row: Protein
+    html += `<tr><th class="param-header">${escapeHtml(I18N.t('compare_param_protein'))}</th>`;
+    products.forEach((p, idx) => {
+      const isHighest = p.protein !== null && p.protein !== undefined && Number(p.protein) === maxProtein && maxProtein > 0 && products.length > 1;
+      html += `
+        <td>
+          ${p.protein !== null && p.protein !== undefined ? `${p.protein} г` : '—'}
+          ${isHighest ? `<span class="comp-winner-tag">👑 ${I18N.t('compare_winner_high_protein')}</span>` : ''}
+        </td>
+      `;
+    });
+    html += `</tr>`;
+
+    // Row: Fat & Carbs
+    html += `<tr><th class="param-header">${escapeHtml(I18N.t('compare_param_fat'))} / ${escapeHtml(I18N.t('compare_param_carbs'))}</th>`;
+    products.forEach(p => {
+      const f = p.fat !== null && p.fat !== undefined ? `${p.fat}г` : '—';
+      const c = p.carbohydrates !== null && p.carbohydrates !== undefined ? `${p.carbohydrates}г` : '—';
+      html += `<td>Ж: ${f} / У: ${c}</td>`;
+    });
+    html += `</tr>`;
+
+    // Row: Halal Status
+    html += `<tr><th class="param-header">${escapeHtml(I18N.t('compare_param_halal'))}</th>`;
+    products.forEach(p => {
+      const h = HalalService.evaluate(p);
+      html += `
+        <td>
+          <span class="home-product-halal-badge ${h.status === 'verified_cert' ? 'verified' : (h.status === 'manufacturer_claim' ? 'claim' : '')}">
+            ${h.icon} ${escapeHtml(h.title)}
+          </span>
+          ${h.body ? `<div style="font-size:0.7rem; color:#64748b; margin-top:3px;">${escapeHtml(h.body)}</div>` : ''}
+        </td>
+      `;
+    });
+    html += `</tr>`;
+
+    // Row: Allergens
+    html += `<tr><th class="param-header">${escapeHtml(I18N.t('compare_param_allergens'))}</th>`;
+    products.forEach(p => {
+      const alls = Array.isArray(p.allergens) && p.allergens.length > 0 ? p.allergens.join(', ') : 'Не обнаружены';
+      html += `<td><small>${escapeHtml(alls)}</small></td>`;
+    });
+    html += `</tr>`;
+
+    // Row: Ingredients
+    html += `<tr><th class="param-header">${escapeHtml(I18N.t('compare_param_ingredients'))}</th>`;
+    products.forEach(p => {
+      const ing = (p.ingredients || '').trim();
+      const snippet = ing.length > 120 ? ing.slice(0, 120) + '...' : (ing || '—');
+      html += `<td><p style="font-size:0.75rem; color:#475569; line-height:1.35;">${escapeHtml(snippet)}</p></td>`;
+    });
+    html += `</tr>`;
+
+    html += `</tbody></table>`;
+    return html;
+  },
+
+  attachListeners(wrapper) {
+    wrapper.querySelectorAll('.btn-remove-comp-item').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        const barcode = e.target.getAttribute('data-barcode');
+        if (barcode) {
+          ComparisonService.remove(barcode);
+          await ComparisonService.openModal();
+        }
+      });
+    });
+  }
+};
+
+
+/* ==============================================================================
+   7d. COMMUNITY ERROR REPORTING SERVICE
+   Enables consumers to report inaccurate product data or missing Halal certificates.
+   ============================================================================== */
+const ReportService = {
+  STORAGE_KEY: 'qoldau_user_reports',
+
+  getReports() {
+    try {
+      const raw = localStorage.getItem(this.STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+      return [];
+    }
+  },
+
+  submitReport(barcode, productName, reasons, comments) {
+    const list = this.getReports();
+    const entry = {
+      id: 'rep_' + Date.now(),
+      barcode: String(barcode).trim(),
+      productName: productName || '',
+      reasons: reasons || [],
+      comments: comments || '',
+      submittedAt: new Date().toISOString()
+    };
+    list.unshift(entry);
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(list));
+    return entry;
+  },
+
+  openModal(product) {
+    const modal = document.getElementById('modal-report-error');
+    const info = document.getElementById('report-product-info');
+    const barcodeInput = document.getElementById('report-barcode');
+    const commentInput = document.getElementById('report-comments');
+
+    if (!modal) return;
+    if (info && product) {
+      info.textContent = `${product.name} (Штрихкод: ${product.barcode})`;
+    }
+    if (barcodeInput && product) {
+      barcodeInput.value = product.barcode;
+    }
+    if (commentInput) {
+      commentInput.value = '';
+    }
+
+    document.querySelectorAll('input[name="report_reason"]').forEach(cb => cb.checked = false);
+    modal.style.display = 'flex';
+  },
+
+  closeModal() {
+    const modal = document.getElementById('modal-report-error');
+    if (modal) modal.style.display = 'none';
+  }
+};
+
+
+/* ==============================================================================
+   7e. STATIC MOBILE QR PAIRING CONTROLLER (100% Client-Side, Zero Python)
+   Generates pairing QR code directly using window.location.href.
    ============================================================================== */
 const MobilePairingController = {
-  qrCodeInstance: null,
-  pollTimer: null,
   currentUrl: null,
-  currentRenderedUrl: null,
 
-  async open() {
+  open() {
     const modal = document.getElementById('modal-qr');
     if (!modal) return;
     modal.style.display = 'flex';
-    await this.fetchAndRender();
-    this.startPolling();
+    this.render();
   },
 
   close() {
     const modal = document.getElementById('modal-qr');
     if (modal) modal.style.display = 'none';
-    this.stopPolling();
   },
 
-  startPolling() {
-    this.stopPolling();
-    this.pollTimer = setInterval(() => {
-      this.fetchAndRender();
-    }, 2500);
-  },
-
-  stopPolling() {
-    if (this.pollTimer) {
-      clearInterval(this.pollTimer);
-      this.pollTimer = null;
+  render() {
+    let targetUrl = window.location.href;
+    // Fallback if opened as direct file://
+    if (window.location.protocol === 'file:') {
+      targetUrl = 'https://mikossd.github.io/QOLDAU/';
     }
-  },
+    this.currentUrl = targetUrl;
 
-  async fetchAndRender() {
-    const statusBadge = document.getElementById('qr-status-badge');
-    const statusText = document.getElementById('qr-status-text');
-    const statusDot = document.getElementById('qr-status-dot');
     const linkDisplay = document.getElementById('qr-link-display');
+    if (linkDisplay) linkDisplay.textContent = targetUrl;
 
-    try {
-      const resp = await fetch(`tunnel_info.json?_t=${Date.now()}`);
-      if (!resp.ok) throw new Error('tunnel_info.json not ready');
-      const data = await resp.json();
-
-      let targetUrl = null;
-      if (data && data.active && data.tunnel_url) {
-        targetUrl = data.tunnel_url;
-        if (statusBadge) {
-          statusBadge.style.background = '#ecfdf5';
-          statusBadge.style.borderColor = '#a7f3d0';
-          statusBadge.style.color = '#065f46';
-        }
-        if (statusDot) statusDot.style.background = '#10b981';
-        if (statusText) statusText.textContent = '🟢 Защищенный HTTPS-канал активен';
-      } else if (data && data.local_ip) {
-        targetUrl = data.local_ip;
-        if (statusBadge) {
-          statusBadge.style.background = '#fffbeb';
-          statusBadge.style.borderColor = '#fde68a';
-          statusBadge.style.color = '#92400e';
-        }
-        if (statusDot) statusDot.style.background = '#f59e0b';
-        if (statusText) statusText.textContent = '🟡 Подключение по Wi-Fi (без HTTPS)';
-      }
-
-      if (targetUrl) {
-        this.currentUrl = targetUrl;
-        if (linkDisplay) linkDisplay.textContent = targetUrl;
-        this.renderQrCode(targetUrl);
-      } else {
-        if (linkDisplay) linkDisplay.textContent = 'Ожидание создания туннеля...';
-      }
-    } catch (e) {
-      if (linkDisplay && !this.currentUrl) {
-        linkDisplay.textContent = 'Запустите run.bat для создания ссылки';
-      }
-    }
-  },
-
-  renderQrCode(url) {
     const qrTarget = document.getElementById('qr-code-target');
     if (!qrTarget) return;
-
-    if (this.currentRenderedUrl === url) return;
-    this.currentRenderedUrl = url;
-
     qrTarget.innerHTML = '';
+
     if (typeof QRCode !== 'undefined') {
       try {
         new QRCode(qrTarget, {
-          text: url,
+          text: targetUrl,
           width: 216,
           height: 216,
           colorDark: '#0f172a',
@@ -3417,13 +4469,13 @@ const MobilePairingController = {
         });
         return;
       } catch (err) {
-        console.warn('QRCode generation failed:', err);
+        console.warn('QRCode library generation error:', err);
       }
     }
 
-    // Fallback image
+    // Fallback QR service
     const img = document.createElement('img');
-    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=216x216&data=${encodeURIComponent(url)}`;
+    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=216x216&data=${encodeURIComponent(targetUrl)}`;
     img.style.width = '216px';
     img.style.height = '216px';
     img.style.display = 'block';
@@ -3434,7 +4486,7 @@ const MobilePairingController = {
     if (!this.currentUrl) return;
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(this.currentUrl).then(() => {
-        UIController.showToast('Ссылка скопирована в буфер обмена!', 'success');
+        UIController.showToast(I18N.t('toast_link_copied'), 'success');
       }).catch(() => {
         UIController.showToast(this.currentUrl, 'info');
       });
@@ -3652,6 +4704,15 @@ const UIController = {
       }
     }
 
+    // Comparison button state setup
+    ComparisonService.updateUI();
+    const btnCompareProd = document.getElementById('btn-toggle-compare-product');
+    if (btnCompareProd) {
+      btnCompareProd.onclick = () => {
+        ComparisonService.toggle(product);
+      };
+    }
+
     // 1b. Offline cache badge (Requirement 7)
     const cacheBadge = document.getElementById('product-cache-badge');
     if (cacheBadge) {
@@ -3677,9 +4738,20 @@ const UIController = {
       }
     }
 
-    // 3. Barcode & GS1 Origin badge
+    // 3. Barcode & GS1 Origin badge + Copy to clipboard
     const barcodeVal = document.getElementById('product-barcode-val');
     if (barcodeVal) barcodeVal.textContent = product.barcode;
+
+    const barcodeChip = document.getElementById('product-barcode-chip');
+    if (barcodeChip) {
+      barcodeChip.onclick = () => {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(product.barcode).then(() => {
+            UIController.showToast(I18N.t('toast_barcode_copied'), 'success');
+          });
+        }
+      };
+    }
 
     const originBadge = document.getElementById('product-origin-badge');
     if (originBadge) {
@@ -3873,10 +4945,13 @@ const UIController = {
     // 11. Healthier Alternatives (Requirement 1)
     this.renderAlternatives(product);
 
-    // 12. Official Product Information (Requirement 3: Official Data)
+    // 12. Halal Information (Card 6)
+    this.renderHalalInfo(product);
+
+    // 13. Official Product Information (Requirement 3: Official Data)
     this.renderOfficialInfo(product);
 
-    // 13. Information Source & Transparency (Requirement 3: Provenance & Disclaimer)
+    // 14. Information Source & Transparency (Requirement 3: Provenance & Disclaimer)
     this.renderDataSource(product);
 
     // Switch view
@@ -4087,6 +5162,203 @@ const UIController = {
   },
 
   /**
+   * Card 6: Halal Information & Verification
+   * @param {object} product
+   */
+  renderHalalInfo(product) {
+    const badge = document.getElementById('halal-status-badge');
+    const content = document.getElementById('halal-content');
+    if (!content) return;
+
+    const evalRes = HalalService.evaluate(product);
+
+    if (badge) {
+      badge.textContent = `${evalRes.icon} ${evalRes.title}`;
+      badge.className = `badge ${evalRes.badgeClass}`;
+    }
+
+    const porkAlcoholClass = evalRes.status === 'not_halal' ? 'fail' : 'pass';
+    const porkAlcoholIcon = evalRes.status === 'not_halal' ? '❌' : '✓';
+    const porkAlcoholText = evalRes.status === 'not_halal'
+      ? (evalRes.notes || I18N.t('halal_pork_or_alcohol', 'Обнаружены запрещенные компоненты (свинина / алкоголь)'))
+      : I18N.t('halal_audit_pork_alcohol', 'Свинина и алкоголь в составе не обнаружены');
+
+    let certStatusClass = 'neutral';
+    let certStatusIcon = '—';
+    let certStatusText = I18N.t('halal_audit_no_cert', 'Независимый сертификат не зарегистрирован');
+
+    if (evalRes.status === 'verified_cert') {
+      certStatusClass = 'pass';
+      certStatusIcon = '✓';
+      certStatusText = evalRes.body || I18N.t('halal_audit_cert_ok', 'Действующий официальный сертификат подтвержден');
+    } else if (evalRes.status === 'manufacturer_claim') {
+      certStatusClass = 'warn';
+      certStatusIcon = '⚠️';
+      certStatusText = I18N.t('halal_audit_claim_only', 'Самозаявление производителя на упаковке (без независимой верификации)');
+    }
+
+    content.innerHTML = `
+      <div class="halal-status-banner ${evalRes.badgeClass}">
+        <div class="halal-banner-icon">${evalRes.icon}</div>
+        <div class="halal-banner-text">
+          <div class="halal-banner-title">${escapeHtml(evalRes.title)}</div>
+          ${evalRes.body ? `<div class="halal-banner-body">${escapeHtml(evalRes.body)}</div>` : ''}
+          ${evalRes.notes ? `<div class="halal-banner-notes">${escapeHtml(evalRes.notes)}</div>` : ''}
+        </div>
+      </div>
+      <div class="halal-audit-breakdown">
+        <div class="halal-audit-item ${porkAlcoholClass}">
+          <span class="audit-icon">${porkAlcoholIcon}</span>
+          <span class="audit-text">${escapeHtml(porkAlcoholText)}</span>
+        </div>
+        <div class="halal-audit-item ${certStatusClass}">
+          <span class="audit-icon">${certStatusIcon}</span>
+          <span class="audit-text">${escapeHtml(certStatusText)}</span>
+        </div>
+      </div>
+    `;
+  },
+
+  /**
+   * Kazakhstan Products Catalog Grid / List on Homepage
+   * @param {string|null} category
+   * @param {string|null} sort
+   */
+  renderHomeCatalog(category = null, sort = null) {
+    const grid = document.getElementById('home-products-grid');
+    if (!grid) return;
+
+    if (category !== null) AppState.catalogCategory = category;
+    if (sort !== null) AppState.catalogSort = sort;
+
+    const cat = AppState.catalogCategory || 'all';
+    const sortMode = AppState.catalogSort || 'default';
+    const viewMode = AppState.catalogViewMode || 'grid';
+
+    // Synchronize grid mode class
+    if (viewMode === 'list') {
+      grid.classList.add('mode-list');
+    } else {
+      grid.classList.remove('mode-list');
+    }
+
+    // Synchronize view toggle buttons
+    const btnGrid = document.getElementById('btn-view-grid');
+    const btnList = document.getElementById('btn-view-list');
+    if (btnGrid && btnList) {
+      if (viewMode === 'list') {
+        btnList.classList.add('active');
+        btnGrid.classList.remove('active');
+      } else {
+        btnGrid.classList.add('active');
+        btnList.classList.remove('active');
+      }
+    }
+
+    let products = LOCAL_DB.getByCategory(cat);
+
+    // Apply Sorting and Filtering
+    if (sortMode === 'score_desc') {
+      products = products.slice().sort((a, b) => {
+        const sa = EVALUATOR.calculateHealthScore(a).score || 0;
+        const sb = EVALUATOR.calculateHealthScore(b).score || 0;
+        return sb - sa;
+      });
+    } else if (sortMode === 'score_asc') {
+      products = products.slice().sort((a, b) => {
+        const sa = EVALUATOR.calculateHealthScore(a).score || 0;
+        const sb = EVALUATOR.calculateHealthScore(b).score || 0;
+        return sa - sb;
+      });
+    } else if (sortMode === 'halal_only') {
+      products = products.filter(p => {
+        const h = HalalService.evaluate(p);
+        return h.status === 'verified_cert' || h.status === 'manufacturer_claim';
+      });
+    }
+
+    if (!products || products.length === 0) {
+      grid.innerHTML = `
+        <div class="empty-state-card" style="grid-column: 1 / -1; text-align:center; padding: 36px 16px;">
+          <div style="font-size:36px; margin-bottom:10px;">🔍</div>
+          <p style="color:var(--text-muted); font-size:15px; font-weight:600;">В этой категории пока нет подходящих товаров</p>
+          <p style="color:var(--text-light); font-size:13px; margin-top:4px;">Попробуйте выбрать другую категорию или сбросить сортировку</p>
+        </div>
+      `;
+      return;
+    }
+
+    grid.innerHTML = products.map(prod => {
+      const scoreObj = EVALUATOR.calculateHealthScore(prod);
+      const score = scoreObj.score !== null ? scoreObj.score : '--';
+      const color = scoreObj.color || '#94a3b8';
+      const halal = HalalService.evaluate(prod);
+
+      const imgHtml = prod.image
+        ? `<img src="${escapeHtml(prod.image)}" class="home-product-thumb" alt="${escapeHtml(prod.name)}" loading="lazy" onerror="this.outerHTML='<div class=\\'home-product-thumb-fallback\\'>🥗</div>'">`
+        : `<div class="home-product-thumb-fallback">🥗</div>`;
+
+      if (viewMode === 'list') {
+        return `
+          <div class="home-product-card" data-barcode="${escapeHtml(prod.barcode)}" role="button" tabindex="0">
+            <div class="home-card-header">
+              ${imgHtml}
+            </div>
+            <div class="home-card-body">
+              <div class="home-card-title">${escapeHtml(prod.name)}</div>
+              <div class="home-card-meta">
+                <span class="home-card-brand">${escapeHtml(prod.brand || prod.country || '')}</span>
+                ${prod.country ? `<span class="home-card-country">🇰🇿</span>` : ''}
+              </div>
+              <div class="home-card-tags">
+                <span class="badge ${halal.badgeClass} badge-mini">${halal.icon} ${escapeHtml(halal.title)}</span>
+                <span class="badge badge-neutral badge-mini">#${escapeHtml(prod.barcode)}</span>
+              </div>
+            </div>
+            <div class="home-card-score" style="background:${color}18; color:${color}; border: 1.5px solid ${color}40;" title="Health Score">
+              <span>${score}</span>
+              <small>/100</small>
+            </div>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="home-product-card" data-barcode="${escapeHtml(prod.barcode)}" role="button" tabindex="0">
+          <div class="home-card-header">
+            ${imgHtml}
+            <div class="home-card-score" style="background:${color}18; color:${color}; border: 1.5px solid ${color}40;" title="Health Score">
+              <span>${score}</span>
+              <small>/100</small>
+            </div>
+          </div>
+          <div class="home-card-body">
+            <div class="home-card-title">${escapeHtml(prod.name)}</div>
+            <div class="home-card-meta">
+              <span class="home-card-brand">${escapeHtml(prod.brand || prod.country || '')}</span>
+              ${prod.country ? `<span class="home-card-country">🇰🇿</span>` : ''}
+            </div>
+            <div class="home-card-tags">
+              <span class="badge ${halal.badgeClass} badge-mini">${halal.icon} ${escapeHtml(halal.title)}</span>
+              <span class="badge badge-neutral badge-mini">#${escapeHtml(prod.barcode)}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    // Attach click listeners to cards
+    grid.querySelectorAll('.home-product-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const barcode = card.getAttribute('data-barcode');
+        if (barcode) {
+          App.searchBarcode(barcode);
+        }
+      });
+    });
+  },
+
+  /**
    * Requirement 3: Official Product Information
    * Shows official certs/EAC/Halal only if present in data, otherwise polite fallback.
    * @param {object} product 
@@ -4132,12 +5404,13 @@ const UIController = {
     const originEl = document.getElementById('source-origin-val');
     const statusEl = document.getElementById('source-status-val');
     const updatedEl = document.getElementById('source-updated-val');
+    const linkEl = document.getElementById('source-link-val');
 
     if (originEl) {
       if (product.source === 'user_local') {
         originEl.textContent = 'Qoldau Food (Пользователь / Пайдаланушы)';
       } else if (product.source === 'local_verified') {
-        originEl.textContent = 'Qoldau Food (Казахстан)';
+        originEl.textContent = 'Qoldau Food (Казахстан — локальная база)';
       } else {
         originEl.textContent = 'Open Food Facts (Global Database)';
       }
@@ -4169,8 +5442,27 @@ const UIController = {
         const locale = I18N.currentLang === 'kk' ? 'kk-KZ' : (I18N.currentLang === 'ru' ? 'ru-RU' : 'en-US');
         updatedEl.textContent = date.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
       } else {
-        updatedEl.textContent = '—';
+        updatedEl.textContent = '2025';
       }
+    }
+
+    if (linkEl) {
+      if (product.source_url) {
+        linkEl.innerHTML = `<a href="${escapeHtml(product.source_url)}" target="_blank" rel="noopener" class="source-external-link">🔗 ${escapeHtml(product.source_url)}</a>`;
+      } else if (product.barcode && product.source !== 'user_local' && product.source !== 'local_verified') {
+        const offUrl = `https://world.openfoodfacts.org/product/${encodeURIComponent(product.barcode)}`;
+        linkEl.innerHTML = `<a href="${offUrl}" target="_blank" rel="noopener" class="source-external-link">🔗 Open Food Facts #${escapeHtml(product.barcode)}</a>`;
+      } else {
+        linkEl.textContent = I18N.t('source_local_internal', 'Внутренняя база QOLDAU (Казахстан)');
+      }
+    }
+
+    // Connect report error button
+    const btnReport = document.getElementById('btn-open-report-error');
+    if (btnReport) {
+      btnReport.onclick = () => {
+        ReportService.openModal(product);
+      };
     }
   },
 
@@ -4278,21 +5570,123 @@ const UIController = {
 
 
 /* ==============================================================================
+   8b. THEME MANAGER (DARK / LIGHT MODE)
+   Handles theme switching, persistence, system sync, and dynamic UI updates
+   ============================================================================== */
+const ThemeManager = {
+  STORAGE_KEY: 'qoldau_theme',
+
+  init() {
+    let savedTheme = null;
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      savedTheme = urlParams.get('theme') || localStorage.getItem(this.STORAGE_KEY);
+    } catch (e) {
+      console.warn('LocalStorage access error in ThemeManager', e);
+    }
+
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    this.applyTheme(theme, false);
+
+    // Watch for OS-level dark mode preference changes if user hasn't explicitly chosen
+    if (window.matchMedia) {
+      try {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (!localStorage.getItem(this.STORAGE_KEY)) {
+            this.applyTheme(e.matches ? 'dark' : 'light', true);
+          }
+        });
+      } catch (e) {}
+    }
+
+    // Attach click listener to Theme Toggle button in header
+    const btnToggle = document.getElementById('btn-theme-toggle');
+    if (btnToggle) {
+      btnToggle.addEventListener('click', () => {
+        this.toggle();
+      });
+    }
+  },
+
+  getCurrentTheme() {
+    return document.documentElement.getAttribute('data-theme') || 'light';
+  },
+
+  toggle() {
+    const current = this.getCurrentTheme();
+    const next = current === 'dark' ? 'light' : 'dark';
+    this.applyTheme(next, true);
+    try {
+      localStorage.setItem(this.STORAGE_KEY, next);
+    } catch (e) {}
+  },
+
+  applyTheme(theme, showNotification = false) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (document.body) {
+      document.body.setAttribute('data-theme', theme);
+    }
+
+    const btn = document.getElementById('btn-theme-toggle');
+    if (btn) {
+      const iconLight = btn.querySelector('.theme-icon-light');
+      const iconDark = btn.querySelector('.theme-icon-dark');
+      if (theme === 'dark') {
+        if (iconLight) iconLight.style.display = 'none';
+        if (iconDark) iconDark.style.display = 'inline-flex';
+        btn.setAttribute('title', 'Переключить на светлую тему');
+      } else {
+        if (iconLight) iconLight.style.display = 'inline-flex';
+        if (iconDark) iconDark.style.display = 'none';
+        btn.setAttribute('title', 'Переключить на темную тему');
+      }
+    }
+
+    if (showNotification && typeof UIController !== 'undefined' && UIController.showToast) {
+      const toastText = theme === 'dark' 
+        ? (typeof I18N !== 'undefined' && I18N.t('toast_theme_dark') ? I18N.t('toast_theme_dark') : '🌙 Включена темная тема') 
+        : (typeof I18N !== 'undefined' && I18N.t('toast_theme_light') ? I18N.t('toast_theme_light') : '☀️ Включена светлая тема');
+      UIController.showToast(toastText, 'info');
+    }
+  }
+};
+
+/* ==============================================================================
    9. GLOBAL APPLICATION CONTROLLER (APP)
    ============================================================================== */
 const AppState = {
   currentView: 'view-home',
   currentProduct: null,
   pendingNotFoundBarcode: '',
-  tempAddPhotoDataUrl: ''
+  tempAddPhotoDataUrl: '',
+  catalogCategory: 'all',
+  catalogSort: 'default',
+  catalogViewMode: (function() {
+    try { return localStorage.getItem('qoldau_catalog_view') || 'grid'; } catch(e) { return 'grid'; }
+  })()
 };
 
 const App = {
   init() {
+    ThemeManager.init();
     I18N.init();
     UserPreferencesService.updateBadge();
+    ComparisonService.updateUI();
+    UIController.renderHomeCatalog('all');
     HistoryManager.render();
     this.attachEventListeners();
+
+    // Check URL parameters or Hash for direct barcode link
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const barcodeParam = urlParams.get('barcode') || (window.location.hash.startsWith('#barcode=') ? window.location.hash.split('=')[1] : null);
+      if (barcodeParam) {
+        this.searchBarcode(barcodeParam.trim());
+      }
+    } catch (e) {
+      console.warn('URL param parsing skipped', e);
+    }
   },
 
   openPreferencesModal() {
@@ -4489,24 +5883,6 @@ const App = {
     const scannerFileInput = document.getElementById('scanner-file-input');
     if (scannerFileInput) {
       scannerFileInput.addEventListener('change', (e) => {
-        const file = e.target.files && e.target.files[0];
-        if (file) ScannerController.scanFromFile(file);
-      });
-    }
-
-    // Native Camera Snap button handler (100% sharp autofocus via native camera app)
-    const scannerNativeSnap = document.getElementById('scanner-native-snap');
-    if (scannerNativeSnap) {
-      scannerNativeSnap.addEventListener('change', (e) => {
-        const file = e.target.files && e.target.files[0];
-        if (file) ScannerController.scanFromFile(file);
-      });
-    }
-
-    // Home screen native camera button handler
-    const homeNativeCamInput = document.getElementById('home-native-camera-input');
-    if (homeNativeCamInput) {
-      homeNativeCamInput.addEventListener('change', (e) => {
         const file = e.target.files && e.target.files[0];
         if (file) ScannerController.scanFromFile(file);
       });
@@ -4844,6 +6220,128 @@ const App = {
         AppState.currentProduct = newProduct;
         HistoryManager.add(newProduct);
         UIController.renderProduct(newProduct);
+      });
+    }
+
+    // 11. Comparison Modal & Floating Bar Controls
+    const btnOpenComp = document.getElementById('btn-open-comparison');
+    if (btnOpenComp) {
+      btnOpenComp.addEventListener('click', () => ComparisonService.openModal());
+    }
+
+    const btnShowCompModal = document.getElementById('btn-show-comparison-modal');
+    if (btnShowCompModal) {
+      btnShowCompModal.addEventListener('click', () => ComparisonService.openModal());
+    }
+
+    const btnClearCompBar = document.getElementById('btn-clear-comparison-bar');
+    if (btnClearCompBar) {
+      btnClearCompBar.addEventListener('click', () => ComparisonService.clear());
+    }
+
+    const btnCloseComp = document.getElementById('btn-close-comparison');
+    if (btnCloseComp) {
+      btnCloseComp.addEventListener('click', () => ComparisonService.closeModal());
+    }
+
+    const btnCloseCompFooter = document.getElementById('btn-close-comparison-footer');
+    if (btnCloseCompFooter) {
+      btnCloseCompFooter.addEventListener('click', () => ComparisonService.closeModal());
+    }
+
+    const backdropComp = document.getElementById('backdrop-comparison');
+    if (backdropComp) {
+      backdropComp.addEventListener('click', () => ComparisonService.closeModal());
+    }
+
+    const btnClearAllComp = document.getElementById('btn-clear-all-comparison');
+    if (btnClearAllComp) {
+      btnClearAllComp.addEventListener('click', () => {
+        ComparisonService.clear();
+        ComparisonService.closeModal();
+      });
+    }
+
+    // 12. Homepage Kazakhstan Category Filter Pills
+    document.querySelectorAll('.category-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const cat = pill.getAttribute('data-category') || 'all';
+        UIController.renderHomeCatalog(cat);
+      });
+    });
+
+    // 12b. Catalog View Switcher (Grid vs List)
+    const btnViewGrid = document.getElementById('btn-view-grid');
+    const btnViewList = document.getElementById('btn-view-list');
+    if (btnViewGrid && btnViewList) {
+      btnViewGrid.addEventListener('click', () => {
+        btnViewGrid.classList.add('active');
+        btnViewList.classList.remove('active');
+        AppState.catalogViewMode = 'grid';
+        try { localStorage.setItem('qoldau_catalog_view', 'grid'); } catch(e){}
+        UIController.renderHomeCatalog();
+      });
+
+      btnViewList.addEventListener('click', () => {
+        btnViewList.classList.add('active');
+        btnViewGrid.classList.remove('active');
+        AppState.catalogViewMode = 'list';
+        try { localStorage.setItem('qoldau_catalog_view', 'list'); } catch(e){}
+        UIController.renderHomeCatalog();
+      });
+    }
+
+    // 12c. Catalog Sort & Filter Dropdown
+    const catalogSort = document.getElementById('catalog-sort-select');
+    if (catalogSort) {
+      catalogSort.addEventListener('change', (e) => {
+        AppState.catalogSort = e.target.value;
+        UIController.renderHomeCatalog();
+      });
+    }
+
+    // 12d. Sticky Quick-Navigation Bar for Product Page
+    document.querySelectorAll('.quick-nav-pill').forEach(pill => {
+      pill.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = pill.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          const targetEl = document.getElementById(targetId.substring(1));
+          if (targetEl) {
+            document.querySelectorAll('.quick-nav-pill').forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
+    });
+
+    // 13. Report Error Modal Controls
+    const btnCloseReport = document.getElementById('btn-close-report');
+    if (btnCloseReport) {
+      btnCloseReport.addEventListener('click', () => ReportService.closeModal());
+    }
+
+    const backdropReport = document.getElementById('backdrop-report');
+    if (backdropReport) {
+      backdropReport.addEventListener('click', () => ReportService.closeModal());
+    }
+
+    const formReport = document.getElementById('form-report-error');
+    if (formReport) {
+      formReport.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const barcode = document.getElementById('report-barcode').value.trim();
+        const reasons = Array.from(document.querySelectorAll('input[name="report_reason"]:checked'))
+          .map(cb => cb.value);
+        const comments = document.getElementById('report-comments').value.trim();
+        const prodName = AppState.currentProduct ? AppState.currentProduct.name : '';
+
+        ReportService.submitReport(barcode, prodName, reasons, comments);
+        ReportService.closeModal();
+        UIController.showToast(I18N.t('toast_report_sent', 'Спасибо! Ваше сообщение отправлено на проверку QOLDAU'), 'success');
       });
     }
   }

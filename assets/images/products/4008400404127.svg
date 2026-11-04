@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="kinderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#e01a22"/>
+      <stop offset="100%" stop-color="#c41219"/>
+    </linearGradient>
+    <filter id="shadowKinder" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="#f8fafc" rx="16"/>
+  <g filter="url(#shadowKinder)">
+    <!-- Package Box -->
+    <rect x="50" y="45" width="300" height="210" rx="12" fill="url(#kinderGrad)" stroke="#e2e8f0" stroke-width="2"/>
+    <!-- Top White half content -->
+    <text x="200" y="95" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="28" fill="#e01a22" text-anchor="middle" letter-spacing="1">Kinder</text>
+    <text x="200" y="125" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="14" fill="#0075c9" text-anchor="middle">CHOCOLATE</text>
+    <text x="200" y="142" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" fill="#64748b" text-anchor="middle">with milk filling • 100g</text>
+    
+    <!-- Dividing milk wave -->
+    <path d="M 50 150 Q 120 160 200 150 T 350 150 L 350 255 L 50 255 Z" fill="#e01a22" opacity="0.95"/>
+    
+    <!-- Chocolate sticks preview -->
+    <g transform="translate(100, 168)">
+      <rect x="0" y="0" width="40" height="65" rx="4" fill="#5c3826" stroke="#ffffff" stroke-width="2"/>
+      <rect x="4" y="4" width="32" height="26" rx="3" fill="#ffffff" opacity="0.9"/>
+      
+      <rect x="55" y="0" width="40" height="65" rx="4" fill="#5c3826" stroke="#ffffff" stroke-width="2"/>
+      <rect x="59" y="4" width="32" height="26" rx="3" fill="#ffffff" opacity="0.9"/>
+
+      <rect x="110" y="0" width="40" height="65" rx="4" fill="#5c3826" stroke="#ffffff" stroke-width="2"/>
+      <rect x="114" y="4" width="32" height="26" rx="3" fill="#ffffff" opacity="0.9"/>
+
+      <rect x="165" y="0" width="40" height="65" rx="4" fill="#5c3826" stroke="#ffffff" stroke-width="2"/>
+      <rect x="169" y="4" width="32" height="26" rx="3" fill="#ffffff" opacity="0.9"/>
+    </g>
+    <text x="200" y="246" font-family="'Segoe UI', Roboto, sans-serif" font-weight="700" font-size="11" fill="#ffffff" text-anchor="middle">+ М О Л О К О  -  К А К А О</text>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" width="320" height="220">
+  <defs>
+    <linearGradient id="bgTea" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b91c1c"/>
+      <stop offset="100%" stop-color="#7f1d1d"/>
+    </linearGradient>
+    <linearGradient id="gTea" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+    <filter id="sh3" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <rect x="25" y="20" width="270" height="180" rx="8" fill="url(#bgTea)" filter="url(#sh3)"/>
+  <rect x="31" y="26" width="258" height="168" rx="6" fill="none" stroke="url(#gTea)" stroke-width="2"/>
+  <text x="160" y="58" font-family="sans-serif" font-size="11" font-weight="bold" fill="#fca5a5" text-anchor="middle" letter-spacing="2">RG BRANDS</text>
+  <text x="160" y="96" font-family="'Georgia', serif" font-size="28" font-weight="bold" fill="url(#gTea)" text-anchor="middle" letter-spacing="1">ПИАЛА</text>
+  <text x="160" y="122" font-family="'Georgia', serif" font-size="16" font-style="italic" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="3">GOLD • КЕНИЯ</text>
+  <rect x="70" y="136" width="180" height="2" fill="url(#gTea)"/>
+  <text x="160" y="156" font-family="sans-serif" font-size="10" font-weight="600" fill="#ffffff" text-anchor="middle">ОТБОРНЫЙ ГРАНУЛИРОВАННЫЙ ЧАЙ</text>
+  <text x="160" y="174" font-family="sans-serif" font-size="11" font-weight="bold" fill="url(#gTea)" text-anchor="middle">250 г • 100% ТАБИҒИ</text>
+</svg>
