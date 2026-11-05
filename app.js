@@ -4549,7 +4549,7 @@ const UIController = {
    * @param {object} health
    */
   renderHealthScore(health) {
-    const card = document.getElementById('product-health-card');
+    const card = document.getElementById('card-health-score') || document.getElementById('product-health-card');
     if (!card) return;
 
     const valEl = document.getElementById('health-score-val');
